@@ -155,7 +155,10 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        App\Providers\UserServiceProvider::class,
+        App\Providers\ConcertServiceProvider::class,
+        App\Providers\UserConcertServiceProvider::class,
+        App\Providers\PotentialMatchServiceProvider::class,
     ],
 
     /*
