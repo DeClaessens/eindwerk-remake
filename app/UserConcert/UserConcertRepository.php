@@ -11,8 +11,28 @@ namespace App\UserConcert;
 
 interface UserConcertRepository
 {
+    /**
+     * @return UserConcert
+     */
     public function make();
+
+    /**
+     * @param $userConcert
+     */
     public function save($userConcert);
+
+    /**
+     * @param $user_id
+     * @param $concert_id
+     * @return mixed
+     */
     public function searchUserConcerts($user_id, $concert_id);
+
+
+    /**
+     * @param $user_id
+     * @param $concert_id
+     * @return mixed
+     */
     public function getAllUsersFromConcert($user_id, $concert_id);
 }

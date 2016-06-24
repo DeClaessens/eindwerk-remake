@@ -11,6 +11,13 @@ namespace App\User;
 
 interface UserRepository
 {
+    /**
+     * @return User
+     */
     public function make();
+
+    /**
+     * @param $user
+     */
     public function save($user);
 }
