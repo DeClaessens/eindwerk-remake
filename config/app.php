@@ -158,6 +158,8 @@ return [
         App\Providers\UserServiceProvider::class,
         App\Providers\ConcertServiceProvider::class,
         App\Providers\UserConcertServiceProvider::class,
+
+        App\Providers\HTTPClientServiceProvider::class,
         App\Providers\PotentialMatchServiceProvider::class,
     ],
 

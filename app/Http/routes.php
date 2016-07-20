@@ -11,4 +11,34 @@
 |
 */
 
-Route::get('/', 'HomeController@testConcerts');
+Route::get('/', 'HomeController@index');
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+
+    Route::get('/profile', 'UserController@profile');
+
+    Route::get('/profile/edit', 'UserController@edit');
+
+    Route::post('/profile/save', 'UserController@saveProfile');
+
+    Route::get('/user/{id}', 'UserController@userPage');
+
+    Route::get('/chat/solo/{id}', 'ChatController@showChat');
+
+    Route::post('/chat/solo/send/{id}', 'ChatController@sendMessage');
+
+    Route::get('/concert/select/{concertId}', 'ConcertController@showConcertLanding');
+
+    Route::get('/concerts', 'HomeController@concerts');
+
+    Route::get('/admin/getConcerts', 'HomeController@saveConcertsToDatabase');
+
+    Route::get('/concert/find/solo/{concertId}', 'ConcertController@findSolo');
+
+    Route::get('/stubru', 'HomeController@stubru');
+
+    Route::get('/swiperight/{userId}/{concertId}', 'PotentialMatchController@soloYes');
+});
