@@ -26,5 +26,5 @@ interface ChatRepository
      * @param $user2
      * @return mixed
      */
-    public static function getMessagesFromMatch($user1, $user2);
+    public function getMessagesFromMatch($user1, $user2);
 }

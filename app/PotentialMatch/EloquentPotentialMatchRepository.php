@@ -12,7 +12,7 @@ namespace App\PotentialMatch;
 use App\Concert\Concert;
 use Illuminate\Contracts\Auth\Guard;
 
-class EloquentPotentialMatchRepository
+class EloquentPotentialMatchRepository implements PotentialMatchRepository
 {
     /**
      * @var Guard
