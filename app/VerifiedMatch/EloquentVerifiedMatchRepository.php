@@ -11,7 +11,7 @@ namespace App\VerifiedMatch;
 
 use Illuminate\Contracts\Auth\Guard;
 
-class EloquentVerifiedMatchRepository
+class EloquentVerifiedMatchRepository implements VerifiedMatchRepository
 {
     /**
      * @var Guard

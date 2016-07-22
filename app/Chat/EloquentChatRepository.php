@@ -11,7 +11,7 @@ namespace App\Chat;
 
 use Illuminate\Contracts\Auth\Guard;
 
-class EloquentChatRepository
+class EloquentChatRepository implements ChatRepository
 {
     /**
      * @var Guard

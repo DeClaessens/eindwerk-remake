@@ -33,6 +33,11 @@ class EloquentConcertRepository implements ConcertRepository
         return $this->model->all();
     }
 
+    public function find($id)
+    {
+        return $this->model->where('id', $id)->first();
+    }
+
     public function findById($id)
     {
         return $this->model->where('id', $id)->first();
