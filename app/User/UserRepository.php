@@ -20,4 +20,6 @@ interface UserRepository
      * @param $user
      */
     public function save($user);
+
+    public function find($id);
 }

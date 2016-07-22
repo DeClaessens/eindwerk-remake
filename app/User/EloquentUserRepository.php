@@ -43,4 +43,9 @@ class EloquentUserRepository implements UserRepository
     {
         $user->save();
     }
+
+    public function find($id)
+    {
+        return $this->model->where('id', $id)->first();
+    }
 }

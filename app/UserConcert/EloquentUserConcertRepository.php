@@ -13,7 +13,7 @@ use App\Concert\Concert;
 use App\User\User;
 use Illuminate\Contracts\Auth\Guard;
 
-class EloquentUserRepository
+class EloquentUserConcertRepository implements UserConcertRepository
 {
     /**
      * @var Guard
