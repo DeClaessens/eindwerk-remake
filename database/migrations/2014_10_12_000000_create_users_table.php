@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('bio');
             $table->string('favoriteArtists');
             $table->integer('birthday');
+            $table->string('provider_user_id');
+            $table->string('provider');
             $table->rememberToken();
             $table->timestamps();
         });

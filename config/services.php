@@ -30,9 +30,15 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\User::class,
+        'model' => App\User\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+
+    'facebook' => [
+        'client_id' => '1129968120408479',
+        'client_secret' => '55a4dc0d034d80c4e5b1ab870c747bdc',
+        'redirect' => 'http://eindwerk.app/callback/',
+    ]
 
 ];

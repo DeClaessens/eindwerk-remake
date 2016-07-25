@@ -3,7 +3,7 @@ namespace App\Providers;
 
 
 use Illuminate\Support\ServiceProvider;
-class PotentialMatchServiceProvider extends ServiceProvider
+class VerifiedMatchServiceProvider extends ServiceProvider
 {
     /**
      * @return void

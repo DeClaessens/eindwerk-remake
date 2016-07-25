@@ -16,6 +16,9 @@ Route::get('/', 'HomeController@index');
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
+    Route::get('/redirect', 'SocialAuthController@redirect');
+    Route::get('/callback', 'SocialAuthController@callback');
+
     Route::get('/home', 'HomeController@index');
 
     Route::get('/profile', 'UserController@profile');
@@ -42,3 +45,6 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/swiperight/{userId}/{concertId}', 'PotentialMatchController@soloYes');
 });
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

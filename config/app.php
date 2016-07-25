@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://eindwerk.app'),
 
     /*
     |--------------------------------------------------------------------------
@@ -160,7 +160,11 @@ return [
         App\Providers\UserConcertServiceProvider::class,
 
         App\Providers\HTTPClientServiceProvider::class,
+        App\Providers\VerifiedMatchServiceProvider::class,
         App\Providers\PotentialMatchServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
+
     ],
 
     /*
@@ -206,7 +210,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];
