@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Concert\ConcertRepository;
+use App\HTTPClient\GuzzleHTTPClientRepository;
 use App\User\UserRepository;
 use App\UserConcert\UserConcertRepository;
 use Illuminate\Contracts\Auth\Guard;
@@ -28,6 +29,10 @@ class ConcertController extends Controller
      * @var UserRepository
      */
     private $user;
+    /**
+     * @var GuzzleHTTPClientRepository
+     */
+    private $guzzle;
 
     /**
      * Create a new controller instance.
@@ -36,14 +41,45 @@ class ConcertController extends Controller
      * @param Guard $auth
      * @param UserConcertRepository $userConcert
      * @param UserRepository $user
+     * @param GuzzleHTTPClientRepository $guzzle
      */
-    public function __construct(ConcertRepository $concert, Guard $auth, UserConcertRepository $userConcert, UserRepository $user)
+    public function __construct(ConcertRepository $concert, Guard $auth, UserConcertRepository $userConcert, UserRepository $user, GuzzleHTTPClientRepository $guzzle)
     {
         $this->middleware('auth');
         $this->concert = $concert;
         $this->auth = $auth;
         $this->userConcert = $userConcert;
         $this->user = $user;
+        $this->guzzle = $guzzle;
+    }
+
+    public function showAllConcerts() {
+        //load concerts from the database through the concert model.
+        $concerts = $this->concert->getAllConcerts();
+
+        return view('concertSelect', compact('concerts'));
+    }
+
+    public function getAllConcertsFromApiAndSaveToDatabase() {
+        $client = $this->guzzle->generateClient('http://api.songkick.com');
+        ///////////////sportpaleis/ab/////lotto arena//forest national//de roma//palais 12//depot//vooruit//Charlan//capitole
+        $venueArray = ['569556', '29622', '56494', '31696', '583421', '2037269', '32003', '806981', '582451', '104956'];
+        $concertArray = $this->guzzle->getConcertArrayWithApiResults($client, $venueArray);
+
+        foreach($concertArray as $concert) {
+            if(!$this->concert->find($concert->id)){
+                $newConcert = $this->concert->make();
+                $newConcert->id = $concert->id;
+                $newConcert->name = $concert->displayName;
+                $newConcert->status = $concert->status;
+                $newConcert->venue = $concert->venue->displayName;
+                $newConcert->concertImageUrl = "http://images.sk-static.com/images/media/profile_images/artists/" . $concert->performance[0]->artist->id . "/huge_avatar";
+                $newConcert->concertUrl = $concert->uri;
+                $newConcert->date = $concert->startDate;
+
+                $this->concert->save($newConcert);
+            }
+        }
     }
 
     public function showConcertLanding($concert_id)
@@ -60,11 +96,11 @@ class ConcertController extends Controller
         //-- -- -- save data
 
         $user = $this->auth->user();
+
         $concert = $this->concert->find($concert_id);
 
         if($existingUserConcert = !$this->userConcert->searchUserConcerts($user->id, $concert->id)) {
             $newUserConcert = $this->userConcert->make();
-
             $newUserConcert->user_id = $user->id;
             $newUserConcert->concert_id = $concert->id;
             $this->userConcert->save($newUserConcert);

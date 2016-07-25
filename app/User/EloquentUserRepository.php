@@ -25,13 +25,13 @@ class EloquentUserRepository implements UserRepository
     /**
      * EloquentUserRepository constructor.
      * @param Guard $auth
-     * @param User $user
+     * @param User $model
+     * @internal param User $user
      */
     public function __construct(Guard $auth, User $model)
     {
-
         $this->auth = $auth;
-        $this->user = $model;
+        $this->model = $model;
     }
 
     public function make()

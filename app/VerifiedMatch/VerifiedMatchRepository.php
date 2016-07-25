@@ -18,14 +18,14 @@ interface VerifiedMatchRepository
      * @param $user1
      * @return mixed
      */
-    public static function findAllMatches($user1);
+    public function findAllMatches($user1);
 
     /**
      * @param $user1
      * @param $user2
      * @return mixed
      */
-    public static function checkIfUsersMatch($user1, $user2);
+    public function checkIfUsersMatch($user1, $user2);
 
     /**
      * @param $user1

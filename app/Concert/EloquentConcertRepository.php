@@ -42,4 +42,9 @@ class EloquentConcertRepository implements ConcertRepository
     {
         return $this->model->where('id', $id)->first();
     }
+
+    public function getAllConcerts()
+    {
+        return $this->model->get();
+    }
 }

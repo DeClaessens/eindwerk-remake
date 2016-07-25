@@ -35,7 +35,7 @@ class EloquentVerifiedMatchRepository implements VerifiedMatchRepository
 
     public function make()
     {
-        $this->model->newInstance();
+        return $this->model->newInstance();
     }
     public function save($verifiedMatch)
     {

@@ -32,25 +32,24 @@ class EloquentUserConcertRepository implements UserConcertRepository
      */
     private $model;
 
-
     /**
      * EloquentUserRepository constructor.
      * @param Guard $auth
      * @param User $user
      * @param Concert $concert
-     * @param UserConcert $userConcert
+     * @param UserConcert $model
      */
     public function __construct(Guard $auth, User $user, Concert $concert, UserConcert $model)
     {
         $this->auth = $auth;
         $this->user = $user;
         $this->concert = $concert;
-        $this->userConcert = $model;
+        $this->model = $model;
     }
 
     public function make()
     {
-        $this->model->newInstance();
+        return $this->model->newInstance();
     }
 
     public function save($userConcert)

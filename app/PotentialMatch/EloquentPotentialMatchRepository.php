@@ -43,7 +43,7 @@ class EloquentPotentialMatchRepository implements PotentialMatchRepository
 
     public function make()
     {
-        $this->model->newInstance();
+        return $this->model->newInstance();
     }
     public function save($potentialMatch)
     {

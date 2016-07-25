@@ -35,7 +35,7 @@ class EloquentChatRepository implements ChatRepository
 
     public function make()
     {
-        $this->model->newInstance();
+        return $this->model->newInstance();
     }
 
     public function save($chat)

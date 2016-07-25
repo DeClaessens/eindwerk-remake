@@ -3,10 +3,26 @@
 namespace App\SocialAccountService;
 
 use App\User\User;
+use App\User\UserRepository;
 use Laravel\Socialite\Contracts\User as ProviderUser;
 
 class SocialAccountService
 {
+    /**
+     * @var UserRepository
+     */
+    private $userRepo;
+
+
+    /**
+     * SocialAccountService constructor.
+     * @param UserRepository $userRepo
+     */
+    public function __construct(UserRepository $userRepo)
+    {
+        $this->userRepo = $userRepo;
+    }
+
     public function createOrGetUser(ProviderUser $providerUser)
     {
         $user = User::whereProvider('facebook')
@@ -21,15 +37,18 @@ class SocialAccountService
 
             if (!$user) {
 
-                $user = User::create([
-                    'email' => $providerUser->getEmail(),
-                    'name' => $providerUser->getName(),
-                    'provider_user_id' => $providerUser->getId(),
-                    'provider' => 'facebook',
-                ]);
-            }
+                $newUser = $this->userRepo->make();
 
-            $user->save();
+                $newUser->name = $providerUser->getName();
+                $newUser->email = $providerUser->getEmail();
+                $newUser->provider = 'facebook';
+                $newUser->provider_user_id = $providerUser->getId();
+
+                $this->userRepo->save($newUser);
+
+                return $newUser;
+
+            }
 
             return $user;
 

@@ -35,7 +35,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/concert/select/{concertId}', 'ConcertController@showConcertLanding');
 
-    Route::get('/concerts', 'HomeController@concerts');
+    Route::get('/concerts', 'ConcertController@showAllConcerts');
+    Route::get('/getConcerts', 'ConcertController@getAllConcertsFromApiAndSaveToDatabase');
 
     Route::get('/admin/getConcerts', 'HomeController@saveConcertsToDatabase');
 

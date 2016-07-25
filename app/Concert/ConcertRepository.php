@@ -26,4 +26,7 @@ interface ConcertRepository
      * @return Concert
      */
     public function findById($id);
+
+
+    public function getAllConcerts();
 }
