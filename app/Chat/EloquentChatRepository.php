@@ -1,13 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 24/06/16
- * Time: 12:40
- */
-
 namespace App\Chat;
-
 
 use Illuminate\Contracts\Auth\Guard;
 
@@ -25,7 +17,7 @@ class EloquentChatRepository implements ChatRepository
     /**
      * EloquentChatRepository constructor.
      * @param Guard $auth
-     * @param Chat $chat
+     * @param Chat $model
      */
     public function __construct(Guard $auth, Chat $model)
     {
@@ -54,6 +46,13 @@ class EloquentChatRepository implements ChatRepository
                     ->where('sender', $user2);
             })
             ->get();
+        return $query;
+    }
+
+    public function getXLastMessages($user1, $amount)
+    {
+        $query = $this->model->where('receiver', $user1)->limit($amount)->get();
+
         return $query;
     }
 }

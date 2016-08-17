@@ -30,7 +30,7 @@ class EloquentConcertRepository implements ConcertRepository
 
     public function getAll()
     {
-        return $this->model->all();
+        return $this->model->orderBy('date', 'asc')->get();
     }
 
     public function find($id)
@@ -45,6 +45,12 @@ class EloquentConcertRepository implements ConcertRepository
 
     public function getAllConcerts()
     {
-        return $this->model->get();
+        return $this->model->orderBy('date', 'asc')->get();
+    }
+
+    public function getUpcomingConcerts($amount)
+    {
+        $query = $this->model->where('event_passed', '0')->orderBy('date', 'asc')->limit($amount)->get();
+        return $query;
     }
 }

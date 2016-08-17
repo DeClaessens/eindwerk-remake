@@ -8,7 +8,7 @@ use App\User\UserRepository;
 use App\UserConcert\UserConcertRepository;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
-
+use SpotifyWebAPI\SpotifyWebAPI;
 use App\Http\Requests;
 
 class ConcertController extends Controller
@@ -85,7 +85,16 @@ class ConcertController extends Controller
     public function showConcertLanding($concert_id)
     {
         $selectedConcert = $this->concert->find($concert_id);
-        return view('concerts.landing', compact('selectedConcert'));
+        $api = new SpotifyWebAPI();
+        $searchArtist = $api->search($selectedConcert->name, 'artist', array(
+            'market' => 'be'
+        ));
+        $searchArtistId = $searchArtist->artists->items[0]->id;
+        $topTracks = $api->getArtistTopTracks($searchArtistId, array(
+            'country' => 'be'
+        ));
+
+        return view('concerts.landing', compact('selectedConcert', 'topTracks'));
     }
 
     public function findSolo($concert_id)

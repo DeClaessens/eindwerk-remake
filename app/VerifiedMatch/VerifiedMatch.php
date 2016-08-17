@@ -10,8 +10,13 @@ class VerifiedMatch extends Model
 
     public $timestamps = false;
 
-    public function user()
+    public function matchedUser()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User\User', 'user2');
+    }
+
+    public function matchedConcert()
+    {
+        return $this->belongsTo('App\Concert\Concert', 'concert_id');
     }
 }

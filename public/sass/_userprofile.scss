@@ -1,0 +1,195 @@
+.profile-header {
+    position: relative;
+
+    text-align: center;
+    .header-inner-wrapper {
+        position: relative;
+        top: 30%;
+        transform: translateY(-50%);
+
+        height: 300px;
+    }
+    height: 100px;
+    .edit-profile-button {
+        display: inline-block;
+
+        position: absolute;
+        left: 20%;
+
+        height:300px;
+
+        a {
+            line-height: 300px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            font-size: 14pt;
+
+        }
+    }
+    .widget-container {
+        .widget {
+            width: 400px;
+            border-radius: 3px;
+            background-color: white;
+            display: block;
+            position: absolute;
+            padding: 10px;
+            bottom: 10%;
+
+            h1 {
+                font-size: 14pt;
+                text-align: center;
+                padding-top: 8px;
+                display: block;
+
+                margin-bottom: 20px;
+            }
+        }
+        .profile-notification-screen {
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+            ul {
+                width: 100%;
+                text-align: center;
+                li {
+                    display: inline-block;
+                    width: 50px;
+                    height: 50px;
+
+                    border-radius: 5px;
+
+                    margin: 0 10px 10px 0;
+                }
+            }
+
+            &:after{
+                content: "";
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                background-color: white;
+                position: absolute;
+                left:50%;
+                top: 3px;
+                z-index: -1;
+                border-radius: 3px;
+
+                transform: rotate(45deg) translateX(-71%);
+            }
+        }
+        .recent-messages-screen {
+            width: 300px;
+            right: 5%;
+            padding: 0;
+
+            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+            h1 {
+                text-align: left;
+                padding-left: 10px;
+                margin: 10px 0;
+            }
+            li {
+                height: 30px;
+                padding: 10px;
+                list-style-type: none;
+            }
+            li:nth-child(even){
+                background-color: #eee;
+            }
+            .message-profile-icon {
+                width: 30px;
+                height: 30px;
+
+                display: inline-block;
+                position: absolute;
+                left: 10px;
+            }
+            p, a {
+                margin: 0;
+                display: inline-block;
+                height: 30px;
+                line-height: 30px;
+                position: absolute;
+                font-size: 9pt;
+            }
+            p {
+                left: 50px;
+            }
+            a {
+                right: 10px;
+            }
+        }
+
+        .upcoming-concert-screen {
+            width: 300px;
+            left: 5%;
+            padding: 0;
+            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+            h1 {
+                text-align: left;
+                padding-left: 10px;
+                margin: 10px 0;
+            }
+            li {
+                height: 30px;
+                padding: 10px;
+                list-style-type: none;
+            }
+            li:nth-child(even){
+                background-color: #eee;
+            }
+            p, a {
+                margin: 0;
+                display: inline-block;
+                height: 30px;
+                line-height: 30px;
+                position: absolute;
+                font-size: 9pt;
+            }
+            p {
+                left: 10px;
+            }
+            a {
+                right: 10px;
+            }
+        }
+    }
+
+    .gotoconcerts-button {
+        display: inline-block;
+
+        position: absolute;
+        right: 20%;
+
+        height:300px;
+
+        a {
+            line-height: 300px;
+
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            font-size: 14pt;
+
+        }
+    }
+    .profile-image {
+        width: 300px;
+        height: 300px;
+
+        background-size: cover;
+
+        border-radius: 50%;
+
+        //border: 10px solid rgba(0,0,0,0.5);
+        box-shadow: 0 0 0 10px rgba(0,0,0,0.2);
+        display: inline-block;
+
+        transition: .2s all ease-in-out;
+    }
+}

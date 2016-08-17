@@ -11,21 +11,21 @@ class User extends Authenticatable
 
     public function userconcerts()
     {
-        return $this->hasMany('App\UserConcert');
+        return $this->hasMany('App\UserConcert\UserConcert');
     }
 
     public function chats()
     {
-        return $this->hasMany('App\Chat');
+        return $this->hasMany('App\Chat\Chat');
     }
 
     public function verifiedmatch()
     {
-        return $this->hasMany('App\VerifiedMatch');
+        return $this->hasMany('App\VerifiedMatch\VerifiedMatch');
     }
 
     public function potentialmatch()
     {
-        return $this->hasMany('App\PotentialMatch');
+        return $this->hasMany('App\PotentialMatch\PotentialMatch');
     }
 }

@@ -29,4 +29,6 @@ interface ConcertRepository
 
 
     public function getAllConcerts();
+
+    public function getUpcomingConcerts($amount);
 }

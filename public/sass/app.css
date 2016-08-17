@@ -1,0 +1,396 @@
+html {
+  height: 100%;
+  width: 100%; }
+
+body {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(270deg, #c8c8c8, #b74545);
+  background-size: 400% 400%;
+  min-height: 100%; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.user-nav {
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%; }
+  .user-nav .logo {
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    line-height: 50px; }
+    .user-nav .logo a {
+      padding: 0 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: 900;
+      font-size: 17pt;
+      display: block; }
+      .user-nav .logo a:hover {
+        color: #b74848;
+        background-color: rgba(255, 255, 255, 0.7); }
+  .user-nav ul {
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    right: 20px; }
+    .user-nav ul li {
+      display: inline-block;
+      line-height: 50px;
+      box-sizing: border-box;
+      font-size: 12pt;
+      color: white; }
+      .user-nav ul li a {
+        padding: 0 30px;
+        color: inherit;
+        text-decoration: none;
+        display: block; }
+        .user-nav ul li a:hover {
+          background-color: rgba(255, 255, 255, 0.7);
+          color: #b74848; }
+
+.full-page {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%; }
+
+.outer-wrapper {
+  width: 100%;
+  height: 100%; }
+
+.homepage-inner-wrapper {
+  position: relative;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.homepage-header {
+  color: white; }
+  .homepage-header h1 {
+    font-size: 10vw;
+    text-align: center; }
+  .homepage-header .register-button {
+    display: inline-block;
+    margin: 50px 0;
+    position: relative;
+    color: transparent;
+    left: 50%;
+    transform: translateX(-50%); }
+    .homepage-header .register-button a {
+      display: block;
+      padding: 20px 60px;
+      color: white;
+      font-weight: 900;
+      text-transform: uppercase;
+      border: 3px solid white;
+      border-radius: 50px;
+      background-color: transparent;
+      text-decoration: none;
+      transition: .2s all ease-in-out; }
+      .homepage-header .register-button a:hover {
+        background-color: white;
+        color: black; }
+  .homepage-header .homepage-header-separator {
+    display: block;
+    background-color: white;
+    margin: 20px 0 70px 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 279px;
+    height: 3px; }
+  .homepage-header p {
+    text-align: center; }
+  .homepage-header .login-options {
+    position: relative;
+    display: inline-block;
+    margin: 10px 0 0 0;
+    left: 50%;
+    transform: translateX(-50%); }
+    .homepage-header .login-options a:first-child {
+      color: white;
+      font-weight: 900;
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 2px solid white;
+      margin-right: 10px;
+      transition: .2s all ease-in-out; }
+      .homepage-header .login-options a:first-child:hover {
+        color: #333;
+        border-color: #333; }
+    .homepage-header .login-options a:last-child {
+      margin-left: 10px;
+      background-color: #3B5998;
+      padding: 10px 15px;
+      color: white;
+      display: inline-block;
+      border-radius: 4px;
+      text-decoration: none; }
+
+.profile-header {
+  position: relative;
+  text-align: center;
+  height: 100px; }
+  .profile-header .header-inner-wrapper {
+    position: relative;
+    top: 30%;
+    transform: translateY(-50%);
+    height: 300px; }
+  .profile-header .edit-profile-button {
+    display: inline-block;
+    position: absolute;
+    left: 20%;
+    height: 300px; }
+    .profile-header .edit-profile-button a {
+      line-height: 300px;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      font-size: 14pt; }
+  .profile-header .widget-container .widget {
+    width: 400px;
+    border-radius: 3px;
+    background-color: white;
+    display: block;
+    position: absolute;
+    padding: 10px;
+    bottom: 10%; }
+    .profile-header .widget-container .widget h1 {
+      font-size: 14pt;
+      text-align: center;
+      padding-top: 8px;
+      display: block;
+      margin-bottom: 20px; }
+  .profile-header .widget-container .profile-notification-screen {
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+    .profile-header .widget-container .profile-notification-screen ul {
+      width: 100%;
+      text-align: center; }
+      .profile-header .widget-container .profile-notification-screen ul li {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        margin: 0 10px 10px 0; }
+    .profile-header .widget-container .profile-notification-screen:after {
+      content: "";
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      background-color: white;
+      position: absolute;
+      left: 50%;
+      top: 3px;
+      z-index: -1;
+      border-radius: 3px;
+      transform: rotate(45deg) translateX(-71%); }
+  .profile-header .widget-container .recent-messages-screen {
+    width: 300px;
+    right: 5%;
+    padding: 0;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+    .profile-header .widget-container .recent-messages-screen h1 {
+      text-align: left;
+      padding-left: 10px;
+      margin: 10px 0; }
+    .profile-header .widget-container .recent-messages-screen li {
+      height: 30px;
+      padding: 10px;
+      list-style-type: none; }
+    .profile-header .widget-container .recent-messages-screen li:nth-child(even) {
+      background-color: #eee; }
+    .profile-header .widget-container .recent-messages-screen .message-profile-icon {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      position: absolute;
+      left: 10px; }
+    .profile-header .widget-container .recent-messages-screen p, .profile-header .widget-container .recent-messages-screen a {
+      margin: 0;
+      display: inline-block;
+      height: 30px;
+      line-height: 30px;
+      position: absolute;
+      font-size: 9pt; }
+    .profile-header .widget-container .recent-messages-screen p {
+      left: 50px; }
+    .profile-header .widget-container .recent-messages-screen a {
+      right: 10px; }
+  .profile-header .widget-container .upcoming-concert-screen {
+    width: 300px;
+    left: 5%;
+    padding: 0;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+    .profile-header .widget-container .upcoming-concert-screen h1 {
+      text-align: left;
+      padding-left: 10px;
+      margin: 10px 0; }
+    .profile-header .widget-container .upcoming-concert-screen li {
+      height: 30px;
+      padding: 10px;
+      list-style-type: none; }
+    .profile-header .widget-container .upcoming-concert-screen li:nth-child(even) {
+      background-color: #eee; }
+    .profile-header .widget-container .upcoming-concert-screen p, .profile-header .widget-container .upcoming-concert-screen a {
+      margin: 0;
+      display: inline-block;
+      height: 30px;
+      line-height: 30px;
+      position: absolute;
+      font-size: 9pt; }
+    .profile-header .widget-container .upcoming-concert-screen p {
+      left: 10px; }
+    .profile-header .widget-container .upcoming-concert-screen a {
+      right: 10px; }
+  .profile-header .gotoconcerts-button {
+    display: inline-block;
+    position: absolute;
+    right: 20%;
+    height: 300px; }
+    .profile-header .gotoconcerts-button a {
+      line-height: 300px;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      font-size: 14pt; }
+  .profile-header .profile-image {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    transition: .2s all ease-in-out; }
+
+.concert-select-wrapper {
+  margin-top: 80px; }
+  .concert-select-wrapper h1 {
+    color: white;
+    margin: 10px 0 20px 20px; }
+  .concert-select-wrapper ul {
+    text-align: center; }
+    .concert-select-wrapper ul a {
+      display: inline-block;
+      margin: 10px;
+      width: 200px;
+      height: 200px;
+      background-color: #333;
+      position: relative;
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+      transition: .2s all ease-in-out; }
+      .concert-select-wrapper ul a:hover {
+        transform: scale(1.1); }
+      .concert-select-wrapper ul a .concert-info {
+        position: absolute;
+        bottom: 0;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        color: white;
+        font-weight: 900;
+        background-color: rgba(0, 0, 0, 0.5); }
+
+.concert-landing-container {
+  padding-top: 100px;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center; }
+  .concert-landing-container .concert-landing-card {
+    width: 500px;
+    min-height: 600px;
+    display: inline-block;
+    text-align: left;
+    margin: 0 10px 0 0;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+    .concert-landing-container .concert-landing-card .concert-landing-image {
+      height: 300px;
+      width: 100%;
+      position: relative;
+      text-align: center; }
+      .concert-landing-container .concert-landing-card .concert-landing-image h1 {
+        height: 300px;
+        line-height: 300px;
+        color: white;
+        font-size: 25pt;
+        text-align: center; }
+      .concert-landing-container .concert-landing-card .concert-landing-image a {
+        display: inline-block;
+        position: absolute;
+        bottom: 16%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 20px;
+        border: 3px solid white;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-size: 11pt;
+        font-weight: 900;
+        color: #333;
+        background-color: white;
+        text-decoration: none;
+        transition: .2s all ease-in-out; }
+        .concert-landing-container .concert-landing-card .concert-landing-image a:hover {
+          background-color: #b84a4a;
+          border-color: #b84a4a;
+          color: white; }
+    .concert-landing-container .concert-landing-card .top-tracks-container .about-paragraph {
+      height: 50px;
+      line-height: 50px;
+      position: relative; }
+      .concert-landing-container .concert-landing-card .top-tracks-container .about-paragraph .about-venue {
+        position: absolute;
+        left: 10px; }
+      .concert-landing-container .concert-landing-card .top-tracks-container .about-paragraph .about-date {
+        position: absolute;
+        right: 10px; }
+    .concert-landing-container .concert-landing-card .top-tracks-container h2 {
+      padding: 10px; }
+    .concert-landing-container .concert-landing-card .top-tracks-container ul li {
+      height: 40px;
+      list-style-type: none;
+      padding-left: 10px;
+      background-color: white;
+      transition: .2s all ease-in-out; }
+      .concert-landing-container .concert-landing-card .top-tracks-container ul li:hover {
+        transform: scale(1.05);
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+      .concert-landing-container .concert-landing-card .top-tracks-container ul li a {
+        text-decoration: none;
+        color: black;
+        display: block; }
+      .concert-landing-container .concert-landing-card .top-tracks-container ul li p {
+        line-height: 40px;
+        display: inline-block;
+        font-size: 10pt;
+        font-weight: normal; }
+      .concert-landing-container .concert-landing-card .top-tracks-container ul li i {
+        display: inline-block;
+        margin-right: 15px;
+        line-height: 40px; }
+    .concert-landing-container .concert-landing-card .top-tracks-container ul li:nth-child(even) {
+      background-color: #eee; }
+
+#tinderslide {
+  width: 300px;
+  height: 300px; }
+  #tinderslide ul li img {
+    width: 100%; }
+  #tinderslide ul li.my-class {
+    background: url("../img/liked.png") no-repeat scroll 0 0; }
+
+/*# sourceMappingURL=app.css.map */

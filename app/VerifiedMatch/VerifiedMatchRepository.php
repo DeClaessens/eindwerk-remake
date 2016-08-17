@@ -33,4 +33,8 @@ interface VerifiedMatchRepository
      * @return mixed
      */
     public function findAllConcertsMatched($user1, $user2);
+
+    public function matchUsersTogether($user1, $user2, $concertId);
+
+    public function findXLastMatchesById($id, $amount);
 }

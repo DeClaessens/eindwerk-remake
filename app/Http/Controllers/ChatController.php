@@ -17,7 +17,7 @@ class ChatController extends Controller
      */
     private $auth;
     /**
-     * @var Chat
+     * @var ChatRepository
      */
     private $chat;
     /**
@@ -38,6 +38,7 @@ class ChatController extends Controller
      */
     public function __construct(Guard $auth, ChatRepository $chat, UserRepository $user, VerifiedMatchRepository $verifiedmatch)
     {
+        $this->middleware('auth');
         $this->auth = $auth;
         $this->chat = $chat;
         $this->user = $user;
@@ -60,7 +61,6 @@ class ChatController extends Controller
     {
         $authUser = $this->auth->user();
         $otherUser = $this->user->find($id);
-
 
         $newChat = $this->chat->make();
 

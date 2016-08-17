@@ -39,6 +39,7 @@ class PotentialMatchController extends Controller
      */
     public function __construct(Guard $auth, PotentialMatchRepository $potentialMatch, UserRepository $user, VerifiedMatchRepository $verifiedMatch)
     {
+        $this->middleware('auth');
         $this->auth = $auth;
         $this->potentialMatch = $potentialMatch;
         $this->user = $user;
@@ -54,13 +55,8 @@ class PotentialMatchController extends Controller
         if($this->potentialMatch->checkIfMatch($authenticatedUser, $otherUser->id, $concertId)){
             //CHECK IF VARIFIED MATCH ALREADY EXISTS ?
             //TECHNICALLY THIS SHOULDNT BE NEEDED AS WE SHOULD CLEAR THE MATCHES BEFORE VIEWING THEM
-            $newVerifiedMatch = $this->verifiedMatch->make();
 
-            $newVerifiedMatch->user1 = $authenticatedUser;
-            $newVerifiedMatch->user2 = $otherUser->id;
-            $newVerifiedMatch->concert_id = $concertId;
-
-            $this->verifiedMatch->save($newVerifiedMatch);
+            $this->verifiedMatch->matchUsersTogether($authenticatedUser, $otherUser->id, $concertId);
 
         } else {
             $newPotentialMatch = $this->potentialMatch->make();

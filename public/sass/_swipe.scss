@@ -1,0 +1,16 @@
+#tinderslide {
+    width: 300px;
+    height: 300px;
+
+    ul {
+        li {
+            img {
+                width: 100%;
+            }
+        }
+
+        li.my-class {
+            background: url("../img/liked.png") no-repeat scroll 0 0;
+        }
+    }
+}

@@ -163,6 +163,7 @@ return [
         App\Providers\HTTPClientServiceProvider::class,
         App\Providers\VerifiedMatchServiceProvider::class,
         App\Providers\PotentialMatchServiceProvider::class,
+        App\Providers\ChatServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
 
 

@@ -85,4 +85,26 @@ class EloquentVerifiedMatchRepository implements VerifiedMatchRepository
 
         return $query;
     }
+
+    public function matchUsersTogether($user1, $user2, $concertId) {
+        $vm1 = $this->make();
+        $vm2 = $this->make();
+
+        $vm1->user1 = $user1;
+        $vm1->user2 = $user2;
+        $vm1->concert_id = $concertId;
+
+        $vm2->user1 = $user2;
+        $vm2->user2 = $user1;
+        $vm2->concert_id = $concertId;
+
+        $this->save($vm1);
+        $this->save($vm2);
+    }
+
+    public function findXLastMatchesById($id, $amount){
+        $query = $this->model->where('user1', $id)->limit($amount)->get();
+
+        return $query;
+    }
 }

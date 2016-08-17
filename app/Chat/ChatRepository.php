@@ -27,4 +27,11 @@ interface ChatRepository
      * @return mixed
      */
     public function getMessagesFromMatch($user1, $user2);
+
+    /**
+     * @param $user1
+     * @param $amount
+     * @return mixed
+     */
+    public function getXLastMessages($user1, $amount);
 }

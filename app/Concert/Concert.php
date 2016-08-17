@@ -9,7 +9,7 @@ class Concert extends Model
 
     public function userconcerts()
     {
-        return $this->hasMany('App\UserConcert');
+        return $this->hasMany('App\UserConcert\UserConcert');
     }
 
     public static function getAllConcerts(){

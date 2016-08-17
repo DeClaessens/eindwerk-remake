@@ -21,6 +21,7 @@ class CreateConcertsTable extends Migration
             $table->string('concertImageUrl')->default('placeholder_concert_image.png');
             $table->string('concertUrl');
             $table->string('date');
+            $table->bool('event_passed')->default(false);
             $table->timestamps();
         });
     }

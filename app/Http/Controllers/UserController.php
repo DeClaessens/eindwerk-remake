@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Chat\ChatRepository;
+use App\Concert\ConcertRepository;
 use App\VerifiedMatch\VerifiedMatchRepository;
 use App\User\UserRepository;
 use Illuminate\Contracts\Auth\Guard;
@@ -10,6 +12,7 @@ use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -22,16 +25,31 @@ class UserController extends Controller
      * @var UserRepository
      */
     private $user;
+    /**
+     * @var ChatRepository
+     */
+    private $chat;
+    /**
+     * @var ConcertRepository
+     */
+    private $concert;
 
     /**
      * UserController constructor.
+     * @param Guard $auth
+     * @param VerifiedMatchRepository $verifiedMatch
+     * @param UserRepository $user
+     * @param ChatRepository $chat
+     * @param ConcertRepository $concert
      */
-    public function __construct(Guard $auth, VerifiedMatchRepository $verifiedMatch, UserRepository $user)
+    public function __construct(Guard $auth, VerifiedMatchRepository $verifiedMatch, UserRepository $user, ChatRepository $chat, ConcertRepository $concert)
     {
         $this->middleware('auth');
         $this->auth = $auth;
         $this->verifiedMatch = $verifiedMatch;
         $this->user = $user;
+        $this->chat = $chat;
+        $this->concert = $concert;
     }
 
     public function profile(){
@@ -52,8 +70,11 @@ class UserController extends Controller
 
             $array_counter++;
         }
+        $recentmessages = $this->chat->getXLastMessages($user->id, 5);
+        $fivelastmatches = $this->verifiedMatch->findXLastMatchesById($user->id, 5);
+        $upcomingconcerts = $this->concert->getUpcomingConcerts(5);
 
-        return view('profile.profile', compact('user', 'matchedusers'));
+        return view('profile.profile', compact('user', 'matchedusers', 'fivelastmatches', 'recentmessages', 'upcomingconcerts'));
     }
 
     public function userPage($id) {
@@ -73,20 +94,22 @@ class UserController extends Controller
             'imageUrl' => 'image',
         ]);
 
+        //TODO: Build a check for image
         //find authenticated user to edit
         $editUser = $this->user->find($this->auth->user()->id);
+        if($request->file('imageUrl') != null) {
+            //if there is a previous image url, delete it.
+            if ($editUser->imageUrl != '') {
+                File::delete($editUser->imageUrl);
+            }
 
-        //if there is a previous image url, delete it.
-        if($editUser->imageUrl != ''){
-            File::delete($editUser->imageUrl);
+            //save image to public/uploads/users/images and give it a prefixed name with user id to prevent overwrites
+            $imageName = $editUser->id . $request->file('imageUrl')->getClientOriginalName();
+            $path = base_path() . '/public/uploads/users/images/';
+            $request->file('imageUrl')->move($path, $imageName);
+
+            $editUser->imageUrl = '/uploads/users/images/' . $imageName;
         }
-
-        //save image to public/uploads/users/images and give it a prefixed name with user id to prevent overwrites
-        $imageName = $editUser->id . $request->file('imageUrl')->getClientOriginalName();
-        $path = base_path() . '/public/uploads/users/images/';
-        $request->file('imageUrl')->move($path , $imageName);
-
-        $editUser->imageUrl = '/uploads/users/images/' . $imageName;
         $editUser->bio = $request->bio;
         $editUser->favoriteArtists = $request->favoriteArtists;
 
@@ -95,6 +118,22 @@ class UserController extends Controller
         //so we can pass a nice parameter.
         $user = $editUser;
 
-        return view('profile.profile', compact('user'));
+        return redirect()->to('/profile');
+    }
+
+    public function showNewPassword(){
+        $user = $this->auth->user();
+
+        return view('profile.setPassword', compact('user'));
+    }
+
+    public function saveNewPassword(Request $request){
+        $user = $this->user->find($this->auth->user()->id);
+
+        $user->password = Hash::make($request->password);
+
+        $this->user->save($user);
+
+        return redirect()->to('/profile');
     }
 }

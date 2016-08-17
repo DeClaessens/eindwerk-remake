@@ -1,25 +1,52 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="profile-container">
-        <div class="profile-image" style="background-image: url({{ URL::to('/') }}{{$user->imageUrl}})"></div>
-        <h1>{{$user->name}}</h1>
+    <div id="gradient" class="full-page profile-header">
+        <div class="header-inner-wrapper">
+            <div class="edit-profile-button">
+                <a href="{{URL::to('profile/edit')}}">Edit Profile</a>
+            </div>
+            <div class="profile-image" style="background: url('{{$user->imageUrl}}') center center no-repeat; background-size: contain;">
+            </div>
+            <div class="gotoconcerts-button">
+                <a href="{{URL::to('concerts')}}">Concerts</a>
+            </div>
+        </div>
+        <div class="widget-container">
+            <div class="profile-notification-screen widget">
+                <h1>Your recent matches</h1>
+                <ul>
+                    @foreach($fivelastmatches as $match)
+                        <li style="background: url('{{$match->matchedUser->imageUrl}}') center center no-repeat; background-size: contain;"></li>
+                    @endforeach
+                </ul>
+            </div>
 
-        <!-- this should eventually link to certain different user profiles 'anyone' can lookup -->
-        <p>Dit zijn jouw matches!</p>
+            <div class="recent-messages-screen widget">
+                <h1>Your recent messages</h1>
+                <ul>
+                    @foreach($recentmessages as $message)
+                        <li>
+                            <div class="message-profile-icon" style="background: url('{{$message->senderUser->imageUrl}}') center center no-repeat; background-size: cover;"></div>
+                            <p>{{$message->message}}</p>
+                            <a href="#">Reply</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
 
-        <div class="matched-user-container">
-            @foreach($matchedusers as $match)
-                <div class="matched-user">
-                    <a class="matched-user-image" href="{{URL::to('user', $match->id)}}" style="background: url({{ URL::to('/') }}{{$match->imageUrl}}); background-position: center center; background-size: cover; background-repeat: no-repeat;"></a>
-                    <a class="matched-user-name" href="{{URL::to('user', $match->id)}}">{{$match->name}}</a>
-                </div>
-            @endforeach
+            <div class="upcoming-concert-screen widget">
+                <h1>Upcoming Concerts</h1>
+                <ul>
+                    @foreach($upcomingconcerts as $concert)
+                        <li>
+                            <p>{{$concert->name}} - {{$concert->venue}}</p>
+                            <a href="{{url('/concert/select', $concert->id)}}">Go</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
 
-        <div class="profile-buttons">
-            <a href="{{URL::to('profile/edit')}}">Edit Profile Info</a>
-            <a href="{{URL::to('concerts')}}">Select a concert to start</a>
-        </div>
     </div>
 @endsection

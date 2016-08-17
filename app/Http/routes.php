@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
-
+Route::get('/goToLogin', 'HomeController@goToLogin');
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
@@ -24,6 +24,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/profile', 'UserController@profile');
 
     Route::get('/profile/edit', 'UserController@edit');
+    Route::get('/profile/new-password', 'UserController@showNewPassword');
+    Route::post('/profile/save-new-password', 'UserController@saveNewPassword');
 
     Route::post('/profile/save', 'UserController@saveProfile');
 
