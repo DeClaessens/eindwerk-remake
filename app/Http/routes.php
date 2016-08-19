@@ -30,7 +30,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/profile/save', 'UserController@saveProfile');
 
     Route::get('/user/{id}', 'UserController@userPage');
-
+    Route::get('/chat', 'ChatController@index');
     Route::get('/chat/solo/{id}', 'ChatController@showChat');
 
     Route::post('/chat/solo/send/{id}', 'ChatController@sendMessage');
@@ -46,7 +46,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/stubru', 'HomeController@stubru');
 
-    Route::get('/swiperight/{userId}/{concertId}', 'PotentialMatchController@soloYes');
+    Route::post('/swiperight/{userId}/{concertId}', 'PotentialMatchController@soloYes');
 });
 Route::auth();
 

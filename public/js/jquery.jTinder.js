@@ -115,10 +115,21 @@
 						if (posX >= 0) {
 							panes.eq(current_pane).find($that.settings.likeSelector).css('opacity', opa);
 							panes.eq(current_pane).find($that.settings.dislikeSelector).css('opacity', 0);
-						} else if (posX < 0) {
 
+							if(panes.eq(current_pane).hasClass('d')){
+								panes.eq(current_pane).removeClass('d');
+							}
+
+							panes.eq(current_pane).addClass('l');
+						} else if (posX < 0) {
 							panes.eq(current_pane).find($that.settings.dislikeSelector).css('opacity', opa);
 							panes.eq(current_pane).find($that.settings.likeSelector).css('opacity', 0);
+
+							if(panes.eq(current_pane).hasClass('l')){
+								panes.eq(current_pane).removeClass('l');
+							}
+
+							panes.eq(current_pane).addClass('d');
 						}
 					}
 					break;

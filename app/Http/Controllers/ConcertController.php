@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Concert\ConcertRepository;
 use App\HTTPClient\GuzzleHTTPClientRepository;
+use App\PotentialMatch\PotentialMatchRepository;
 use App\User\UserRepository;
 use App\UserConcert\UserConcertRepository;
 use Illuminate\Contracts\Auth\Guard;
@@ -33,6 +34,10 @@ class ConcertController extends Controller
      * @var GuzzleHTTPClientRepository
      */
     private $guzzle;
+    /**
+     * @var PotentialMatchRepository
+     */
+    private $potentialMatch;
 
     /**
      * Create a new controller instance.
@@ -42,8 +47,9 @@ class ConcertController extends Controller
      * @param UserConcertRepository $userConcert
      * @param UserRepository $user
      * @param GuzzleHTTPClientRepository $guzzle
+     * @param PotentialMatchRepository $potentialMatch
      */
-    public function __construct(ConcertRepository $concert, Guard $auth, UserConcertRepository $userConcert, UserRepository $user, GuzzleHTTPClientRepository $guzzle)
+    public function __construct(ConcertRepository $concert, Guard $auth, UserConcertRepository $userConcert, UserRepository $user, GuzzleHTTPClientRepository $guzzle, PotentialMatchRepository $potentialMatch)
     {
         $this->middleware('auth');
         $this->concert = $concert;
@@ -51,11 +57,12 @@ class ConcertController extends Controller
         $this->userConcert = $userConcert;
         $this->user = $user;
         $this->guzzle = $guzzle;
+        $this->potentialMatch = $potentialMatch;
     }
 
     public function showAllConcerts() {
         //load concerts from the database through the concert model.
-        $concerts = $this->concert->getAllConcerts();
+        $concerts = $this->concert->getAllUpcomingConcerts();
 
         return view('concertSelect', compact('concerts'));
     }
@@ -76,8 +83,23 @@ class ConcertController extends Controller
                 $newConcert->concertImageUrl = "http://images.sk-static.com/images/media/profile_images/artists/" . $concert->performance[0]->artist->id . "/huge_avatar";
                 $newConcert->concertUrl = $concert->uri;
                 $newConcert->date = $concert->startDate;
+                $newConcert->event_passed = false;
 
                 $this->concert->save($newConcert);
+            } else {
+                $concert = $this->concert->find($concert->id);
+                $today = date("Y-m-d");
+                $expire = $concert->date; //from db
+
+                $today_time = strtotime($today);
+                $expire_time = strtotime($expire);
+
+                if ($expire_time < $today_time){
+                    $concert->event_passed = true;
+                }
+
+                $this->concert->save($concert);
+
             }
         }
     }
@@ -86,13 +108,18 @@ class ConcertController extends Controller
     {
         $selectedConcert = $this->concert->find($concert_id);
         $api = new SpotifyWebAPI();
+        $topTracks = '';
         $searchArtist = $api->search($selectedConcert->name, 'artist', array(
             'market' => 'be'
         ));
-        $searchArtistId = $searchArtist->artists->items[0]->id;
-        $topTracks = $api->getArtistTopTracks($searchArtistId, array(
-            'country' => 'be'
-        ));
+
+        if($searchArtist->artists->total != 0) {
+            $searchArtistId = $searchArtist->artists->items[0]->id;
+            $topTracks = $api->getArtistTopTracks($searchArtistId, array(
+                'country' => 'be'
+            ));
+        }
+
 
         return view('concerts.landing', compact('selectedConcert', 'topTracks'));
     }
@@ -120,8 +147,12 @@ class ConcertController extends Controller
         //fill collection with user data
 
         $counter = 0;
-        foreach($users as $user) {
-            array_push($usersCollection, $this->user->find($user->user_id));
+        $shuffledUsers = $users->shuffle();
+        foreach($shuffledUsers as $concertUser) {
+            if(!$this->potentialMatch->checkIfOneSidedMatch($user->id, $concertUser->user_id, $concert->id))
+            {
+                array_push($usersCollection, $this->user->find($concertUser->user_id));
+            }
             $counter++;
         }
 

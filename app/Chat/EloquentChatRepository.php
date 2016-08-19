@@ -35,6 +35,11 @@ class EloquentChatRepository implements ChatRepository
         $chat->save();
     }
 
+    public function getAllMessageUsers()
+    {
+
+    }
+
     public function getMessagesFromMatch($user1, $user2)
     {
         $query = $this->model->where(function ($query) use ($user1, $user2) {
@@ -53,6 +58,21 @@ class EloquentChatRepository implements ChatRepository
     {
         $query = $this->model->where('receiver', $user1)->limit($amount)->get();
 
+        return $query;
+    }
+
+    public function getLastMessageFromThread($user1, $user2)
+    {
+        $query = $this->model->where(function ($query) use ($user1, $user2) {
+            $query->where('sender', $user1)
+                ->where('receiver', $user2);
+        })
+            ->orWhere(function ($query) use ($user1, $user2) {
+                $query->where('receiver', $user1)
+                    ->where('sender', $user2);
+            })
+            ->orderBy('id', 'desc')
+            ->first();
         return $query;
     }
 }

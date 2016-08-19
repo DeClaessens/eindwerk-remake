@@ -34,4 +34,6 @@ interface ChatRepository
      * @return mixed
      */
     public function getXLastMessages($user1, $amount);
+
+    public function getLastMessageFromThread($user1, $user2);
 }

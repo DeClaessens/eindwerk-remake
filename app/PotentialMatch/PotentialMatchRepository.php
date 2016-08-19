@@ -21,4 +21,6 @@ interface PotentialMatchRepository
      * @return mixed
      */
     public function checkIfMatch($user1, $user2, $concert_id);
+
+    public function checkIfOneSidedMatch($user1, $user2, $concert_id);
 }

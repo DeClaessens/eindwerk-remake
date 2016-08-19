@@ -11,18 +11,22 @@
             <div class="top-tracks-container">
                 <h2>Top Tracks</h2>
                 <ul>
-                    @foreach($topTracks->tracks as $track)
-                    <li>
-                        <audio id="track-{{$track->id}}">
-                            <source src="{{$track->preview_url}}" type="audio/mpeg">
-                        </audio>
+                    @if($topTracks != '')
+                        @foreach($topTracks->tracks as $track)
+                        <li>
+                            <audio id="track-{{$track->id}}">
+                                <source src="{{$track->preview_url}}" type="audio/mpeg">
+                            </audio>
 
-                        <a target="_blank" href="http://open.spotify.com/track/{{$track->id}}">
-                            <i class="fa fa-play-circle" aria-hidden="true" data-trackid="track-{{$track->id}}"></i>
-                            <p>{{$track->name}}</p>
-                        </a>
-                    </li>
-                    @endforeach
+                            <a target="_blank" href="http://open.spotify.com/track/{{$track->id}}">
+                                <i class="fa fa-play-circle" aria-hidden="true" data-trackid="track-{{$track->id}}"></i>
+                                <p>{{$track->name}}</p>
+                            </a>
+                        </li>
+                        @endforeach
+                    @else
+                        <p>No Spotify Data was found for this artist.</p>
+                    @endif
                 </ul>
             </div>
         </div>

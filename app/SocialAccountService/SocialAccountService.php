@@ -28,12 +28,12 @@ class SocialAccountService
         $user = User::whereProvider('facebook')
             ->whereProviderUserId($providerUser->getId())
             ->first();
-
         if ($user) {
             return $user;
         } else {
 
             $user = User::whereEmail($providerUser->getEmail())->first();
+
 
             if (!$user) {
 
@@ -43,6 +43,7 @@ class SocialAccountService
                 $newUser->email = $providerUser->getEmail();
                 $newUser->provider = 'facebook';
                 $newUser->provider_user_id = $providerUser->getId();
+                $newUser->imageUrl = $providerUser->avatar_original;
 
                 $this->userRepo->save($newUser);
 

@@ -6,11 +6,11 @@
         <ul class="concert-list container">
             @foreach($concerts as $concert)
                     <a href="{{URL::to('concert/select', $concert->id)}}" class="column concert-list-item" style="
-                    background: url('{{$concert->concertImageUrl}}');
+                    background: url('{{$concert->concertImageUrl}}'), url('{{asset('img/default.jpg')}}');
                     background-size: 100%;">
                         <div class="concert-info">
-                            <span class="concert-info-left">{{$concert->name}}</span>
-                            <!--<span class="concert-info-right">{{$concert->date}}</span>-->
+                            <p class="concert-info-left">{{$concert->name}}</p>
+                            <p class="concert-info-right">{{$concert->venue}} - {{$concert->date}}</p>
                         </div>
                     </a>
             @endforeach

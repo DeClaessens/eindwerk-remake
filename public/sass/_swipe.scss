@@ -2,15 +2,70 @@
     width: 300px;
     height: 300px;
 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
     ul {
         li {
+            height: 400px;
+            background-color: white;
+
+            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+            .image-container {
+                width:300px;
+                height: 300px;
+            }
+
+            .text-container {
+                height:100px;
+
+                h2 {
+                    position: static;
+                    font-size: 14pt;
+                    display: block;
+                    text-align: left;
+                    text-shadow: none;
+                    color: black;
+
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    text-align: left;
+                    font-size: 9pt;
+                    line-height: 17px;
+                }
+            }
             img {
                 width: 100%;
+                display: block;
             }
         }
 
-        li.my-class {
-            background: url("../img/liked.png") no-repeat scroll 0 0;
+        .l {
+            .like-dislike-notification {
+                background: url("../img/liked.png") no-repeat scroll 0 0;
+                width: 50px;
+                height: 50px;
+                z-index: 2;
+                right: 0;
+                position: absolute;
+                background-size: contain;
+            }
+        }
+        .d {
+            .like-dislike-notification {
+                background: url("../img/nope.png") no-repeat scroll 0 0;
+                width: 50px;
+                height: 50px;
+                z-index: 2;
+                left: 0;
+                position: absolute;
+                background-size: contain;
+            }
         }
     }
 }

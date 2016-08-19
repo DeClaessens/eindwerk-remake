@@ -53,4 +53,9 @@ class EloquentConcertRepository implements ConcertRepository
         $query = $this->model->where('event_passed', '0')->orderBy('date', 'asc')->limit($amount)->get();
         return $query;
     }
+    public function getAllUpcomingConcerts()
+    {
+        $query = $this->model->where('event_passed', '0')->orderBy('date', 'asc')->get();
+        return $query;
+    }
 }

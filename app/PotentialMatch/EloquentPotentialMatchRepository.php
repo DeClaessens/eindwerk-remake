@@ -75,4 +75,20 @@ class EloquentPotentialMatchRepository implements PotentialMatchRepository
             return 0;
         }
     }
+
+    public function checkIfOneSidedMatch($user1, $user2, $concert_id)
+    {
+        $response = $queryResult = $this->model
+            ->where('user1', $user1)
+            ->where('user2', $user2)
+            ->where('concert_id', $concert_id)
+            ->first();
+
+        if($response != NULL) {
+            //MATCH FOUND, RETURN TRUE
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 }

@@ -30,6 +30,14 @@
                 color: white;
                 font-weight: 900;
                 background-color: rgba(0,0,0,0.5);
+                p:first-child {
+                    font-weight: normal;
+                    margin-bottom: 5px;
+                }
+                p:last-child {
+                    font-weight: 100;
+                    font-size: 8pt;
+                }
             }
         }
     }
@@ -59,12 +67,14 @@
             text-align: center;
 
             h1 {
-                height: 300px;
-                line-height: 300px;
-
+                position: absolute;
+                top: 50%;
+                left:50%;
+                transform: translate(-50%, -50%);
                 color: white;
                 font-size: 25pt;
                 text-align: center;
+                width: 90%;
             }
             a {
                 display: inline-block;

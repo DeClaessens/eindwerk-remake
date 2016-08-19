@@ -20,5 +20,27 @@ $('document').ready(function(){
         e.stopPropagation();
     });
 
-    $("#tinderslide").jTinder();
+    $("#tinderslide").jTinder({
+        onDislike: function (item) {
+            console.log(item.data('userid'));
+        },
+        onLike: function (item) {
+            console.log(item.data('userid'));
+            var token = $('.csrf').val();
+            /*$.ajax({
+                type: 'POST',
+                url: '/swiperight/' + item.data('userid') + '/' + item.data('concertid'),
+                data: { CSRF: csrf},
+                dataType: 'json'
+            });*/
+            $.post(
+                '/swiperight/' + item.data('userid') + '/' + item.data('concertid'),
+                {
+                    "_token": token
+                }
+            );
+        }
+    });
+
+    $(".message-box").scrollTop($(".message-box")[0].scrollHeight);
 });
