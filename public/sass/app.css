@@ -1,61 +1,76 @@
+/* fonts */
+@font-face {
+  font-family: Brandon;
+  src: url("../fonts/BrandonText-Regular.otf") format("opentype"); }
+@font-face {
+  font-family: Brandon;
+  font-weight: bold;
+  src: url("../fonts/BrandonText-Bold.otf") format("opentype"); }
+@font-face {
+  font-family: Brandon;
+  font-weight: 900;
+  src: url("../fonts/BrandonText-Black.otf") format("opentype"); }
 html {
-  height: 100%;
+  min-height: 100%;
   width: 100%; }
 
 body {
+  min-height: 100%;
   height: 100%;
   width: 100%;
-  background: linear-gradient(270deg, #c8c8c8, #b74545);
-  background-size: 400% 400%;
-  min-height: 100%; }
-
-* {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  background-color: #f9f9f9;
+  font-family: Brandon, 'Helvetica', 'Arial' !important; }
+
+.grid-container {
+  width: 960px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative; }
 
 .user-nav {
+  background-color: white;
   height: 50px;
-  background-color: rgba(255, 255, 255, 0.2);
-  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid #dbdbdb;
   position: fixed;
-  top: 0;
-  z-index: 3;
-  width: 100%; }
+  top: 0; }
   .user-nav .logo {
-    height: 50px;
-    position: absolute;
-    top: 0;
-    left: 20px;
-    line-height: 50px; }
+    line-height: 50px;
+    display: inline-block; }
     .user-nav .logo a {
-      padding: 0 20px;
-      text-decoration: none;
-      color: white;
+      display: block;
+      font-size: 20pt;
       font-weight: 900;
-      font-size: 17pt;
-      display: block; }
-      .user-nav .logo a:hover {
-        color: #b74848;
-        background-color: rgba(255, 255, 255, 0.7); }
-  .user-nav ul {
-    list-style-type: none;
-    position: absolute;
-    top: 0;
-    right: 20px; }
-    .user-nav ul li {
+      text-decoration: none;
+      color: #ff3d3d; }
+  .user-nav .menu {
+    display: inline-block; }
+    .user-nav .menu li {
       display: inline-block;
-      line-height: 50px;
-      box-sizing: border-box;
-      font-size: 12pt;
-      color: white; }
-      .user-nav ul li a {
-        padding: 0 30px;
-        color: inherit;
+      list-style-type: none;
+      margin: 0 10px; }
+      .user-nav .menu li a {
+        display: block;
+        color: black;
+        font-size: 14pt;
+        font-weight: 100;
         text-decoration: none;
-        display: block; }
-        .user-nav ul li a:hover {
-          background-color: rgba(255, 255, 255, 0.7);
-          color: #b74848; }
+        font-weight: 400;
+        transition: .2s all ease-in-out; }
+        .user-nav .menu li a:hover {
+          color: #ff3d3d; }
+  .user-nav .nav-profile-image {
+    display: inline-block;
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); }
 
 .full-page {
   width: 100%;
@@ -135,152 +150,6 @@ body {
       display: inline-block;
       border-radius: 4px;
       text-decoration: none; }
-
-.profile-header {
-  position: relative;
-  text-align: center;
-  height: 100px; }
-  .profile-header .header-inner-wrapper {
-    position: relative;
-    top: 30%;
-    transform: translateY(-50%);
-    height: 300px; }
-  .profile-header .edit-profile-button {
-    display: inline-block;
-    position: absolute;
-    left: 20%;
-    height: 300px; }
-    .profile-header .edit-profile-button a {
-      line-height: 300px;
-      font-weight: 900;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: white;
-      font-size: 14pt; }
-  .profile-header .widget-container .widget {
-    width: 400px;
-    border-radius: 3px;
-    background-color: white;
-    display: block;
-    position: absolute;
-    padding: 10px;
-    bottom: 10%; }
-    .profile-header .widget-container .widget h1 {
-      font-size: 14pt;
-      text-align: center;
-      padding-top: 8px;
-      display: block;
-      margin-bottom: 20px; }
-  .profile-header .widget-container .profile-notification-screen {
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
-    .profile-header .widget-container .profile-notification-screen p {
-      font-size: 9pt; }
-    .profile-header .widget-container .profile-notification-screen ul {
-      width: 100%;
-      text-align: center; }
-      .profile-header .widget-container .profile-notification-screen ul li {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        border-radius: 5px;
-        margin: 0 10px 10px 0; }
-    .profile-header .widget-container .profile-notification-screen:after {
-      content: "";
-      width: 50px;
-      height: 50px;
-      display: inline-block;
-      background-color: white;
-      position: absolute;
-      left: 50%;
-      top: 3px;
-      z-index: -1;
-      border-radius: 3px;
-      transform: rotate(45deg) translateX(-71%); }
-  .profile-header .widget-container .recent-messages-screen {
-    width: 300px;
-    right: 5%;
-    padding: 0;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
-    .profile-header .widget-container .recent-messages-screen #messagesempty {
-      display: block;
-      position: static;
-      text-align: left;
-      padding: 10px; }
-    .profile-header .widget-container .recent-messages-screen h1 {
-      text-align: left;
-      padding-left: 10px;
-      margin: 10px 0; }
-    .profile-header .widget-container .recent-messages-screen li {
-      height: 30px;
-      padding: 10px;
-      list-style-type: none; }
-    .profile-header .widget-container .recent-messages-screen li:nth-child(even) {
-      background-color: #eee; }
-    .profile-header .widget-container .recent-messages-screen .message-profile-icon {
-      width: 30px;
-      height: 30px;
-      display: inline-block;
-      position: absolute;
-      left: 10px; }
-    .profile-header .widget-container .recent-messages-screen p, .profile-header .widget-container .recent-messages-screen a {
-      margin: 0;
-      display: inline-block;
-      height: 30px;
-      line-height: 30px;
-      position: absolute;
-      font-size: 9pt; }
-    .profile-header .widget-container .recent-messages-screen p {
-      left: 50px; }
-    .profile-header .widget-container .recent-messages-screen a {
-      right: 10px; }
-  .profile-header .widget-container .upcoming-concert-screen {
-    width: 300px;
-    left: 5%;
-    padding: 0;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
-    .profile-header .widget-container .upcoming-concert-screen h1 {
-      text-align: left;
-      padding-left: 10px;
-      margin: 10px 0; }
-    .profile-header .widget-container .upcoming-concert-screen li {
-      height: 30px;
-      padding: 10px;
-      list-style-type: none; }
-    .profile-header .widget-container .upcoming-concert-screen li:nth-child(even) {
-      background-color: #eee; }
-    .profile-header .widget-container .upcoming-concert-screen p, .profile-header .widget-container .upcoming-concert-screen a {
-      margin: 0;
-      display: inline-block;
-      height: 30px;
-      line-height: 30px;
-      position: absolute;
-      font-size: 9pt; }
-    .profile-header .widget-container .upcoming-concert-screen p {
-      left: 10px; }
-    .profile-header .widget-container .upcoming-concert-screen a {
-      right: 10px; }
-  .profile-header .gotoconcerts-button {
-    display: inline-block;
-    position: absolute;
-    right: 20%;
-    height: 300px; }
-    .profile-header .gotoconcerts-button a {
-      line-height: 300px;
-      font-weight: 900;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: white;
-      font-size: 14pt; }
-  .profile-header .profile-image {
-    width: 300px;
-    height: 300px;
-    background-size: cover;
-    border-radius: 50%;
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.2);
-    display: inline-block;
-    transition: .2s all ease-in-out; }
 
 .concert-select-wrapper {
   margin-top: 80px; }

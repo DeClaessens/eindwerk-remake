@@ -1,7 +1,60 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="full-page">
+    <div class="grid-container">
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--
     <div id="gradient" class="full-page profile-header">
+
         <div class="header-inner-wrapper">
             <div class="edit-profile-button">
                 <a href="{{URL::to('profile/edit')}}">Edit Profile</a>
@@ -59,4 +112,5 @@
         </div>
 
     </div>
+    -->
 @endsection

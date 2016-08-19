@@ -29,20 +29,25 @@
     <div class="outer-wrapper">
         @if(Auth::check())
             <div class="user-nav">
-                <div class="logo">
-                    <a href="{{url('/')}}">GoCON</a>
+                <div class="grid-container">
+                    <div class="logo">
+                        <a href="{{url('/')}}">GoCON</a>
+                    </div>
+                    <ul class="menu">
+                        <li>
+                            <a href="{{url('/concerts')}}">Concerts</i></a>
+                        </li>
+                        <li>
+                            <a href="{{url('/chat')}}">Matches</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/profile')}}">Chat</a>
+                        </li>
+                    </ul>
+                    <div class="nav-profile-image">
+
+                    </div>
                 </div>
-                <ul>
-                    <li>
-                        <a href="{{url('/concerts')}}"><i class="fa fa-music" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="{{url('/chat')}}"><i class="fa fa-comments" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="{{url('/profile')}}"><i class="fa fa-user" aria-hidden="true"></i></a>
-                    </li>
-                </ul>
             </div>
 
         @endif
