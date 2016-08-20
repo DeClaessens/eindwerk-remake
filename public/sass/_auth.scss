@@ -1,0 +1,97 @@
+.auth-container {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    background-color: white;
+    padding: 20px;
+    width: 650px;
+    .form-horizontal {
+        width: 305px;
+        position: relative;
+        display: inline-block;
+        margin-right: 40px;
+    }
+    .panel-heading {
+        font-weight: normal;
+        font-size: 18pt;
+        display: inline-block;
+        color: $accent-color;
+        padding-bottom: 2px;
+        border-bottom: 2px solid $accent-color;
+
+        margin-bottom: 15px;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    input {
+        display: inline-block;
+        width: 300px;
+        height: 30px;
+        padding-left: 10px;
+    }
+    input:first-child {
+        margin-bottom: 10px;
+    }
+    .checkbox {
+        input {
+            width: auto;
+            position: relative;
+            top: 7px;
+            margin-right: 8px;
+        }
+        margin-bottom: 10px;
+    }
+
+    .btn-primary {
+        width: 100px;
+        height: 30px;
+        background-color: $accent-color;
+        border: none;
+        color: white;
+        margin-right: 22px;
+    }
+    .btn-link {
+        line-height: 30px;
+        font-size: 9pt;
+        position: absolute;
+        right:0;
+    }
+
+    .facebook-register-container {
+        display: inline-block;
+        width: 30%;
+        height: 90%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-left: 1px solid #edefef;
+        padding-left: 40px;
+        box-sizing: border-box;
+        .facebook-register-inner-container {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            .facebook {
+                position: relative;
+                display: inline-block;
+
+                border-bottom: none;
+                background-color: #3b5998;
+                padding: 7px 20px;
+                font-weight: normal;
+                border-radius: 3px;
+                text-decoration: none;
+                color: white;
+                margin-bottom: 5px;
+                i {
+                    margin-right: 10px;
+                }
+            }
+            p {
+                font-size: 9pt;
+                text-align: center;
+            }
+        }
+
+    }
+}

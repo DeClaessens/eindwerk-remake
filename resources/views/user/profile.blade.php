@@ -1,13 +1,57 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>{{$user->name}}</h1>
+    <div class="full-page">
+        <div class="grid-container">
+            <div class="user-profile-container">
+                <div class="user-container">
+                    <div class="user-card">
+                        <div class="user-card-image" style="background: url('{{$user->imageUrl}}') center center no-repeat; background-size: cover;">
 
-    @if ($doyoumatch)
-        <h2>MATCH</h2>
-    @else
-        <h2>NO MATCH</h2>
-    @endif
+                        </div>
+                        <div class="user-card-text">
+                            <div class="user-card-text-name">
+                                <h4>Name</h4>
+                                <p class="">{{$user->name}}</p>
+                            </div>
+                            <div class="user-card-text-bio">
+                                <h4>Bio</h4>
+                                <p class="">{{$user->bio}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li class="favorite-artists">
+                            <h4 class="favorite-artists-header">Favorite Artists</h4>
+                            <p class="favorite-artists-artists">{{$user->favoriteArtists}}</p>
+                        </li>
+                        <li>
+                            <a href="{{ url('/chat/solo', $user->id) }}">Send a Message</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="matched-concerts-container">
+                    <div class="matched-concerts-header">
+                        <h2>Concerts you're matched for</h2>
+                    </div>
+                    <ul>
+                        @foreach($concertsMatched as $concert)
+                            <li class="matched-concert">
+                                <a href="{{ url('concert/select', $concert->MatchedConcert->id) }}">
+                                    <div class="matched-concert-image" style="background: url('{{$concert->MatchedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
 
-    <a href="{{URL::to('chat/solo', $user->id)}}">CHAT</a><br/>
+                                    </div>
+                                    <div class="matched-concert-text">
+                                        <p>{{$concert->MatchedConcert->name}}</p>
+                                        <p>{{$concert->MatchedConcert->venue}}</p>
+                                        <p>{{$concert->MatchedConcert->date->format('d/m/Y')}}</p>
+                                    </div>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

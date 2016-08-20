@@ -34,7 +34,11 @@ interface VerifiedMatchRepository
      */
     public function findAllConcertsMatched($user1, $user2);
 
+    public function countAllConcertsMatched($user1, $user2);
+
     public function matchUsersTogether($user1, $user2, $concertId);
 
     public function findXLastMatchesById($id, $amount);
+
+    public function delete($verifiedMatch);
 }

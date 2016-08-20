@@ -1,335 +1,560 @@
+@charset "UTF-8";
+/* fonts */
+@font-face {
+  font-family: Brandon;
+  src: url("../fonts/BrandonText-Regular.otf") format("opentype"); }
+@font-face {
+  font-family: Brandon;
+  font-weight: bold;
+  src: url("../fonts/BrandonText-Bold.otf") format("opentype"); }
+@font-face {
+  font-family: Brandon;
+  font-weight: 900;
+  src: url("../fonts/BrandonText-Black.otf") format("opentype"); }
 html {
   height: 100%;
   width: 100%; }
 
 body {
-  height: 100%;
+  height: inherit;
   width: 100%;
-  background: linear-gradient(270deg, #c8c8c8, #b74545);
-  background-size: 400% 400%;
-  min-height: 100%; }
+  min-height: 100%;
+  background-color: #f9f9f9;
+  font-family: Brandon, 'Helvetica', 'Arial' !important; }
 
 * {
   margin: 0;
   padding: 0; }
 
-.user-nav {
-  height: 50px;
-  background-color: rgba(255, 255, 255, 0.2);
-  display: inline-block;
-  position: fixed;
-  top: 0;
-  z-index: 3;
-  width: 100%; }
-  .user-nav .logo {
-    height: 50px;
-    position: absolute;
-    top: 0;
-    left: 20px;
-    line-height: 50px; }
-    .user-nav .logo a {
-      padding: 0 20px;
-      text-decoration: none;
-      color: white;
-      font-weight: 900;
-      font-size: 17pt;
-      display: block; }
-      .user-nav .logo a:hover {
-        color: #b74848;
-        background-color: rgba(255, 255, 255, 0.7); }
-  .user-nav ul {
-    list-style-type: none;
-    position: absolute;
-    top: 0;
-    right: 20px; }
-    .user-nav ul li {
-      display: inline-block;
-      line-height: 50px;
-      box-sizing: border-box;
-      font-size: 12pt;
-      color: white; }
-      .user-nav ul li a {
-        padding: 0 30px;
-        color: inherit;
-        text-decoration: none;
-        display: block; }
-        .user-nav ul li a:hover {
-          background-color: rgba(255, 255, 255, 0.7);
-          color: #b74848; }
-
 .full-page {
+  padding-top: 80px;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   min-width: 100%;
   min-height: 100%; }
 
 .outer-wrapper {
+  min-height: 100%; }
+
+.grid-container {
+  width: 960px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative; }
+
+.user-nav {
+  background-color: white;
+  height: 50px;
   width: 100%;
-  height: 100%; }
-
-.homepage-inner-wrapper {
-  position: relative;
-  display: block;
-  top: 50%;
-  transform: translateY(-50%); }
-
-.homepage-header {
-  color: white; }
-  .homepage-header h1 {
-    font-size: 10vw;
-    text-align: center; }
-  .homepage-header .register-button {
+  z-index: 3;
+  border-bottom: 1px solid #dbdbdb;
+  position: fixed;
+  top: 0; }
+  .user-nav .logo {
+    line-height: 50px;
     display: inline-block;
-    margin: 50px 0;
-    position: relative;
-    color: transparent;
-    left: 50%;
-    transform: translateX(-50%); }
-    .homepage-header .register-button a {
+    margin-right: 20px; }
+    .user-nav .logo a {
       display: block;
-      padding: 20px 60px;
-      color: white;
+      font-size: 20pt;
       font-weight: 900;
-      text-transform: uppercase;
-      border: 3px solid white;
-      border-radius: 50px;
-      background-color: transparent;
       text-decoration: none;
-      transition: .2s all ease-in-out; }
-      .homepage-header .register-button a:hover {
-        background-color: white;
-        color: black; }
-  .homepage-header .homepage-header-separator {
-    display: block;
-    background-color: white;
-    margin: 20px 0 70px 0;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 279px;
-    height: 3px; }
-  .homepage-header p {
-    text-align: center; }
-  .homepage-header .login-options {
-    position: relative;
+      color: #ff3d3d; }
+  .user-nav .menu {
+    display: inline-block; }
+    .user-nav .menu li {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0 10px; }
+      .user-nav .menu li a {
+        display: block;
+        color: black;
+        font-size: 14pt;
+        font-weight: 100;
+        text-decoration: none;
+        font-weight: 400;
+        transition: .2s all ease-in-out; }
+        .user-nav .menu li a:hover {
+          color: #ff3d3d; }
+  .user-nav .nav-profile-image {
     display: inline-block;
-    margin: 10px 0 0 0;
-    left: 50%;
-    transform: translateX(-50%); }
-    .homepage-header .login-options a:first-child {
-      color: white;
-      font-weight: 900;
-      text-decoration: none;
-      padding-bottom: 2px;
-      border-bottom: 2px solid white;
-      margin-right: 10px;
-      transition: .2s all ease-in-out; }
-      .homepage-header .login-options a:first-child:hover {
-        color: #333;
-        border-color: #333; }
-    .homepage-header .login-options a:last-child {
-      margin-left: 10px;
-      background-color: #3B5998;
-      padding: 10px 15px;
-      color: white;
-      display: inline-block;
-      border-radius: 4px;
-      text-decoration: none; }
-
-.profile-header {
-  position: relative;
-  text-align: center;
-  height: 100px; }
-  .profile-header .header-inner-wrapper {
-    position: relative;
-    top: 30%;
-    transform: translateY(-50%);
-    height: 300px; }
-  .profile-header .edit-profile-button {
-    display: inline-block;
-    position: absolute;
-    left: 20%;
-    height: 300px; }
-    .profile-header .edit-profile-button a {
-      line-height: 300px;
-      font-weight: 900;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: white;
-      font-size: 14pt; }
-  .profile-header .widget-container .widget {
-    width: 400px;
-    border-radius: 3px;
-    background-color: white;
-    display: block;
-    position: absolute;
-    padding: 10px;
-    bottom: 10%; }
-    .profile-header .widget-container .widget h1 {
-      font-size: 14pt;
-      text-align: center;
-      padding-top: 8px;
-      display: block;
-      margin-bottom: 20px; }
-  .profile-header .widget-container .profile-notification-screen {
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
-    .profile-header .widget-container .profile-notification-screen p {
-      font-size: 9pt; }
-    .profile-header .widget-container .profile-notification-screen ul {
-      width: 100%;
-      text-align: center; }
-      .profile-header .widget-container .profile-notification-screen ul li {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        border-radius: 5px;
-        margin: 0 10px 10px 0; }
-    .profile-header .widget-container .profile-notification-screen:after {
-      content: "";
-      width: 50px;
-      height: 50px;
-      display: inline-block;
-      background-color: white;
-      position: absolute;
-      left: 50%;
-      top: 3px;
-      z-index: -1;
-      border-radius: 3px;
-      transform: rotate(45deg) translateX(-71%); }
-  .profile-header .widget-container .recent-messages-screen {
-    width: 300px;
-    right: 5%;
-    padding: 0;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
-    .profile-header .widget-container .recent-messages-screen #messagesempty {
-      display: block;
-      position: static;
-      text-align: left;
-      padding: 10px; }
-    .profile-header .widget-container .recent-messages-screen h1 {
-      text-align: left;
-      padding-left: 10px;
-      margin: 10px 0; }
-    .profile-header .widget-container .recent-messages-screen li {
-      height: 30px;
-      padding: 10px;
-      list-style-type: none; }
-    .profile-header .widget-container .recent-messages-screen li:nth-child(even) {
-      background-color: #eee; }
-    .profile-header .widget-container .recent-messages-screen .message-profile-icon {
-      width: 30px;
-      height: 30px;
-      display: inline-block;
-      position: absolute;
-      left: 10px; }
-    .profile-header .widget-container .recent-messages-screen p, .profile-header .widget-container .recent-messages-screen a {
-      margin: 0;
-      display: inline-block;
-      height: 30px;
-      line-height: 30px;
-      position: absolute;
-      font-size: 9pt; }
-    .profile-header .widget-container .recent-messages-screen p {
-      left: 50px; }
-    .profile-header .widget-container .recent-messages-screen a {
-      right: 10px; }
-  .profile-header .widget-container .upcoming-concert-screen {
-    width: 300px;
-    left: 5%;
-    padding: 0;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
-    .profile-header .widget-container .upcoming-concert-screen h1 {
-      text-align: left;
-      padding-left: 10px;
-      margin: 10px 0; }
-    .profile-header .widget-container .upcoming-concert-screen li {
-      height: 30px;
-      padding: 10px;
-      list-style-type: none; }
-    .profile-header .widget-container .upcoming-concert-screen li:nth-child(even) {
-      background-color: #eee; }
-    .profile-header .widget-container .upcoming-concert-screen p, .profile-header .widget-container .upcoming-concert-screen a {
-      margin: 0;
-      display: inline-block;
-      height: 30px;
-      line-height: 30px;
-      position: absolute;
-      font-size: 9pt; }
-    .profile-header .widget-container .upcoming-concert-screen p {
-      left: 10px; }
-    .profile-header .widget-container .upcoming-concert-screen a {
-      right: 10px; }
-  .profile-header .gotoconcerts-button {
-    display: inline-block;
-    position: absolute;
-    right: 20%;
-    height: 300px; }
-    .profile-header .gotoconcerts-button a {
-      line-height: 300px;
-      font-weight: 900;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: white;
-      font-size: 14pt; }
-  .profile-header .profile-image {
-    width: 300px;
-    height: 300px;
+    background-color: #eee;
     background-size: cover;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.2);
-    display: inline-block;
-    transition: .2s all ease-in-out; }
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); }
+  .user-nav .sub-menu {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    min-width: 230px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    display: none; }
+    .user-nav .sub-menu li {
+      list-style-type: none;
+      height: 50px;
+      line-height: 50px;
+      border-bottom: 1px solid #edefef; }
+      .user-nav .sub-menu li a {
+        display: block;
+        padding-left: 20px;
+        color: black;
+        text-decoration: none;
+        font-size: 15pt; }
+        .user-nav .sub-menu li a:hover {
+          color: #ff3d3d;
+          background-color: #f9f9f9; }
 
-.concert-select-wrapper {
-  margin-top: 80px; }
-  .concert-select-wrapper h1 {
-    color: white;
-    margin: 10px 0 20px 20px; }
-  .concert-select-wrapper ul {
-    text-align: center; }
-    .concert-select-wrapper ul a {
+.hidden {
+  display: none !important; }
+
+.background {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5)), url("../img/homepage/background1.jpg") center center no-repeat;
+  background-size: cover; }
+
+.aanmelden-container {
+  position: absolute;
+  z-index: 3;
+  top: 20px;
+  left: 20px;
+  background-color: white;
+  border-radius: 3px;
+  padding: 10px 20px;
+  display: inline-block;
+  color: black;
+  font-size: 15pt;
+  text-decoration: none;
+  transition: .2s all ease-in-out; }
+  .aanmelden-container:hover {
+    background-color: #eee;
+    color: #ff3d3d; }
+
+.homepage-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  overflow-y: scroll; }
+  .homepage-container .homepage-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+    .homepage-container .homepage-content .homepage-header h1 {
+      color: white;
+      font-size: 65pt; }
+    .homepage-container .homepage-content .homepage-header p {
+      color: white;
+      font-weight: bold;
+      font-size: 16pt;
+      margin-bottom: 45px; }
+    .homepage-container .homepage-content .divider {
+      width: 150px;
+      height: 5px;
+      background-color: white;
+      margin: 15px auto; }
+    .homepage-container .homepage-content .homepage-body {
+      height: 300px;
+      position: relative; }
+      .homepage-container .homepage-content .homepage-body .homepage-body-step-container {
+        position: relative;
+        top: 50%;
+        transform: translateY(-40%); }
+      .homepage-container .homepage-content .homepage-body .homepage-body-step {
+        position: relative;
+        display: inline-block;
+        border: 2px solid white;
+        background-color: white;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 40px; }
+        .homepage-container .homepage-content .homepage-body .homepage-body-step span {
+          color: white;
+          font-weight: bold;
+          position: absolute;
+          top: 0;
+          left: 0;
+          text-align: center;
+          display: block;
+          width: 100%;
+          transform: translateY(-200%); }
+    .homepage-container .homepage-content .homepage-register a {
       display: inline-block;
-      margin: 10px;
-      width: 200px;
-      height: 200px;
-      background-color: #333;
-      position: relative;
-      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+      color: white;
+      text-decoration: none;
+      font-size: 14pt; }
+    .homepage-container .homepage-content .homepage-register a.register-button {
+      padding: 10px 20px;
+      border-radius: 3px;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      margin-bottom: 30px;
+      border: 3px solid white;
+      margin-top: 20px;
+      font-weight: normal;
       transition: .2s all ease-in-out; }
-      .concert-select-wrapper ul a:hover {
-        transform: scale(1.1); }
-      .concert-select-wrapper ul a .concert-info {
-        position: absolute;
-        bottom: 0;
-        padding: 10px;
-        width: 100%;
-        box-sizing: border-box;
+      .homepage-container .homepage-content .homepage-register a.register-button:hover {
+        background-color: #eee;
+        color: #ff3d3d; }
+    .homepage-container .homepage-content .homepage-register p {
+      font-weight: bold;
+      color: white;
+      font-size: 14pt;
+      margin-bottom: 30px; }
+    .homepage-container .homepage-content .homepage-register a.facebook {
+      border-bottom: none;
+      background-color: #3b5998;
+      padding: 7px 20px;
+      font-weight: normal;
+      border-radius: 3px; }
+      .homepage-container .homepage-content .homepage-register a.facebook i {
+        margin-right: 10px; }
+
+.profile-position-container {
+  position: relative; }
+
+.container {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  display: inline-block; }
+
+.hub-container {
+  background-color: white;
+  border-radius: 3px;
+  height: auto;
+  width: 580px;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  .hub-container .hub-menu-item {
+    min-height: 50px;
+    height: auto;
+    border-bottom: 1px solid #edefef; }
+    .hub-container .hub-menu-item .small {
+      line-height: initial;
+      font-size: 11pt;
+      margin-bottom: 20px; }
+    .hub-container .hub-menu-item .hub-menu-item-link {
+      padding-left: 40px;
+      display: block;
+      text-decoration: none;
+      color: #ff3d3d;
+      transition: .2s all ease-in-out; }
+      .hub-container .hub-menu-item .hub-menu-item-link:hover {
+        background-color: #f9f9f9;
+        color: #ff3d3d; }
+  .hub-container .hub-menu-item:last-child {
+    border-bottom: 1px solid #ffffff; }
+  .hub-container .hub-menu-item.center-text {
+    line-height: 50px;
+    font-size: 15pt; }
+    .hub-container .hub-menu-item.center-text p {
+      padding-left: 20px; }
+
+.recent-matches-container {
+  position: relative;
+  padding-left: 20px; }
+  .recent-matches-container .match-header {
+    padding-top: 10px;
+    font-size: 15pt; }
+  .recent-matches-container .hub-recent-matches {
+    text-decoration: none;
+    margin: 20px auto 40px auto; }
+    .recent-matches-container .hub-recent-matches .recent-match-item {
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      margin: 10px 10px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      transition: .2s all ease-in-out; }
+      .recent-matches-container .hub-recent-matches .recent-match-item .name-popup {
+        display: block;
+        padding: 3px 13px;
+        font-size: 8pt;
         color: white;
-        font-weight: 900;
-        background-color: rgba(0, 0, 0, 0.5); }
-        .concert-select-wrapper ul a .concert-info p:first-child {
-          font-weight: normal;
-          margin-bottom: 5px; }
-        .concert-select-wrapper ul a .concert-info p:last-child {
-          font-weight: 100;
-          font-size: 8pt; }
+        background-color: #ff3d3d;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        transition: .2s all ease-in-out; }
+      .recent-matches-container .hub-recent-matches .recent-match-item:hover {
+        transform: scale(1.2); }
+        .recent-matches-container .hub-recent-matches .recent-match-item:hover .name-popup {
+          transform: translateX(-50%) scale(0.9); }
+  .recent-matches-container .more-matches {
+    color: #ff3d3d;
+    text-decoration: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 8pt; }
+
+.recent-messages-container {
+  position: relative;
+  padding-left: 20px; }
+  .recent-messages-container .match-header {
+    padding-top: 10px;
+    font-size: 15pt; }
+  .recent-messages-container .message-list {
+    margin: 20px 0; }
+    .recent-messages-container .message-list li {
+      position: relative;
+      display: block;
+      background-color: transparent; }
+      .recent-messages-container .message-list li .message-list-profile-image {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: inline-block;
+        background-color: #eee;
+        background-size: cover;
+        margin: 10px 10px; }
+      .recent-messages-container .message-list li .message-list-message {
+        position: absolute;
+        top: 17px;
+        display: inline-block;
+        background-color: #ff3d3d;
+        min-width: 250px;
+        max-width: 100px;
+        min-height: 50px;
+        color: white;
+        text-decoration: none;
+        border-radius: 3px;
+        box-sizing: border-box;
+        padding: 5px 10px;
+        font-size: 9pt; }
+        .recent-messages-container .message-list li .message-list-message p  {
+          z-index: 2; }
+        .recent-messages-container .message-list li .message-list-message:after {
+          content: "";
+          height: 10px;
+          width: 10px;
+          display: inline-block;
+          position: absolute;
+          z-index: 1;
+          left: 0;
+          transform: translateX(-50%) rotate(45deg);
+          top: 8px;
+          background-color: #ff3d3d; }
+  .recent-messages-container .more-matches {
+    color: #ff3d3d;
+    text-decoration: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 8pt; }
+
+.profile-container {
+  font-size: 15pt;
+  background-color: white;
+  border-radius: 3px;
+  width: 350px;
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .profile-container .main-profile-menu-item {
+    padding: 10px 20px;
+    line-height: 60px !important;
+    position: relative; }
+    .profile-container .main-profile-menu-item .profile-menu-item-image {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-right: 20px;
+      display: inline-block;
+      background-color: #eee;
+      background-size: cover; }
+    .profile-container .main-profile-menu-item p {
+      display: inline-block;
+      position: absolute; }
+  .profile-container .profile-menu-item {
+    min-height: 50px;
+    height: auto;
+    border-bottom: 1px solid #edefef;
+    line-height: 50px; }
+    .profile-container .profile-menu-item a {
+      display: block;
+      padding-left: 20px;
+      color: black;
+      text-decoration: none;
+      transition: .2s all ease-in-out; }
+      .profile-container .profile-menu-item a:hover {
+        color: #ff3d3d;
+        background-color: #f9f9f9; }
+  .profile-container .profile-menu-item:last-child {
+    border-bottom: none; }
+
+.matches-header {
+  position: relative;
+  margin-bottom: 20px; }
+  .matches-header h1 {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 10px; }
+  .matches-header h2 {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 12pt;
+    padding-left: 10px; }
+  .matches-header .search {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    bottom: 0; }
+    .matches-header .search input {
+      width: 300px;
+      display: inline-block;
+      height: 28px;
+      line-height: 28px;
+      -webkit-appearance: textfield;
+      box-sizing: content-box; }
+
+.icon {
+  display: inline-block;
+  height: 32px;
+  padding: 0 5px;
+  color: #ff3d3d; }
+
+.matches-container {
+  height: auto;
+  width: 100%;
+  box-shadow: none; }
+  .matches-container .match {
+    display: inline-block;
+    width: 217px;
+    height: 277px;
+    background-color: white;
+    margin: 10px;
+    color: black;
+    text-decoration: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: .2s all ease-in-out; }
+    .matches-container .match:hover {
+      transform: scale(1.03);
+      color: white; }
+      .matches-container .match:hover .matched-user {
+        color: #ff3d3d; }
+      .matches-container .match:hover .match-text {
+        background-color: #ff3d3d; }
+    .matches-container .match .match-image {
+      background-color: red;
+      width: 217px;
+      height: 217px; }
+    .matches-container .match .match-text {
+      height: 70px;
+      position: relative; }
+      .matches-container .match .match-text .matched-user {
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        line-height: normal;
+        background-color: white;
+        text-align: center;
+        padding: 5px 10px;
+        min-width: 70px;
+        border-radius: 20px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        transform: translate(-50%, -50%); }
+      .matches-container .match .match-text .matched-concert {
+        text-align: center;
+        font-size: 9pt;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%); }
+
+.concerts-container .concert-header {
+  position: relative; }
+.concerts-container h1 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+  padding-left: 10px; }
+.concerts-container h2 {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 12pt;
+  padding-left: 10px; }
+.concerts-container .search {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  bottom: 0; }
+  .concerts-container .search input {
+    width: 300px;
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    -webkit-appearance: textfield;
+    box-sizing: content-box; }
+.concerts-container .icon {
+  display: inline-block;
+  height: 32px;
+  padding: 0 5px;
+  color: #ff3d3d; }
+.concerts-container ul {
+  padding-top: 10px;
+  text-align: left; }
+  .concerts-container ul a {
+    display: inline-block;
+    margin: 10px;
+    width: 217px;
+    height: 292px;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: .2s all ease-in-out;
+    text-align: center; }
+    .concerts-container ul a:hover {
+      transform: scale(1.1); }
+    .concerts-container ul a .concert-image-container {
+      width: 217px;
+      height: 217px; }
+    .concerts-container ul a .concert-info {
+      height: 75px;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      font-weight: 900;
+      background-color: white;
+      color: black;
+      border-top: 1px solid #edefef; }
+      .concerts-container ul a .concert-info p:first-child {
+        font-weight: normal;
+        margin-bottom: 5px; }
+      .concerts-container ul a .concert-info p:last-child {
+        font-weight: 100;
+        font-size: 8pt; }
 
 .concert-landing-container {
   padding-top: 100px;
   box-sizing: border-box;
   position: relative;
-  text-align: center; }
+  text-align: left; }
   .concert-landing-container .concert-landing-card {
-    width: 500px;
+    width: 570px;
     min-height: 600px;
     display: inline-block;
     text-align: left;
     margin: 0 10px 0 0;
     background-color: white;
     border-radius: 3px;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
     .concert-landing-container .concert-landing-card .concert-landing-image {
       height: 300px;
       width: 100%;
@@ -401,20 +626,276 @@ body {
     .concert-landing-container .concert-landing-card .top-tracks-container ul li:nth-child(even) {
       background-color: #eee; }
 
+.concert-info-container {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: 300px;
+  text-align: left;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  font-weight: normal; }
+  .concert-info-container h2 {
+    padding: 10px; }
+  .concert-info-container li {
+    padding-left: 20px;
+    list-style-type: none;
+    border-bottom: 1px solid #edefef;
+    height: 50px;
+    line-height: 50px; }
+  .concert-info-container li:last-child {
+    border-bottom: none;
+    padding: 0; }
+    .concert-info-container li:last-child a {
+      padding-left: 20px;
+      display: block;
+      cursor: pointer;
+      text-decoration: none;
+      color: #ff3d3d; }
+      .concert-info-container li:last-child a:hover {
+        background-color: #f9f9f9; }
+
+.user-container {
+  background-color: white;
+  width: 530px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
+  .user-container .user-card {
+    border-bottom: 1px solid #edefef;
+    padding: 20px; }
+    .user-container .user-card .user-card-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 2px;
+      display: inline-block; }
+    .user-container .user-card .user-card-text {
+      width: auto;
+      height: 80px;
+      display: inline-block;
+      position: absolute;
+      padding-left: 20px; }
+      .user-container .user-card .user-card-text div h4 {
+        display: inline-block;
+        font-weight: bold;
+        padding-bottom: 2px;
+        border-bottom: 2px solid #ff3d3d;
+        color: black;
+        margin-bottom: 10px; }
+      .user-container .user-card .user-card-text div p {
+        font-size: 9pt; }
+      .user-container .user-card .user-card-text .user-card-text-bio {
+        max-width: 300px; }
+  .user-container ul li {
+    list-style-type: none;
+    min-height: 50px;
+    border-bottom: 1px solid #edefef; }
+    .user-container ul li a {
+      padding-left: 20px;
+      display: block;
+      line-height: 50px;
+      text-decoration: none;
+      color: #ff3d3d; }
+      .user-container ul li a:hover {
+        background-color: #f9f9f9;
+        color: #ff3d3d; }
+  .user-container ul li:last-child {
+    border-bottom: none; }
+  .user-container ul .favorite-artists {
+    padding: 10px 0 10px 20px; }
+    .user-container ul .favorite-artists .favorite-artists-header {
+      font-size: 15pt;
+      margin-bottom: 10px; }
+
+.matched-concerts-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 350px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
+  .matched-concerts-container div.matched-concerts-header {
+    padding-left: 20px;
+    border-bottom: 1px solid #edefef; }
+    .matched-concerts-container div.matched-concerts-header h2 {
+      font-weight: normal;
+      line-height: 50px;
+      font-size: 15pt; }
+  .matched-concerts-container ul {
+    max-height: 500px;
+    overflow-y: scroll; }
+    .matched-concerts-container ul li {
+      list-style-type: none;
+      min-height: 50px;
+      border-bottom: 1px solid #edefef;
+      position: relative; }
+    .matched-concerts-container ul li.matched-concert a {
+      display: block;
+      padding: 10px 0 10px 20px;
+      text-decoration: none;
+      color: black; }
+      .matched-concerts-container ul li.matched-concert a:hover {
+        background-color: #f9f9f9; }
+      .matched-concerts-container ul li.matched-concert a .matched-concert-image {
+        width: 70px;
+        height: 70px;
+        border-radius: 2px;
+        display: inline-block;
+        margin-right: 10px; }
+      .matched-concerts-container ul li.matched-concert a .matched-concert-text {
+        display: inline-block;
+        position: absolute; }
+        .matched-concerts-container ul li.matched-concert a .matched-concert-text p {
+          font-size: 10pt;
+          margin-bottom: 5px; }
+    .matched-concerts-container ul li:last-child {
+      border-bottom: none; }
+
+.auth-container {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  padding: 20px;
+  width: 650px; }
+  .auth-container .form-horizontal {
+    width: 305px;
+    position: relative;
+    display: inline-block;
+    margin-right: 40px; }
+  .auth-container .panel-heading {
+    font-weight: normal;
+    font-size: 18pt;
+    display: inline-block;
+    color: #ff3d3d;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #ff3d3d;
+    margin-bottom: 15px; }
+  .auth-container label {
+    display: inline-block;
+    margin-bottom: 5px; }
+  .auth-container input {
+    display: inline-block;
+    width: 300px;
+    height: 30px;
+    padding-left: 10px; }
+  .auth-container input:first-child {
+    margin-bottom: 10px; }
+  .auth-container .checkbox {
+    margin-bottom: 10px; }
+    .auth-container .checkbox input {
+      width: auto;
+      position: relative;
+      top: 7px;
+      margin-right: 8px; }
+  .auth-container .btn-primary {
+    width: 100px;
+    height: 30px;
+    background-color: #ff3d3d;
+    border: none;
+    color: white;
+    margin-right: 22px; }
+  .auth-container .btn-link {
+    line-height: 30px;
+    font-size: 9pt;
+    position: absolute;
+    right: 0; }
+  .auth-container .facebook-register-container {
+    display: inline-block;
+    width: 30%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 1px solid #edefef;
+    padding-left: 40px;
+    box-sizing: border-box; }
+    .auth-container .facebook-register-container .facebook-register-inner-container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%); }
+      .auth-container .facebook-register-container .facebook-register-inner-container .facebook {
+        position: relative;
+        display: inline-block;
+        border-bottom: none;
+        background-color: #3b5998;
+        padding: 7px 20px;
+        font-weight: normal;
+        border-radius: 3px;
+        text-decoration: none;
+        color: white;
+        margin-bottom: 5px; }
+        .auth-container .facebook-register-container .facebook-register-inner-container .facebook i {
+          margin-right: 10px; }
+      .auth-container .facebook-register-container .facebook-register-inner-container p {
+        font-size: 9pt;
+        text-align: center; }
+
+.current-concert {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  display: inline-block; }
+  .current-concert li {
+    list-style-type: none;
+    min-height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #edefef;
+    position: relative; }
+  .current-concert li.image-name-concert-container {
+    padding: 20px;
+    line-height: normal; }
+    .current-concert li.image-name-concert-container img {
+      width: 100px;
+      display: inline-block;
+      margin-right: 20px; }
+    .current-concert li.image-name-concert-container .text-container {
+      display: inline-block;
+      position: absolute;
+      top: 20px; }
+      .current-concert li.image-name-concert-container .text-container p {
+        margin-bottom: 4px; }
+  .current-concert li.more-info-concert-container {
+    padding: 0; }
+    .current-concert li.more-info-concert-container a {
+      display: block;
+      padding-left: 20px;
+      color: #ff3d3d;
+      font-size: 15pt;
+      text-decoration: none; }
+      .current-concert li.more-info-concert-container a:hover {
+        background-color: #f9f9f9;
+        color: #ff3d3d; }
+
+.swipe-container {
+  width: 600px;
+  height: 530px;
+  background-color: white;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  box-sizing: border-box; }
+  .swipe-container h4 {
+    font-weight: 100;
+    margin-bottom: 20px; }
+
 #tinderslide {
   width: 300px;
-  height: 300px;
-  position: absolute;
-  top: 50%;
+  display: inline-block;
+  position: relative;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translateX(-50%); }
   #tinderslide ul li {
     height: 400px;
+    box-sizing: border-box;
     background-color: white;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
     #tinderslide ul li .image-container {
-      width: 300px;
-      height: 300px; }
+      margin-bottom: 10px; }
     #tinderslide ul li .text-container {
       height: 100px; }
       #tinderslide ul li .text-container h2 {
@@ -449,24 +930,71 @@ body {
     position: absolute;
     background-size: contain; }
 
+.no-more-people-found {
+  width: 150px;
+  height: 150px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  background-color: #edefef;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -80%);
+  text-decoration: none;
+  left: 50%;
+  color: black; }
+  .no-more-people-found:hover {
+    background-color: #ff3d3d;
+    color: white; }
+  .no-more-people-found p {
+    font-size: 9pt;
+    text-align: center;
+    margin: 0 auto;
+    /* line-height: 150px; */
+    width: 70%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+
 .chat-box {
   background-color: white;
   border-radius: 3px;
   width: 500px;
   height: 70%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
+  .chat-box .recipient-box {
+    height: 75px;
+    line-height: 75px;
+    width: 100%;
+    background-color: #edefef;
+    position: relative;
+    box-sizing: border-box;
+    border-bottom: 1px solid #edefef; }
+    .chat-box .recipient-box a {
+      display: block;
+      padding-left: 20px;
+      height: 75px;
+      color: black; }
+    .chat-box .recipient-box .recipient-image {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 1px solid #F9F9F9;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-right: 20px; }
+    .chat-box .recipient-box p {
+      display: inline-block;
+      position: absolute; }
   .chat-box .message-box {
     width: 100%;
-    height: calc(100% - 50px);
-    position: absolute;
-    top: 0;
+    height: calc(100% - 125px);
     padding: 20px;
     box-sizing: border-box;
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    border-bottom: 1px solid #edefef; }
     .chat-box .message-box ul li {
       list-style-type: none;
       display: block;
@@ -476,6 +1004,10 @@ body {
       margin-bottom: 5px; }
       .chat-box .message-box ul li .message-inner-wrapper .profile-image {
         display: none; }
+        .chat-box .message-box ul li .message-inner-wrapper .profile-image a {
+          display: block;
+          width: 100%;
+          height: 100%; }
       .chat-box .message-box ul li .message-inner-wrapper p {
         display: inline-block;
         border-radius: 3px;
@@ -490,13 +1022,15 @@ body {
     .chat-box .message-box ul li.no-auth p {
       position: relative;
       left: 40px;
-      background-color: #c77575; }
+      background-color: rgba(255, 61, 61, 0.7); }
     .chat-box .message-box ul li.auth .profile-image {
       display: inline-block !important;
       position: absolute;
       right: 0; }
+      .chat-box .message-box ul li.auth .profile-image a {
+        display: none !important; }
     .chat-box .message-box ul li.auth p {
-      background-color: #b95353;
+      background-color: #ff3d3d;
       position: relative;
       right: 40px;
       text-align: right;
@@ -518,7 +1052,7 @@ body {
     height: 50px;
     position: absolute;
     bottom: 0;
-    background-color: #eee; }
+    background-color: #f9f9f9; }
     .chat-box .input-box form {
       width: 100%;
       min-height: 50px;
@@ -532,7 +1066,7 @@ body {
         padding-left: 5px;
         height: 30px;
         border-radius: 2px;
-        border: 1px solid #eee; }
+        border: 1px solid #edefef; }
       .chat-box .input-box form input[type="submit"] {
         display: inline-block;
         width: 15%;
@@ -541,9 +1075,57 @@ body {
         font-weight: 900;
         height: 30px;
         color: white;
-        background-color: #b95353; }
+        background-color: #ff3d3d; }
 
-::-webkit-scrollbar {
-  display: none; }
+.timestamp p {
+  background-color: white !important;
+  font-size: 6pt; }
+
+.chat-overview-container {
+  width: 500px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
+  .chat-overview-container .chat-overview-header {
+    min-height: 70px;
+    line-height: 70px;
+    border-bottom: 1px solid #edefef;
+    padding-left: 20px; }
+    .chat-overview-container .chat-overview-header h3 {
+      font-size: 15pt;
+      font-weight: normal; }
+  .chat-overview-container ul li.thread {
+    list-style-type: none;
+    min-height: 70px;
+    border-bottom: 1px solid #edefef; }
+    .chat-overview-container ul li.thread a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      position: relative;
+      padding: 20px 10px 20px 20px; }
+      .chat-overview-container ul li.thread a:hover {
+        background-color: #f9f9f9; }
+      .chat-overview-container ul li.thread a .thread-profile-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        top: 3px;
+        margin-right: 10px; }
+      .chat-overview-container ul li.thread a .thread-tekst {
+        display: inline-block;
+        position: absolute; }
+        .chat-overview-container ul li.thread a .thread-tekst .thread-tekst-name {
+          font-weight: bold;
+          margin-bottom: 5px; }
+  .chat-overview-container ul li:last-child {
+    border-bottom: 0; }
+
+.no-matches-found {
+  height: 70px;
+  line-height: 70px;
+  padding-left: 20px; }
 
 /*# sourceMappingURL=app.css.map */

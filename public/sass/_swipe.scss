@@ -1,22 +1,83 @@
+.current-concert {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+
+    width: 300px;
+    display: inline-block;
+    li {
+        list-style-type: none;
+        min-height: 50px;
+        line-height: 50px;
+        padding-left: 20px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #edefef;
+        position:  relative;
+    }
+    li.image-name-concert-container {
+        padding: 20px;
+        line-height: normal;
+        img {
+            width: 100px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .text-container {
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            p {
+                margin-bottom: 4px;
+            }
+        }
+    }
+    li.more-info-concert-container {
+        padding:0;
+        a {
+            display: block;
+            padding-left: 20px;
+            color: $accent-color;
+            font-size: 15pt;
+            text-decoration: none;
+            &:hover {
+                background-color: #f9f9f9;
+                color: $accent-color;
+            }
+        }
+    }
+}
+.swipe-container {
+    width: 600px;
+    height: 530px;
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    h4 {
+        font-weight: 100;
+        margin-bottom: 20px;
+    }
+}
 #tinderslide {
     width: 300px;
-    height: 300px;
-
-    position: absolute;
-    top: 50%;
+    display: inline-block;
+    position: relative;
     left: 50%;
-
-    transform: translate(-50%, -50%);
-
+    transform: translateX(-50%);
     ul {
         li {
             height: 400px;
+            box-sizing: border-box;
             background-color: white;
 
-            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
             .image-container {
-                width:300px;
-                height: 300px;
+                margin-bottom: 10px;
             }
 
             .text-container {
@@ -67,5 +128,33 @@
                 background-size: contain;
             }
         }
+    }
+}
+.no-more-people-found {
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border-radius: 50%;
+    background-color: #edefef;
+
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-80%);
+    text-decoration: none;
+    left: 50%;
+    color: black;
+    &:hover {
+        background-color: $accent-color;
+        color: white;
+    }
+    p {
+        font-size: 9pt;
+        text-align: center;
+        margin: 0 auto;
+        /* line-height: 150px; */
+        width: 70%;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }

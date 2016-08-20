@@ -7,7 +7,7 @@ class User extends Authenticatable
 {
     protected $table = 'users';
 
-    protected $fillable = ['user_id', 'provider_user_id', 'provider'];
+    protected $fillable = ['user_id', 'provider_user_id', 'provider', 'name', 'voornaam', 'email', 'password', 'id', 'created_at', 'updated_at'];
 
     public function userconcerts()
     {

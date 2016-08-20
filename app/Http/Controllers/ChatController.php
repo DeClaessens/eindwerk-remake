@@ -67,6 +67,7 @@ class ChatController extends Controller
                 array_push($lastMessageArray, $this->chat->getLastMessageFromThread($user->id, $match->user2));
             }
         }
+
         return view('chat.index', compact('uniqueVerifiedMatchArray', 'lastMessageArray'));
     }
 

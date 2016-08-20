@@ -30,6 +30,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/profile/save', 'UserController@saveProfile');
 
     Route::get('/user/{id}', 'UserController@userPage');
+    Route::get('/matches', 'VerifiedMatchController@index');
     Route::get('/chat', 'ChatController@index');
     Route::get('/chat/solo/{id}', 'ChatController@showChat');
 

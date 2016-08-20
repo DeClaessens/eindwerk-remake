@@ -1,10 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+    <div class="user-nav">
+        <div class="grid-container">
+            <div class="logo">
+                <a href="{{url('/')}}">GoCON</a>
+            </div>
+        </div>
+    </div>
+    <div class="full-page">
+        <div class="grid-container">
+            <div class="auth-container">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
@@ -19,6 +25,20 @@
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('voornaam') ? ' has-error' : '' }}">
+                            <label for="voornaam" class="col-md-4 control-label">Voornaam</label>
+
+                            <div class="col-md-6">
+                                <input id="voornaam" type="text" class="form-control" name="voornaam" value="{{ old('voornaam') }}">
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('voornaam') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -74,9 +94,14 @@
                             </div>
                         </div>
                     </form>
+                    <div class="facebook-register-container">
+                        <div class="facebook-register-inner-container">
+                            <a class="facebook" href="{{url('/redirect')}}"><i class="fa fa-facebook-official" aria-hidden="true"></i>Registreren met Facebook</a>
+                            <p>(we publiceren niets op je tijdlijn)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

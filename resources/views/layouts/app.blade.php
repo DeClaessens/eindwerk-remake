@@ -8,7 +8,6 @@
     <title>Laravel</title>
 
     <!-- Fonts -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
     <script src="https://use.fontawesome.com/5f03e3a277.js"></script>
     <link href="{{ asset('css/jTinder.css') }}" rel="stylesheet" type="text/css" rel="stylesheet">
@@ -29,31 +28,48 @@
     <div class="outer-wrapper">
         @if(Auth::check())
             <div class="user-nav">
-                <div class="logo">
-                    <a href="{{url('/')}}">GoCON</a>
-                </div>
-                <ul>
-                    <li>
-                        <a href="{{url('/concerts')}}"><i class="fa fa-music" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="{{url('/chat')}}"><i class="fa fa-comments" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="{{url('/profile')}}"><i class="fa fa-user" aria-hidden="true"></i></a>
-                    </li>
-                </ul>
-            </div>
+                <div class="grid-container">
+                    <div class="logo">
+                        <a href="{{url('/')}}">GoCON</a>
+                    </div>
+                    <ul class="menu">
+                        <li>
+                            <a href="{{url('/concerts')}}">Concerts</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/matches')}}">Matches</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/chat')}}">Chat</a>
+                        </li>
+                    </ul>
+                    <div class="nav-profile-image">
 
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="{{url('/profile')}}">Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">Edit Profile</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/logout')}}">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         @endif
         @yield('content')
     </div>
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!--<script src="{{ asset('js/jquery.js') }}"></script>-->
     <script src="{{ asset('js/jquery.transform2d.js') }}"></script>
     <script src="{{ asset('js/jquery.jTinder.js') }}"></script>
-    <script src="{{URL::to('/js/code.js')}}"></script>
+    <script src="{{ asset('js/holmes.js') }}"></script>
+    <script src="{{ asset('js/code.js') }}"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

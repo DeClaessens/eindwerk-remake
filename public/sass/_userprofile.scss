@@ -1,205 +1,224 @@
-.profile-header {
+.profile-position-container {
     position: relative;
+}
+.container {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    display: inline-block;
+}
+.hub-container {
+    background-color: white;
+    border-radius: 3px;
+    height: auto;
+    width: 580px;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    text-align: center;
-    .header-inner-wrapper {
-        position: relative;
-        top: 30%;
-        transform: translateY(-50%);
-
-        height: 300px;
-    }
-    height: 100px;
-    .edit-profile-button {
-        display: inline-block;
-
-        position: absolute;
-        left: 20%;
-
-        height:300px;
-
-        a {
-            line-height: 300px;
-            font-weight: 900;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: white;
-            font-size: 14pt;
-
+    .hub-menu-item {
+        min-height:50px;
+        height:auto;
+        border-bottom: 1px solid #edefef;
+        .small {
+            line-height: initial;
+            font-size: 11pt;
+            margin-bottom: 20px;
         }
-    }
-    .widget-container {
-        .widget {
-            width: 400px;
-            border-radius: 3px;
-            background-color: white;
+
+        .hub-menu-item-link {
+            padding-left: 40px;
             display: block;
-            position: absolute;
-            padding: 10px;
-            bottom: 10%;
-
-            h1 {
-                font-size: 14pt;
-                text-align: center;
-                padding-top: 8px;
-                display: block;
-
-                margin-bottom: 20px;
+            text-decoration: none;
+            color: $accent-color;
+            transition: .2s all ease-in-out;
+            &:hover {
+                background-color: #f9f9f9;
+                color: $accent-color;
             }
         }
-        .profile-notification-screen {
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-            p {
-                font-size: 9pt;
+    }
+    .hub-menu-item:last-child {
+        border-bottom: 1px solid #ffffff;
+    }
+    .hub-menu-item.center-text {
+        line-height: 50px;
+        font-size: 15pt;
 
+        p {
+            padding-left: 20px;
+        }
+    }
+}
+
+.recent-matches-container {
+    position: relative;
+    padding-left: 20px;
+    .match-header {
+        padding-top: 10px;
+        font-size: 15pt;
+    }
+    .hub-recent-matches {
+        text-decoration: none;
+        margin: 20px auto 40px auto;
+        .recent-match-item {
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            margin: 10px 10px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+
+            transition: .2s all ease-in-out;
+            .name-popup {
+                display: block;
+                padding: 3px 13px;
+                font-size: 8pt;
+                color: white;
+                background-color: $accent-color;
+                position: absolute;
+                bottom:-10px;
+                left:50%;
+                transform: translateX(-50%) scale(0);
+                transition: .2s all ease-in-out;
             }
-            ul {
-                width: 100%;
-                text-align: center;
-                li {
-                    display: inline-block;
-                    width: 50px;
-                    height: 50px;
+            &:hover {
+                transform: scale(1.2);
 
-                    border-radius: 5px;
-
-                    margin: 0 10px 10px 0;
+                .name-popup {
+                    transform: translateX(-50%) scale(.9);
                 }
             }
-
-            &:after{
-                content: "";
-                width: 50px;
-                height: 50px;
-                display: inline-block;
-                background-color: white;
-                position: absolute;
-                left:50%;
-                top: 3px;
-                z-index: -1;
-                border-radius: 3px;
-
-                transform: rotate(45deg) translateX(-71%);
-            }
-        }
-        .recent-messages-screen {
-            width: 300px;
-            right: 5%;
-            padding: 0;
-
-            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-
-            #messagesempty {
-            display: block;
-            position: static;
-            text-align: left;
-            padding: 10px;
-            }
-            h1 {
-                text-align: left;
-                padding-left: 10px;
-                margin: 10px 0;
-            }
-            li {
-                height: 30px;
-                padding: 10px;
-                list-style-type: none;
-            }
-            li:nth-child(even){
-                background-color: #eee;
-            }
-            .message-profile-icon {
-                width: 30px;
-                height: 30px;
-
-                display: inline-block;
-                position: absolute;
-                left: 10px;
-            }
-            p, a {
-                margin: 0;
-                display: inline-block;
-                height: 30px;
-                line-height: 30px;
-                position: absolute;
-                font-size: 9pt;
-            }
-            p {
-                left: 50px;
-            }
-            a {
-                right: 10px;
-            }
-        }
-
-        .upcoming-concert-screen {
-            width: 300px;
-            left: 5%;
-            padding: 0;
-            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-            h1 {
-                text-align: left;
-                padding-left: 10px;
-                margin: 10px 0;
-            }
-            li {
-                height: 30px;
-                padding: 10px;
-                list-style-type: none;
-            }
-            li:nth-child(even){
-                background-color: #eee;
-            }
-            p, a {
-                margin: 0;
-                display: inline-block;
-                height: 30px;
-                line-height: 30px;
-                position: absolute;
-                font-size: 9pt;
-            }
-            p {
-                left: 10px;
-            }
-            a {
-                right: 10px;
-            }
         }
     }
-
-    .gotoconcerts-button {
-        display: inline-block;
-
+    .more-matches {
+        color: $accent-color;
+        text-decoration: none;
         position: absolute;
-        right: 20%;
+        bottom: 10px;
+        right: 10px;
 
-        height:300px;
+        font-size: 8pt;
+    }
+}
 
-        a {
-            line-height: 300px;
+.recent-messages-container {
+    position: relative;
+    padding-left: 20px;
+    .match-header {
+        padding-top: 10px;
+        font-size: 15pt;
+    }
 
-            font-weight: 900;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: white;
-            font-size: 14pt;
+    .message-list {
+        margin: 20px 0;
+        li {
+            position: relative;
+            display: block;
+            background-color: transparent;
+            .message-list-profile-image {
+                width: 70px;
+                height: 70px;
 
+                border-radius: 50%;
+
+                display: inline-block;
+
+                background-color: #eee;
+                background-size: cover;
+                margin: 10px 10px;
+            }
+
+            .message-list-message {
+                position: absolute;
+                top: 17px;
+                display: inline-block;
+                background-color: $accent-color;
+                min-width:250px;
+                max-width: 100px;
+                min-height: 50px;
+                color: white;
+                text-decoration: none;
+                border-radius: 3px;
+                box-sizing: border-box;
+                padding: 5px 10px;
+                font-size: 9pt;
+                p {
+                    z-index: 2;
+                }
+                &:after {
+                    content: "";
+                    height: 10px;
+                    width: 10px;
+                    display: inline-block;
+                    position: absolute;
+                    z-index: 1;
+                    left: 0;
+                    transform: translateX(-50%) rotate(45deg);
+                    top: 8px;
+                    background-color: $accent-color;
+                }
+            }
         }
     }
-    .profile-image {
-        width: 300px;
-        height: 300px;
 
-        background-size: cover;
+    .more-matches {
+        color: $accent-color;
+        text-decoration: none;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
 
-        border-radius: 50%;
+        font-size: 8pt;
+    }
+}
 
-        //border: 10px solid rgba(0,0,0,0.5);
-        box-shadow: 0 0 0 10px rgba(0,0,0,0.2);
-        display: inline-block;
+.profile-container {
+    font-size: 15pt;
+    background-color: white;
+    border-radius: 3px;
+    width: 350px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    .main-profile-menu-item {
+        padding: 10px 20px;
+        line-height: 60px !important;
+        position: relative;
+        .profile-menu-item-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-right: 20px;
 
-        transition: .2s all ease-in-out;
+            display: inline-block;
+            background-color: #eee;
+            background-size: cover;
+        }
+        p {
+            display: inline-block;
+            position: absolute;
+        }
+    }
+    .profile-menu-item {
+        min-height:50px;
+        height:auto;
+        border-bottom: 1px solid #edefef;
+        line-height: 50px;
+        a {
+            display: block;
+            padding-left: 20px;
+            color: black;
+            text-decoration: none;
+
+            transition: .2s all ease-in-out;
+
+            &:hover {
+                color: $accent-color;
+                background-color: #f9f9f9;
+            }
+        }
+    }
+    .profile-menu-item:last-child {
+        border-bottom: none;
     }
 }

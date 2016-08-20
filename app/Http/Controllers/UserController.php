@@ -70,7 +70,7 @@ class UserController extends Controller
 
             $array_counter++;
         }
-        $recentmessages = $this->chat->getXLastMessages($user->id, 5);
+        $recentmessages = $this->chat->getXLastMessages($user->id, 2);
         $fivelastmatches = $this->verifiedMatch->findXLastMatchesById($user->id, 5);
         $upcomingconcerts = $this->concert->getUpcomingConcerts(5);
 
@@ -81,8 +81,9 @@ class UserController extends Controller
         $user = $this->user->find($id);
         $authUser = $this->auth->user();
         $doyoumatch = $this->verifiedMatch->checkIfUsersMatch($id, $authUser->id);
+        $concertsMatched = $this->verifiedMatch->findAllConcertsMatched($authUser->id, $user->id);
 
-        return view('user.profile', compact('user', 'doyoumatch'));
+        return view('user.profile', compact('user', 'doyoumatch', 'concertsMatched'));
     }
 
     public function edit() {
@@ -97,6 +98,7 @@ class UserController extends Controller
         //TODO: Build a check for image
         //find authenticated user to edit
         $editUser = $this->user->find($this->auth->user()->id);
+
         if($request->file('imageUrl') != null) {
             //if there is a previous image url, delete it.
             if ($editUser->imageUrl != '') {
@@ -110,6 +112,7 @@ class UserController extends Controller
 
             $editUser->imageUrl = '/uploads/users/images/' . $imageName;
         }
+
         $editUser->bio = $request->bio;
         $editUser->favoriteArtists = $request->favoriteArtists;
 
