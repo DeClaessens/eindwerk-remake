@@ -38,7 +38,7 @@ return [
     'facebook' => [
         'client_id' => '1129968120408479',
         'client_secret' => '55a4dc0d034d80c4e5b1ab870c747bdc',
-        'redirect' => 'http://eindwerk.app/callback/',
+        'redirect' => env('APP_URL') . '/callback/',
     ]
 
 ];
