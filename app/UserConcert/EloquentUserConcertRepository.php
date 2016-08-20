@@ -66,4 +66,8 @@ class EloquentUserConcertRepository implements UserConcertRepository
     {
         return $this->model->where('user_id', '!=', $user_id)->where('concert_id', $concert_id)->get();
     }
+    public function countAllUsersFromConcert($concert_id)
+    {
+        return $this->model->where('concert_id', $concert_id)->count();
+    }
 }

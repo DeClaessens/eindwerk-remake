@@ -1,10 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+    <div class="user-nav">
+        <div class="grid-container">
+            <div class="logo">
+                <a href="{{url('/')}}">GoCON</a>
+            </div>
+        </div>
+    </div>
+    <div class="full-page">
+        <div class="grid-container">
+            <div class="auth-container">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
@@ -18,8 +24,8 @@
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
                                 @endif
                             </div>
                         </div>
@@ -32,8 +38,8 @@
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
                                 @endif
                             </div>
                         </div>
@@ -55,13 +61,17 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
-                                <a href="redirect">FB Login</a>
                             </div>
                         </div>
                     </form>
+                    <div class="facebook-register-container">
+                        <div class="facebook-register-inner-container">
+                            <a class="facebook" href="{{url('/redirect')}}"><i class="fa fa-facebook-official" aria-hidden="true"></i>Aanmelden met Facebook</a>
+                            <p>(we publiceren niets op je tijdlijn)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

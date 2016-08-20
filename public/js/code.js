@@ -41,6 +41,28 @@ $('document').ready(function(){
             );
         }
     });
+    holmes({
+        input: '.search-concerts input', // default: input[type=search]
+        find: '.concert-list a' // querySelectorAll that matches each of the results individually
+    });
+
+    holmes({
+        input: '.search-matches input', // default: input[type=search]
+        find: '.matches-container a' // querySelectorAll that matches each of the results individually
+    });
+    var slideDuration = 200;
+    $('.nav-profile-image').on('click', function() {
+        if($('.sub-menu').css('display') == 'none') {
+            $('.sub-menu').stop(true, true).fadeIn({ duration: slideDuration, queue: false }).css('display', 'none').slideDown(slideDuration);
+        } else {
+            $('.sub-menu').stop(true, true).fadeOut({ duration: slideDuration, queue: false }).css('display', 'none').slideUp(slideDuration);
+
+        }
+    });
+
+
 
     $(".message-box").scrollTop($(".message-box")[0].scrollHeight);
+
+
 });

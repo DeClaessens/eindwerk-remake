@@ -88,7 +88,7 @@ class ConcertController extends Controller
                 $this->concert->save($newConcert);
             } else {
                 $concert = $this->concert->find($concert->id);
-                $today = date("Y-m-d");
+                $today = date("d/m/Y");
                 $expire = $concert->date; //from db
 
                 $today_time = strtotime($today);
@@ -120,8 +120,9 @@ class ConcertController extends Controller
             ));
         }
 
+        $amountOfUsers = $this->userConcert->countAllUsersFromConcert($concert_id);
 
-        return view('concerts.landing', compact('selectedConcert', 'topTracks'));
+        return view('concerts.landing', compact('selectedConcert', 'topTracks', 'amountOfUsers'));
     }
 
     public function findSolo($concert_id)
@@ -156,7 +157,7 @@ class ConcertController extends Controller
             $counter++;
         }
 
-        return view('concerts.swipe', compact('usersCollection', 'concert_id'));
+        return view('concerts.swipe', compact('usersCollection', 'concert_id', 'concert'));
     }
 
 }

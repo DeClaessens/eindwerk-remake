@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 class Concert extends Model
 {
     protected $table = 'concerts';
+    protected $dates = ['date'];
 
     public function userconcerts()
     {

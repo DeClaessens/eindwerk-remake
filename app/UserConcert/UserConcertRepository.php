@@ -35,4 +35,6 @@ interface UserConcertRepository
      * @return mixed
      */
     public function getAllUsersFromConcert($user_id, $concert_id);
+
+    public function countAllUsersFromConcert($concert_id);
 }

@@ -1,0 +1,138 @@
+.user-container {
+    background-color: white;
+    width: 530px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    .user-card {
+        border-bottom:1px solid #edefef;
+        padding: 20px;
+        .user-card-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 2px;
+            display: inline-block;
+        }
+        .user-card-text {
+            width: auto;
+            height: 80px;
+            display: inline-block;
+            position: absolute;
+            padding-left: 20px;
+            div {
+                h4 {
+                    display: inline-block;
+                    font-weight: bold;
+                    padding-bottom: 2px;
+                    border-bottom: 2px solid $accent-color;
+                    color: black;
+                    margin-bottom: 10px;
+                }
+                p {
+                    font-size: 9pt;
+                }
+            }
+            .user-card-text-name {
+
+            }
+            .user-card-text-bio {
+                max-width: 300px;
+            }
+        }
+    }
+    ul {
+        li {
+            list-style-type: none;
+            min-height: 50px;
+            a {
+                padding-left: 20px;
+                display: block;
+                line-height: 50px;
+                text-decoration: none;
+                color: $accent-color;
+
+                &:hover {
+                    background-color: #f9f9f9;
+                    color: $accent-color;
+                }
+            }
+            border-bottom: 1px solid #edefef;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        .favorite-artists {
+            padding: 10px 0 10px 20px;
+            .favorite-artists-header {
+                font-size: 15pt;
+                margin-bottom: 10px;
+            }
+            .favorite-artists-artists {
+
+            }
+        }
+    }
+}
+
+.matched-concerts-container {
+    position: absolute;
+    top:0;
+    right:0;
+    width: 350px;
+
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    div.matched-concerts-header {
+        padding-left: 20px;
+        border-bottom: 1px solid #edefef;
+        h2 {
+            font-weight: normal;
+            line-height: 50px;
+            font-size: 15pt;
+        }
+    }
+    ul {
+        max-height: 500px;
+        overflow-y: scroll;
+        li {
+            list-style-type: none;
+            min-height: 50px;
+            border-bottom: 1px solid #edefef;
+            position: relative;
+        }
+        li.matched-concert {
+            a {
+                display: block;
+                padding: 10px 0 10px 20px;
+                text-decoration: none;
+                color: black;
+
+                &:hover {
+                    background-color: #f9f9f9;
+                }
+
+                .matched-concert-image {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 2px;
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+
+                .matched-concert-text {
+                    display: inline-block;
+                    position:  absolute;
+                    p {
+                        font-size: 10pt;
+                        margin-bottom: 5px;
+
+                    }
+                }
+
+            }
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+    }
+}

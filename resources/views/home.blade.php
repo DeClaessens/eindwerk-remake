@@ -1,23 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="gradient" class="full-page homepage-header">
-        <div class="homepage-inner-wrapper">
-            <h1>GoCON</h1>
+    <div class="background">
 
-            <div class="register-button">
-                <a href="{{URL::to('/register')}}"><span>register</span></a>
-            </div>
-
-            <div class="homepage-header-separator"></div>
-            <p>Already have an account ?</p>
-            <p class="login-options">
-                <a href="{{URL::to('/goToLogin')}}">Sign In</a> or <a href="{{URL::to('/redirect')}}">Login with Facebook</a>
-            </p>
-        </div>
     </div>
-
-    <div class="full-page homepage-content">
-
+    <a href="{{ url('/goToLogin') }}" class="aanmelden-container">Aanmelden</a>
+    <div class="homepage-container">
+        <div class="homepage-content">
+            <div class="homepage-header">
+                <h1>GoCON</h1>
+                <p>Vindt je niemand om mee naar een concert te gaan ?<br/>Vindt hier per concert andere mensen om samen mee te gaan!</p>
+            </div>
+            <div class="divider"></div>
+            <div class="homepage-body">
+                <div class="homepage-body-step-container">
+                    <div class="homepage-body-step" id="step-1">
+                        <span>Step 1</span>
+                    </div>
+                    <div class="homepage-body-step" id="step-2">
+                        <span>Step 1</span>
+                    </div>
+                    <div class="homepage-body-step" id="step-3">
+                        <span>Step 1</span>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="homepage-register">
+                <a class="register-button" href="{{url('/register')}}">Registreer</a>
+                <p>of</p>
+                <a class="facebook" href="{{url('/redirect')}}"><i class="fa fa-facebook-official" aria-hidden="true"></i>Registreer met Facebook</a>
+            </div>
+        </div>
     </div>
 @endsection

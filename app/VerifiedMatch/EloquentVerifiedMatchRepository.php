@@ -42,7 +42,7 @@ class EloquentVerifiedMatchRepository implements VerifiedMatchRepository
         $verifiedMatch->save();
     }
     public function findAllMatches($user1) {
-        return $this->model->where('user1', $user1)->get();
+        return $this->model->where('user1', $user1)->groupBy('user2')->get();
     }
 
     public function checkIfUsersMatch($user1, $user2) {
@@ -86,6 +86,17 @@ class EloquentVerifiedMatchRepository implements VerifiedMatchRepository
         return $query;
     }
 
+    public function countAllConcertsMatched($user1, $user2) {
+        $query = $this->model
+            ->where(function ($query) use ($user1, $user2) {
+                $query->where('user1', $user1)
+                    ->where('user2', $user2);
+            })
+            ->count();
+
+        return $query;
+    }
+
     public function matchUsersTogether($user1, $user2, $concertId) {
         $vm1 = $this->make();
         $vm2 = $this->make();
@@ -106,5 +117,10 @@ class EloquentVerifiedMatchRepository implements VerifiedMatchRepository
         $query = $this->model->where('user1', $id)->limit($amount)->get();
 
         return $query;
+    }
+
+    public function delete($verifiedMatch)
+    {
+        $verifiedMatch->delete();
     }
 }
