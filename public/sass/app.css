@@ -1279,6 +1279,9 @@ body {
         margin-bottom: 10px; }
     .hub-container .hub-recent-matches p, .hub-container .message-list p {
       font-size: 9pt; }
+    .hub-container .recent-messages-container .message-list li .message-list-message {
+      min-width: 0;
+      max-width: 60%; }
     .hub-container .center-text {
       line-height: 30px !important; }
       .hub-container .center-text a {

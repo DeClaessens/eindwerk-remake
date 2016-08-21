@@ -46,7 +46,7 @@
                         @endif
                     </ul>
 
-                    <a class="more-matches" href="#">More Messages</a>
+                    <a class="more-matches" href="/chat">More Messages</a>
                 </div>
             </div>
             <div class="profile-container container">
@@ -57,10 +57,10 @@
                     <p>Your Profile</p>
                 </div>
                 <div class="profile-menu-item">
-                    <a href="#">Matches</a>
+                    <a href="/matches">Matches</a>
                 </div>
                 <div class="profile-menu-item">
-                    <a href="#">Messages</a>
+                    <a href="/chat">Messages</a>
                 </div>
                 <div class="profile-menu-item">
                     <a href="#">Edit Profile</a>

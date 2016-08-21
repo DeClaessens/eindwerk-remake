@@ -219,6 +219,19 @@
 
             }
         }
+        .recent-messages-container {
+            .message-list {
+                li {
+                    .message-list-message {
+                        min-width: 0;
+                        max-width: 60%;
+
+                    }
+                }
+
+            }
+        }
+
         .center-text {
             line-height: 30px !important;
             a {
