@@ -389,7 +389,7 @@ body {
     .profile-container .profile-menu-item a {
       display: block;
       padding-left: 20px;
-      color: black;
+      color: #ff3d3d;
       text-decoration: none;
       transition: .2s all ease-in-out; }
       .profile-container .profile-menu-item a:hover {
@@ -1129,6 +1129,28 @@ body {
   padding-left: 20px; }
 
 @media screen and (max-width: 1000px) {
+  /* ------- VARIA ------- */
+  .full-page {
+    padding-bottom: 50px; }
+
+  .grid-container {
+    width: 90%; }
+
+  .user-nav .logo {
+    margin-right: 10px; }
+    .user-nav .logo a {
+      font-size: 14pt; }
+  .user-nav .menu li {
+    margin: 0 5px 0 0; }
+    .user-nav .menu li a {
+      font-size: 9pt; }
+  .user-nav .sub-menu {
+    width: 80%; }
+    .user-nav .sub-menu li a {
+      font-size: 10pt;
+      padding-left: 15px; }
+
+  /* ------- HOMEPAGE -------- */
   .aanmelden-container {
     padding: 5px 10px;
     font-size: 11pt;
@@ -1165,6 +1187,98 @@ body {
       margin: 0 0 10px 0; }
     .homepage-container .homepage-content .homepage-register .facebook {
       font-size: 9pt;
-      padding: 5px 10px; } }
+      padding: 5px 10px; }
+
+  /* ------- END OF HOMEPAGE -------- */
+  /* ------- AUTH -------- */
+  .auth-container {
+    width: auto; }
+    .auth-container .panel-heading {
+      font-size: 14pt; }
+    .auth-container .form-horizontal {
+      width: auto;
+      margin-right: 0;
+      display: block;
+      margin-bottom: 10px; }
+      .auth-container .form-horizontal label {
+        font-size: 9pt; }
+      .auth-container .form-horizontal input {
+        border: 2px solid #edefef !important;
+        width: 100%;
+        height: 20px;
+        box-sizing: border-box; }
+      .auth-container .form-horizontal .checkbox input {
+        width: auto;
+        margin-right: 3px; }
+      .auth-container .form-horizontal .btn-primary {
+        border-radius: 3px;
+        height: 24px;
+        width: 83px; }
+    .auth-container .facebook-register-container {
+      width: 100%;
+      height: auto;
+      border: none;
+      position: static;
+      transform: none;
+      padding-left: 0; }
+      .auth-container .facebook-register-container .facebook-register-inner-container {
+        position: relative;
+        transform: none;
+        top: 0; }
+        .auth-container .facebook-register-container .facebook-register-inner-container .facebook {
+          font-size: 8pt;
+          padding: 5px 10px; }
+        .auth-container .facebook-register-container .facebook-register-inner-container p {
+          text-align: left;
+          font-size: 6pt; }
+
+  /* ------- END OF AUTH -------- */
+  /* ------- PROFILE -------- */
+  .container {
+    width: 100%; }
+
+  .profile-position-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+
+  .hub-container {
+    position: static;
+    order: 2;
+    display: block;
+    width: 100%; }
+    .hub-container .hub-menu-item {
+      min-height: 30px; }
+      .hub-container .hub-menu-item p {
+        font-size: 14pt; }
+      .hub-container .hub-menu-item p.small {
+        font-size: 9pt;
+        margin-bottom: 0; }
+    .hub-container .hub-menu-item:first-child {
+      padding-top: 10px; }
+      .hub-container .hub-menu-item:first-child p {
+        margin-bottom: 10px; }
+    .hub-container .hub-recent-matches p, .hub-container .message-list p {
+      font-size: 9pt; }
+    .hub-container .center-text {
+      line-height: 30px !important; }
+      .hub-container .center-text a {
+        font-size: 9pt; }
+
+  .profile-container {
+    position: static;
+    margin-bottom: 20px;
+    display: block;
+    order: 1;
+    width: 100%; }
+    .profile-container .main-profile-menu-item {
+      line-height: 10px !important; }
+      .profile-container .main-profile-menu-item p {
+        font-size: 13pt;
+        line-height: 44px; }
+    .profile-container .profile-menu-item {
+      font-size: 9pt;
+      min-height: 40px;
+      line-height: 40px; } }
 
 /*# sourceMappingURL=app.css.map */

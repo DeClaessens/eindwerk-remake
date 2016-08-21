@@ -49,23 +49,21 @@
                     <a class="more-matches" href="#">More Messages</a>
                 </div>
             </div>
-            <div>
-                <div class="profile-container container">
-                    <div class="profile-menu-item main-profile-menu-item">
-                        <div class="profile-menu-item-image" style="background: url('{{$user->imageUrl}}') center center no-repeat; background-size: cover;">
+            <div class="profile-container container">
+                <div class="profile-menu-item main-profile-menu-item">
+                    <div class="profile-menu-item-image" style="background: url('{{$user->imageUrl}}') center center no-repeat; background-size: cover;">
 
-                        </div>
-                        <p>Your Profile</p>
                     </div>
-                    <div class="profile-menu-item">
-                        <a href="#">Matches</a>
-                    </div>
-                    <div class="profile-menu-item">
-                        <a href="#">Messages</a>
-                    </div>
-                    <div class="profile-menu-item">
-                        <a href="#">Edit Profile</a>
-                    </div>
+                    <p>Your Profile</p>
+                </div>
+                <div class="profile-menu-item">
+                    <a href="#">Matches</a>
+                </div>
+                <div class="profile-menu-item">
+                    <a href="#">Messages</a>
+                </div>
+                <div class="profile-menu-item">
+                    <a href="#">Edit Profile</a>
                 </div>
             </div>
 
