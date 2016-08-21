@@ -9,15 +9,13 @@
                         <div class="user-card-image" style="background: url('{{$user->imageUrl}}') center center no-repeat; background-size: cover;">
 
                         </div>
-                        <div class="user-card-text">
-                            <div class="user-card-text-name">
-                                <h4>Name</h4>
-                                <p class="">{{$user->name}}</p>
-                            </div>
-                            <div class="user-card-text-bio">
-                                <h4>Bio</h4>
-                                <p class="">{{$user->bio}}</p>
-                            </div>
+                        <div class="user-card-text-name">
+                            <h4>Name</h4>
+                            <p class="">{{$user->name}}</p>
+                        </div>
+                        <div class="user-card-text-bio">
+                            <h4>Bio</h4>
+                            <p>{{$user->bio}}</p>
                         </div>
                     </div>
                     <ul>
@@ -49,6 +47,76 @@
                                 </a>
                             </li>
                         @endforeach
+                            @foreach($concertsMatched as $concert)
+                                <li class="matched-concert">
+                                    <a href="{{ url('concert/select', $concert->MatchedConcert->id) }}">
+                                        <div class="matched-concert-image" style="background: url('{{$concert->MatchedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
+
+                                        </div>
+                                        <div class="matched-concert-text">
+                                            <p>{{$concert->MatchedConcert->name}}</p>
+                                            <p>{{$concert->MatchedConcert->venue}}</p>
+                                            <p>{{$concert->MatchedConcert->date->format('d/m/Y')}}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
+                            @foreach($concertsMatched as $concert)
+                                <li class="matched-concert">
+                                    <a href="{{ url('concert/select', $concert->MatchedConcert->id) }}">
+                                        <div class="matched-concert-image" style="background: url('{{$concert->MatchedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
+
+                                        </div>
+                                        <div class="matched-concert-text">
+                                            <p>{{$concert->MatchedConcert->name}}</p>
+                                            <p>{{$concert->MatchedConcert->venue}}</p>
+                                            <p>{{$concert->MatchedConcert->date->format('d/m/Y')}}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
+                            @foreach($concertsMatched as $concert)
+                                <li class="matched-concert">
+                                    <a href="{{ url('concert/select', $concert->MatchedConcert->id) }}">
+                                        <div class="matched-concert-image" style="background: url('{{$concert->MatchedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
+
+                                        </div>
+                                        <div class="matched-concert-text">
+                                            <p>{{$concert->MatchedConcert->name}}</p>
+                                            <p>{{$concert->MatchedConcert->venue}}</p>
+                                            <p>{{$concert->MatchedConcert->date->format('d/m/Y')}}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
+                            @foreach($concertsMatched as $concert)
+                                <li class="matched-concert">
+                                    <a href="{{ url('concert/select', $concert->MatchedConcert->id) }}">
+                                        <div class="matched-concert-image" style="background: url('{{$concert->MatchedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
+
+                                        </div>
+                                        <div class="matched-concert-text">
+                                            <p>{{$concert->MatchedConcert->name}}</p>
+                                            <p>{{$concert->MatchedConcert->venue}}</p>
+                                            <p>{{$concert->MatchedConcert->date->format('d/m/Y')}}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
+                            @foreach($concertsMatched as $concert)
+                                <li class="matched-concert">
+                                    <a href="{{ url('concert/select', $concert->MatchedConcert->id) }}">
+                                        <div class="matched-concert-image" style="background: url('{{$concert->MatchedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
+
+                                        </div>
+                                        <div class="matched-concert-text">
+                                            <p>{{$concert->MatchedConcert->name}}</p>
+                                            <p>{{$concert->MatchedConcert->venue}}</p>
+                                            <p>{{$concert->MatchedConcert->date->format('d/m/Y')}}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
                     </ul>
                 </div>
             </div>

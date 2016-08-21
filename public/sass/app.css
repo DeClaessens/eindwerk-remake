@@ -665,25 +665,25 @@ body {
     .user-container .user-card .user-card-image {
       width: 200px;
       height: 200px;
+      margin-right: 10px;
       border-radius: 2px;
       display: inline-block; }
-    .user-container .user-card .user-card-text {
-      width: auto;
-      height: 80px;
+    .user-container .user-card div h4 {
       display: inline-block;
-      position: absolute;
-      padding-left: 20px; }
-      .user-container .user-card .user-card-text div h4 {
-        display: inline-block;
-        font-weight: bold;
-        padding-bottom: 2px;
-        border-bottom: 2px solid #ff3d3d;
-        color: black;
-        margin-bottom: 10px; }
-      .user-container .user-card .user-card-text div p {
-        font-size: 9pt; }
-      .user-container .user-card .user-card-text .user-card-text-bio {
-        max-width: 300px; }
+      font-weight: bold;
+      padding-bottom: 2px;
+      border-bottom: 2px solid #ff3d3d;
+      color: black;
+      margin-bottom: 10px; }
+    .user-container .user-card div p {
+      font-size: 9pt; }
+    .user-container .user-card .user-card-text-name {
+      display: inline-block;
+      position: absolute; }
+    .user-container .user-card .user-card-text-bio {
+      display: inline-block; }
+      .user-container .user-card .user-card-text-bio p {
+        max-width: 100%; }
   .user-container ul li {
     list-style-type: none;
     min-height: 50px;
@@ -704,6 +704,8 @@ body {
     .user-container ul .favorite-artists .favorite-artists-header {
       font-size: 15pt;
       margin-bottom: 10px; }
+    .user-container ul .favorite-artists .favorite-artists-artists {
+      font-size: 9pt; }
 
 .matched-concerts-container {
   position: absolute;
@@ -1434,6 +1436,32 @@ body {
     .matches-container .match .match-image {
       width: 100%; }
     .matches-container .match .match-text {
-      font-size: 8pt; } }
+      font-size: 8pt; }
+
+  .user-profile-container {
+    width: 100%; }
+    .user-profile-container .user-container {
+      width: 100%;
+      margin-bottom: 20px; }
+      .user-profile-container .user-container .user-card .user-card-image {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px; }
+      .user-profile-container .user-container .user-card div h4 {
+        font-size: 10pt;
+        padding-bottom: 0;
+        margin-bottom: 3px; }
+      .user-profile-container .user-container .user-card .user-card-text-name {
+        position: absolute; }
+      .user-profile-container .user-container ul li {
+        min-height: 30px; }
+        .user-profile-container .user-container ul li a {
+          line-height: 30px;
+          font-size: 9pt; }
+    .user-profile-container .matched-concerts-container {
+      position: static;
+      width: 100%; }
+      .user-profile-container .matched-concerts-container ul {
+        max-height: 300px; } }
 
 /*# sourceMappingURL=app.css.map */

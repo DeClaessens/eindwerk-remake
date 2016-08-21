@@ -9,15 +9,10 @@
         .user-card-image {
             width: 200px;
             height: 200px;
+            margin-right: 10px;
             border-radius: 2px;
             display: inline-block;
         }
-        .user-card-text {
-            width: auto;
-            height: 80px;
-            display: inline-block;
-            position: absolute;
-            padding-left: 20px;
             div {
                 h4 {
                     display: inline-block;
@@ -32,12 +27,15 @@
                 }
             }
             .user-card-text-name {
-
+                display: inline-block;
+                position: absolute;
             }
             .user-card-text-bio {
-                max-width: 300px;
+                display: inline-block;
+                p {
+                    max-width: 100%;
+                }
             }
-        }
     }
     ul {
         li {
@@ -67,7 +65,7 @@
                 margin-bottom: 10px;
             }
             .favorite-artists-artists {
-
+                font-size: 9pt;
             }
         }
     }
