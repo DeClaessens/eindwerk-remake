@@ -82,6 +82,7 @@ $('document').ready(function(){
 
 
 
+
     $(".message-box").scrollTop($(".message-box")[0].scrollHeight);
 
 

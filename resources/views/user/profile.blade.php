@@ -9,17 +9,17 @@
                         <div class="user-card-image" style="background: url('{{$user->imageUrl}}') center center no-repeat; background-size: cover;">
 
                         </div>
-                        <div class="user-card-text-name">
-                            <h4>Name</h4>
-                            <p class="">{{$user->name}}</p>
-                        </div>
-                        <div class="user-card-text-bio">
-                            <h4>Bio</h4>
-                            <p>{{$user->bio}}</p>
-                        </div>
                     </div>
                     <ul>
-                        <li class="favorite-artists">
+                        <li class="user-info-container">
+                            <h4>Name</h4>
+                            <p>{{$user->name}}</p>
+                        </li>
+                        <li class="user-info-container">
+                            <h4>Bio</h4>
+                            <p>{{$user->bio}}</p>
+                        </li>
+                        <li class="user-info-container">
                             <h4 class="favorite-artists-header">Favorite Artists</h4>
                             <p class="favorite-artists-artists">{{$user->favoriteArtists}}</p>
                         </li>

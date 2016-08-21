@@ -58,13 +58,13 @@
         li:last-child {
             border-bottom: none;
         }
-        .favorite-artists {
+        .user-info-container {
             padding: 10px 0 10px 20px;
-            .favorite-artists-header {
+            h4 {
                 font-size: 15pt;
                 margin-bottom: 10px;
             }
-            .favorite-artists-artists {
+            p {
                 font-size: 9pt;
             }
         }

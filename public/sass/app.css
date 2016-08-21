@@ -699,12 +699,12 @@ body {
         color: #ff3d3d; }
   .user-container ul li:last-child {
     border-bottom: none; }
-  .user-container ul .favorite-artists {
+  .user-container ul .user-info-container {
     padding: 10px 0 10px 20px; }
-    .user-container ul .favorite-artists .favorite-artists-header {
+    .user-container ul .user-info-container h4 {
       font-size: 15pt;
       margin-bottom: 10px; }
-    .user-container ul .favorite-artists .favorite-artists-artists {
+    .user-container ul .user-info-container p {
       font-size: 9pt; }
 
 .matched-concerts-container {
