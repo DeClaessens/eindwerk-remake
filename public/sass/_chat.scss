@@ -218,13 +218,14 @@
                 .thread-tekst {
                     display: inline-block;
                     position:  absolute;
+                    width: 75%;
                     .thread-tekst-name {
                         font-weight: bold;
                         margin-bottom: 5px;
                     }
 
                     .thread-tekst-message {
-                        width: 90%;
+                        width: 100%;
                     }
                 }
             }
