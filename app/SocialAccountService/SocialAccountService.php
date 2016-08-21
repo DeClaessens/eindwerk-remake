@@ -28,6 +28,8 @@ class SocialAccountService
         $user = User::whereProvider('facebook')
             ->whereProviderUserId($providerUser->getId())
             ->first();
+
+        dd($user);
         if ($user) {
             return $user;
         } else {

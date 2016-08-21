@@ -1128,4 +1128,43 @@ body {
   line-height: 70px;
   padding-left: 20px; }
 
+@media screen and (max-width: 1000px) {
+  .aanmelden-container {
+    padding: 5px 10px;
+    font-size: 11pt;
+    top: 10px;
+    left: 10px; }
+
+  .homepage-container .homepage-content .homepage-header h1 {
+    font-size: 40pt; }
+  .homepage-container .homepage-content .homepage-header p {
+    font-size: 9pt;
+    max-width: 90%;
+    line-height: 17pt;
+    margin: 0 auto 10px auto; }
+  .homepage-container .homepage-content .homepage-body {
+    height: 200px; }
+    .homepage-container .homepage-content .homepage-body .homepage-body-step-container .homepage-body-step {
+      width: 70px;
+      height: 70px;
+      margin: 0 8px; }
+      .homepage-container .homepage-content .homepage-body .homepage-body-step-container .homepage-body-step span {
+        transform: translateY(-180%);
+        font-size: 10pt; }
+  .homepage-container .homepage-content .divider {
+    margin: 0 auto; }
+  .homepage-container .homepage-content .homepage-register {
+    padding-top: 20px; }
+    .homepage-container .homepage-content .homepage-register a.register-button {
+      padding: 5px 10px;
+      font-size: 9pt;
+      margin-top: 0;
+      margin-bottom: 10px; }
+    .homepage-container .homepage-content .homepage-register p {
+      font-size: 9pt;
+      margin: 0 0 10px 0; }
+    .homepage-container .homepage-content .homepage-register .facebook {
+      font-size: 9pt;
+      padding: 5px 10px; } }
+
 /*# sourceMappingURL=app.css.map */

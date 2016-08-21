@@ -21,7 +21,6 @@ class SocialAuthController extends Controller
     {
 
         $user = $socialAccountService->createOrGetUser(\Socialite::driver('facebook')->stateless()->user());
-
         auth()->login($user);
 
         return redirect()->to('/profile');

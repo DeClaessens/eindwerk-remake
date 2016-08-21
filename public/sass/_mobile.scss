@@ -1,0 +1,68 @@
+@media screen and (max-width: 1000px) {
+    .aanmelden-container {
+        padding: 5px 10px;
+        font-size: 11pt;
+        top: 10px;
+        left: 10px;
+    }
+    .homepage-container {
+        .homepage-content {
+
+            .homepage-header {
+                h1 {
+                    font-size: 40pt;
+                }
+
+                p {
+                    font-size: 9pt;
+                    max-width: 90%;
+                    line-height: 17pt;
+                    margin: 0 auto 10px auto;
+                }
+            }
+
+            .homepage-body {
+                height: 200px;
+                .homepage-body-step-container {
+                    .homepage-body-step {
+                        width: 70px;
+                        height: 70px;
+
+                        margin: 0 8px;
+
+                        span {
+                            transform: translateY(-180%);
+                            font-size: 10pt;
+                        }
+                    }
+                }
+            }
+
+            .divider {
+                margin: 0 auto;
+            }
+
+            .homepage-register {
+                padding-top: 20px;
+                a.register-button {
+                    padding: 5px 10px;
+                    font-size: 9pt;
+
+                    margin-top: 0;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    font-size: 9pt;
+                    margin: 0 0 10px 0;
+                }
+
+                .facebook {
+                    font-size: 9pt;
+                    padding: 5px 10px;
+                }
+            }
+        }
+    }
+
+}
