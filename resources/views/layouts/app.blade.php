@@ -43,7 +43,7 @@
                             <a href="{{url('/chat')}}">Chat</a>
                         </li>
                     </ul>
-                    <div class="nav-profile-image">
+                    <div class="nav-profile-image" style="background: url('{{Auth::user()->imageUrl}}') center center no-repeat; background-size: cover;">
 
                     </div>
                     <ul class="sub-menu">

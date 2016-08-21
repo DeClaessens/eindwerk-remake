@@ -52,7 +52,7 @@
             <div>
                 <div class="profile-container container">
                     <div class="profile-menu-item main-profile-menu-item">
-                        <div class="profile-menu-item-image">
+                        <div class="profile-menu-item-image" style="background: url('{{$user->imageUrl}}') center center no-repeat; background-size: cover;">
 
                         </div>
                         <p>Your Profile</p>
