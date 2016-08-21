@@ -2,6 +2,7 @@
     background-color: white;
     border-radius: 3px;
     width: 500px;
+    max-width: 500px;
     height: 70%;
     position: absolute;
 
@@ -188,6 +189,8 @@
         }
     }
     ul {
+        max-height: 670px;
+        overflow-y: scroll;
         li.thread {
             list-style-type: none;
             min-height: 70px;

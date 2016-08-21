@@ -960,6 +960,7 @@ body {
   background-color: white;
   border-radius: 3px;
   width: 500px;
+  max-width: 500px;
   height: 70%;
   position: absolute;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
@@ -1095,34 +1096,37 @@ body {
     .chat-overview-container .chat-overview-header h3 {
       font-size: 15pt;
       font-weight: normal; }
-  .chat-overview-container ul li.thread {
-    list-style-type: none;
-    min-height: 70px;
-    border-bottom: 1px solid #edefef; }
-    .chat-overview-container ul li.thread a {
-      display: block;
-      text-decoration: none;
-      color: black;
-      position: relative;
-      padding: 20px 10px 20px 20px; }
-      .chat-overview-container ul li.thread a:hover {
-        background-color: #f9f9f9; }
-      .chat-overview-container ul li.thread a .thread-profile-image {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: inline-block;
+  .chat-overview-container ul {
+    max-height: 670px;
+    overflow-y: scroll; }
+    .chat-overview-container ul li.thread {
+      list-style-type: none;
+      min-height: 70px;
+      border-bottom: 1px solid #edefef; }
+      .chat-overview-container ul li.thread a {
+        display: block;
+        text-decoration: none;
+        color: black;
         position: relative;
-        top: 3px;
-        margin-right: 10px; }
-      .chat-overview-container ul li.thread a .thread-tekst {
-        display: inline-block;
-        position: absolute; }
-        .chat-overview-container ul li.thread a .thread-tekst .thread-tekst-name {
-          font-weight: bold;
-          margin-bottom: 5px; }
-  .chat-overview-container ul li:last-child {
-    border-bottom: 0; }
+        padding: 20px 10px 20px 20px; }
+        .chat-overview-container ul li.thread a:hover {
+          background-color: #f9f9f9; }
+        .chat-overview-container ul li.thread a .thread-profile-image {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: inline-block;
+          position: relative;
+          top: 3px;
+          margin-right: 10px; }
+        .chat-overview-container ul li.thread a .thread-tekst {
+          display: inline-block;
+          position: absolute; }
+          .chat-overview-container ul li.thread a .thread-tekst .thread-tekst-name {
+            font-weight: bold;
+            margin-bottom: 5px; }
+    .chat-overview-container ul li:last-child {
+      border-bottom: 0; }
 
 .no-matches-found {
   height: 70px;
@@ -1462,6 +1466,29 @@ body {
       position: static;
       width: 100%; }
       .user-profile-container .matched-concerts-container ul {
-        max-height: 300px; } }
+        max-height: 300px; }
+
+  /* ------ END OF MATCHES ------*/
+  /* ------ CHAT ----- */
+  .chat-overview-container {
+    width: 100%; }
+    .chat-overview-container .chat-overview-header {
+      min-height: 40px;
+      line-height: 40px; }
+      .chat-overview-container .chat-overview-header h3 {
+        font-size: 14pt; }
+    .chat-overview-container ul {
+      min-height: 0;
+      max-height: 500px; }
+      .chat-overview-container ul li.thread a {
+        padding: 10px 5px 10px 10px; }
+        .chat-overview-container ul li.thread a .thread-profile-image {
+          width: 40px;
+          height: 40px; }
+        .chat-overview-container ul li.thread a .thread-tekst {
+          font-size: 10pt; }
+        .chat-overview-container ul li.thread a .thread-tekst-message {
+          max-width: 90%;
+          font-size: 8pt; } }
 
 /*# sourceMappingURL=app.css.map */

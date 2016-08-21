@@ -540,5 +540,43 @@
             }
         }
     }
+    /* ------ END OF MATCHES ------*/
 
+
+
+    /* ------ CHAT ----- */
+
+    .chat-overview-container {
+        width: 100%;
+        .chat-overview-header {
+            min-height: 40px;
+            line-height: 40px;
+
+            h3 {
+                font-size: 14pt;
+            }
+        }
+
+        ul {
+            min-height: 0;
+            max-height: 500px;
+            li.thread {
+                a {
+                    padding: 10px 5px 10px 10px;
+                    .thread-profile-image {
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                    .thread-tekst {
+                        font-size: 10pt;
+                    }
+                    .thread-tekst-message {
+                        max-width: 90%;
+                        font-size: 8pt;
+                    }
+                }
+            }
+        }
+    }
 }

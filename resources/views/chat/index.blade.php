@@ -20,7 +20,7 @@
                                     </p>
                                     <p class="thread-tekst-message">
                                         @if($lastMessageArray[$i]['message'] != '')
-                                        {{str_limit($lastMessageArray[$i]->message, $limit = 100, $end = '...')}}
+                                        {{str_limit($lastMessageArray[$i]->message, $limit = 80, $end = '...')}}
                                         @else
                                             No Messages yet! Be the first to say 'Hello!'
                                         @endif
@@ -29,6 +29,111 @@
                             </a>
                         </li>
                     @endfor
+                        @for($i = 0; $i < count($uniqueVerifiedMatchArray); $i++)
+                            <li class="thread">
+                                <a href=" {{ url('chat/solo', $uniqueVerifiedMatchArray[$i]->MatchedUser->id) }}">
+                                    <div class="thread-profile-image" style="background: url('{{$uniqueVerifiedMatchArray[$i]->MatchedUser->imageUrl}}') center center no-repeat; background-size: cover;">
+
+                                    </div>
+                                    <div class="thread-tekst">
+                                        <p class="thread-tekst-name">
+                                            {{str_limit($uniqueVerifiedMatchArray[$i]->MatchedUser->name, $limit = 70, $end = '...')}}
+                                        </p>
+                                        <p class="thread-tekst-message">
+                                            @if($lastMessageArray[$i]['message'] != '')
+                                                {{str_limit($lastMessageArray[$i]->message, $limit = 80, $end = '...')}}
+                                            @else
+                                                No Messages yet! Be the first to say 'Hello!'
+                                            @endif
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        @endfor
+                        @for($i = 0; $i < count($uniqueVerifiedMatchArray); $i++)
+                            <li class="thread">
+                                <a href=" {{ url('chat/solo', $uniqueVerifiedMatchArray[$i]->MatchedUser->id) }}">
+                                    <div class="thread-profile-image" style="background: url('{{$uniqueVerifiedMatchArray[$i]->MatchedUser->imageUrl}}') center center no-repeat; background-size: cover;">
+
+                                    </div>
+                                    <div class="thread-tekst">
+                                        <p class="thread-tekst-name">
+                                            {{str_limit($uniqueVerifiedMatchArray[$i]->MatchedUser->name, $limit = 70, $end = '...')}}
+                                        </p>
+                                        <p class="thread-tekst-message">
+                                            @if($lastMessageArray[$i]['message'] != '')
+                                                {{str_limit($lastMessageArray[$i]->message, $limit = 80, $end = '...')}}
+                                            @else
+                                                No Messages yet! Be the first to say 'Hello!'
+                                            @endif
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        @endfor
+                        @for($i = 0; $i < count($uniqueVerifiedMatchArray); $i++)
+                            <li class="thread">
+                                <a href=" {{ url('chat/solo', $uniqueVerifiedMatchArray[$i]->MatchedUser->id) }}">
+                                    <div class="thread-profile-image" style="background: url('{{$uniqueVerifiedMatchArray[$i]->MatchedUser->imageUrl}}') center center no-repeat; background-size: cover;">
+
+                                    </div>
+                                    <div class="thread-tekst">
+                                        <p class="thread-tekst-name">
+                                            {{str_limit($uniqueVerifiedMatchArray[$i]->MatchedUser->name, $limit = 70, $end = '...')}}
+                                        </p>
+                                        <p class="thread-tekst-message">
+                                            @if($lastMessageArray[$i]['message'] != '')
+                                                {{str_limit($lastMessageArray[$i]->message, $limit = 80, $end = '...')}}
+                                            @else
+                                                No Messages yet! Be the first to say 'Hello!'
+                                            @endif
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        @endfor
+                        @for($i = 0; $i < count($uniqueVerifiedMatchArray); $i++)
+                            <li class="thread">
+                                <a href=" {{ url('chat/solo', $uniqueVerifiedMatchArray[$i]->MatchedUser->id) }}">
+                                    <div class="thread-profile-image" style="background: url('{{$uniqueVerifiedMatchArray[$i]->MatchedUser->imageUrl}}') center center no-repeat; background-size: cover;">
+
+                                    </div>
+                                    <div class="thread-tekst">
+                                        <p class="thread-tekst-name">
+                                            {{str_limit($uniqueVerifiedMatchArray[$i]->MatchedUser->name, $limit = 70, $end = '...')}}
+                                        </p>
+                                        <p class="thread-tekst-message">
+                                            @if($lastMessageArray[$i]['message'] != '')
+                                                {{str_limit($lastMessageArray[$i]->message, $limit = 80, $end = '...')}}
+                                            @else
+                                                No Messages yet! Be the first to say 'Hello!'
+                                            @endif
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        @endfor
+                        @for($i = 0; $i < count($uniqueVerifiedMatchArray); $i++)
+                            <li class="thread">
+                                <a href=" {{ url('chat/solo', $uniqueVerifiedMatchArray[$i]->MatchedUser->id) }}">
+                                    <div class="thread-profile-image" style="background: url('{{$uniqueVerifiedMatchArray[$i]->MatchedUser->imageUrl}}') center center no-repeat; background-size: cover;">
+
+                                    </div>
+                                    <div class="thread-tekst">
+                                        <p class="thread-tekst-name">
+                                            {{str_limit($uniqueVerifiedMatchArray[$i]->MatchedUser->name, $limit = 70, $end = '...')}}
+                                        </p>
+                                        <p class="thread-tekst-message">
+                                            @if($lastMessageArray[$i]['message'] != '')
+                                                {{str_limit($lastMessageArray[$i]->message, $limit = 80, $end = '...')}}
+                                            @else
+                                                No Messages yet! Be the first to say 'Hello!'
+                                            @endif
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        @endfor
                     @else
                         <p class="no-matches-found">You don't have any Matches yet. Get swiping to start chatting!</p>
                     @endif
