@@ -67,6 +67,12 @@ $('document').ready(function(){
         el.children('.concert-image-container').css('height', w);
     });
 
+    var landingel = $('.concert-landing-card');
+    var landingW = landingel.width();
+
+    landingel.children('.concert-landing-image').css('height', landingW);
+
+
 
 
     $(".message-box").scrollTop($(".message-box")[0].scrollHeight);

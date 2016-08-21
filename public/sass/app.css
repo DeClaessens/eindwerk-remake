@@ -542,7 +542,6 @@ body {
         font-size: 8pt; }
 
 .concert-landing-container {
-  padding-top: 100px;
   box-sizing: border-box;
   position: relative;
   text-align: left; }
@@ -1323,6 +1322,12 @@ body {
     .concerts-container ul a .concert-info .concert-info-left {
       font-size: 8pt; }
     .concerts-container ul a .concert-info .concert-info-right {
-      position: absolute; } }
+      position: absolute; }
+
+  .concert-landing-container .concert-landing-card {
+    width: 100%; }
+  .concert-landing-container .concert-info-container {
+    position: static;
+    width: 100%; } }
 
 /*# sourceMappingURL=app.css.map */
