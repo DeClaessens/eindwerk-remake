@@ -12,17 +12,19 @@
                 </div>
             </div>
             <div class="matches-container container">
-                @if($counter = 0)@endif
-                @foreach($matches as $match)
-                    <a href="{{url('user', $match->MatchedUser->id)}}"class="match">
-                        <div class="match-image" style="background: url('{{$match->MatchedUser->imageUrl}}') center center no-repeat; background-size: cover;"></div>
-                        <div class="match-text">
-                            <p class="name matched-user">{{$match->MatchedUser->name}}</p>
-                            <p class="name matched-concert">You matched for {{$amountOfConcertsArray[$counter]}} concerts</p>
-                        </div>
-                    </a>
-                    <?php $counter++ ?>
-                @endforeach
+                @for($i = 0; $i < 10; $i++)
+                    @if($counter = 0)@endif
+                    @foreach($matches as $match)
+                        <a href="{{url('user', $match->MatchedUser->id)}}"class="match">
+                            <div class="match-image" style="background: url('{{$match->MatchedUser->imageUrl}}') center center no-repeat; background-size: cover;"></div>
+                            <div class="match-text">
+                                <p class="name matched-user">{{$match->MatchedUser->name}}</p>
+                                <p class="name matched-concert">You matched for {{$amountOfConcertsArray[$counter]}} concerts</p>
+                            </div>
+                        </a>
+                        <?php $counter++ ?>
+                    @endforeach
+                @endfor
             </div>
         </div>
     </div>

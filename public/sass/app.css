@@ -1403,6 +1403,37 @@ body {
     .current-concert ul li.more-info-concert-container a {
       font-size: 9pt; }
 
-  /* ------- END OF SWIPE -------- */ }
+  /* ------- END OF SWIPE -------- */
+  /* ------- MATCHES ------- */
+  .matches-header {
+    text-align: center; }
+    .matches-header h1 {
+      font-size: 16pt;
+      margin-bottom: 0; }
+    .matches-header h2 {
+      font-size: 9pt;
+      margin-bottom: 10px; }
+    .matches-header .search {
+      position: static;
+      width: 100%; }
+      .matches-header .search input {
+        width: 88%;
+        max-width: 245px;
+        padding-left: 10px;
+        border: 2px solid #edefef;
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none; }
+
+  .matches-container .match {
+    width: 47%;
+    margin: 2% 1%;
+    height: auto; }
+    .matches-container .match .match-image {
+      width: 100%; }
+    .matches-container .match .match-text {
+      font-size: 8pt; } }
 
 /*# sourceMappingURL=app.css.map */
