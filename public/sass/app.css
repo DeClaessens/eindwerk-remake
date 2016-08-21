@@ -35,7 +35,8 @@ body {
   min-height: 100%; }
 
 .outer-wrapper {
-  min-height: 100%; }
+  min-height: 100%;
+  height: 100%; }
 
 .grid-container {
   width: 960px;
@@ -723,7 +724,7 @@ body {
       line-height: 50px;
       font-size: 15pt; }
   .matched-concerts-container ul {
-    max-height: 500px;
+    max-height: 400px;
     overflow-y: scroll; }
     .matched-concerts-container ul li {
       list-style-type: none;
@@ -996,7 +997,8 @@ body {
     padding: 20px;
     box-sizing: border-box;
     overflow-y: scroll;
-    border-bottom: 1px solid #edefef; }
+    border-bottom: 1px solid #edefef;
+    overflow-x: hidden; }
     .chat-box .message-box ul li {
       list-style-type: none;
       display: block;
@@ -1493,6 +1495,30 @@ body {
           .chat-overview-container ul li.thread a .thread-tekst {
             font-size: 10pt; }
           .chat-overview-container ul li.thread a .thread-tekst-message {
-            font-size: 8pt; } }
+            font-size: 8pt; }
+
+  .chat-box {
+    width: 100%;
+    position: relative; }
+    .chat-box .recipient-box {
+      height: 60px;
+      line-height: 60px; }
+      .chat-box .recipient-box a {
+        height: 60px; }
+        .chat-box .recipient-box a .recipient-image {
+          width: 40px;
+          height: 40px; }
+    .chat-box .message-box {
+      overflow-x: hidden;
+      height: calc(100% - 110px); }
+      .chat-box .message-box ul li .message-inner-wrapper p {
+        padding: 5px 10px;
+        font-size: 9pt; }
+
+  .matched-concerts-container {
+    position: static;
+    width: 100%; }
+    .matched-concerts-container ul {
+      max-height: 300px; } }
 
 /*# sourceMappingURL=app.css.map */

@@ -579,4 +579,46 @@
             }
         }
     }
+
+    .chat-box {
+        width: 100%;
+
+        position: relative;
+        .recipient-box {
+            height: 60px;
+            line-height: 60px;
+            a {
+
+                height: 60px;
+
+                .recipient-image {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+        .message-box {
+            overflow-x: hidden;
+            height: calc(100% - 110px);
+            ul {
+                li {
+                    .message-inner-wrapper {
+                        p {
+                            padding: 5px 10px;
+                            font-size: 9pt;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .matched-concerts-container {
+        position: static;
+        width: 100%;
+
+        ul {
+            max-height: 300px;
+        }
+    }
 }
