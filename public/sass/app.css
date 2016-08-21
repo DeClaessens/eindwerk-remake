@@ -1304,7 +1304,7 @@ body {
       width: 100%; }
       .concert-header .search input {
         width: 88%;
-        max-width: 252px;
+        max-width: 245px;
         padding-left: 10px;
         border: 2px solid #edefef;
         border-radius: 0;
@@ -1325,9 +1325,84 @@ body {
       position: absolute; }
 
   .concert-landing-container .concert-landing-card {
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 15px; }
+    .concert-landing-container .concert-landing-card .concert-landing-image {
+      max-height: 300px; }
+    .concert-landing-container .concert-landing-card .top-tracks-container h2 {
+      font-size: 14pt; }
+    .concert-landing-container .concert-landing-card .top-tracks-container ul li i {
+      margin-right: 7px; }
+    .concert-landing-container .concert-landing-card .top-tracks-container ul li p {
+      font-size: 8pt; }
   .concert-landing-container .concert-info-container {
     position: static;
-    width: 100%; } }
+    width: 100%; }
+    .concert-landing-container .concert-info-container h2 {
+      font-size: 14pt; }
+    .concert-landing-container .concert-info-container ul li {
+      font-size: 9pt; }
+
+  /* ------- SWIPE -------- */
+  .swipe-outer-container {
+    display: flex;
+    flex-direction: column; }
+
+  .swipe-container {
+    position: static;
+    width: 100%;
+    order: 2;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0; }
+    .swipe-container h2 {
+      font-size: 14pt;
+      text-align: center; }
+    .swipe-container h4 {
+      font-size: 7pt;
+      text-align: center; }
+    .swipe-container #tinderslide {
+      width: 80%; }
+      .swipe-container #tinderslide li {
+        position: fixed;
+        width: 100%;
+        height: auto; }
+
+  .current-concert {
+    position: static;
+    width: 100%;
+    order: 1;
+    margin-bottom: 20px; }
+    .current-concert ul li {
+      min-height: 30px;
+      line-height: 30px; }
+      .current-concert ul li h2 {
+        font-size: 14pt;
+        font-weight: normal; }
+    .current-concert ul li.image-name-concert-container {
+      line-height: 30px;
+      padding: 0; }
+      .current-concert ul li.image-name-concert-container img {
+        display: none; }
+      .current-concert ul li.image-name-concert-container .text-container {
+        position: static;
+        padding-left: 20px;
+        box-sizing: border-box; }
+        .current-concert ul li.image-name-concert-container .text-container p {
+          display: inline-block;
+          margin-right: 5px;
+          margin-bottom: 0;
+          font-size: 9pt; }
+        .current-concert ul li.image-name-concert-container .text-container p:after {
+          content: "-";
+          position: relative;
+          left: 5px; }
+        .current-concert ul li.image-name-concert-container .text-container p:last-child:after {
+          content: "";
+          left: 0; }
+    .current-concert ul li.more-info-concert-container a {
+      font-size: 9pt; }
+
+  /* ------- END OF SWIPE -------- */ }
 
 /*# sourceMappingURL=app.css.map */

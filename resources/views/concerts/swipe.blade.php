@@ -3,52 +3,55 @@
 @section('content')
     <div class="full-page">
         <div class="grid-container">
-            <div class="current-concert">
-                <ul>
-                    <li>
-                        <h2>Current Concert</h2>
-                    </li>
-                    <li class="image-name-concert-container">
-                        <img src="{{$concert->concertImageUrl}}">
-                        <div class="text-container">
-                            <p>{{$concert->name}}</p>
-                            <p>{{$concert->venue}}</p>
-                            <p>{{$concert->date->format('d/m/Y')}}</p>
-                        </div>
-                    </li>
-                    <li class="more-info-concert-container">
-                        <a target="_blank" href="{{$concert->concertUrl}}">More Info</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="swipe-container">
-                <h2>Swipin' Time!</h2>
-                <h4>Find people you like! Left means 'no', Right means 'yes'!</h4>
-                <div id="tinderslide">
+            <div class="swipe-outer-container">
+                <div class="current-concert">
                     <ul>
-                        <input type="hidden" class="csrf" value="{!! csrf_token() !!}">
-                        <?php $counter = 1; ?>
-                        @foreach($usersCollection as $user)
-                            <li class="swipe-card" data-userid="{{$user->id}}" data-concertid="{{$concert_id}}">
-                                <div class="image-container">
-                                    <div class="like-dislike-notification"></div>
-                                    <img src="{{ URL::to('/') }}{{$user->imageUrl}}">
-                                </div>
-                                <div class="text-container">
-                                    <h2>{{$user->name}}, 23</h2>
-                                    <p>{{$user->bio}}</p>
-                                </div>
-
-                                <!--<a href="{{URL::to('swiperight',  array($user->id, $concert_id))}}">Yes</a><a href="{{URL::to('swipeleft',  array($user->id, $concert_id))}}">No</a>-->
-                            </li>
-                        @endforeach
+                        <li>
+                            <h2>Current Concert</h2>
+                        </li>
+                        <li class="image-name-concert-container">
+                            <img src="{{$concert->concertImageUrl}}">
+                            <div class="text-container">
+                                <p>{{$concert->name}}</p>
+                                <p>{{$concert->venue}}</p>
+                                <p>{{$concert->date->format('d/m/Y')}}</p>
+                            </div>
+                        </li>
+                        <li class="more-info-concert-container">
+                            <a target="_blank" href="{{$concert->concertUrl}}">More Info</a>
+                        </li>
                     </ul>
-                    <a href="{{url('/concerts')}}" class="no-more-people-found">
-                        <p>We can't find anyone else. Click to find another concert</p>
-                    </a>
+                </div>
+
+                <div class="swipe-container">
+                    <h2>Swipin' Time!</h2>
+                    <h4>Find people you like! Left means 'no', Right means 'yes'!</h4>
+                    <div id="tinderslide">
+                        <ul>
+                            <input type="hidden" class="csrf" value="{!! csrf_token() !!}">
+                            <?php $counter = 1; ?>
+                            @foreach($usersCollection as $user)
+                                <li class="swipe-card" data-userid="{{$user->id}}" data-concertid="{{$concert_id}}">
+                                    <div class="image-container">
+                                        <div class="like-dislike-notification"></div>
+                                        <img src="{{$user->imageUrl}}">
+                                    </div>
+                                    <div class="text-container">
+                                        <h2>{{$user->name}}, 23</h2>
+                                        <p>{{$user->bio}}</p>
+                                    </div>
+
+                                    <!--<a href="{{URL::to('swiperight',  array($user->id, $concert_id))}}">Yes</a><a href="{{URL::to('swipeleft',  array($user->id, $concert_id))}}">No</a>-->
+                                </li>
+                            @endforeach
+                        </ul>
+                        <a href="{{url('/concerts')}}" class="no-more-people-found">
+                            <p>We can't find anyone else. Click to find another concert</p>
+                        </a>
+                    </div>
                 </div>
             </div>
+
 
         </div>
     </div>
