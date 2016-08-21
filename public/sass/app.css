@@ -1125,6 +1125,8 @@ body {
           .chat-overview-container ul li.thread a .thread-tekst .thread-tekst-name {
             font-weight: bold;
             margin-bottom: 5px; }
+          .chat-overview-container ul li.thread a .thread-tekst .thread-tekst-message {
+            width: 90%; }
     .chat-overview-container ul li:last-child {
       border-bottom: 0; }
 
@@ -1488,7 +1490,6 @@ body {
         .chat-overview-container ul li.thread a .thread-tekst {
           font-size: 10pt; }
         .chat-overview-container ul li.thread a .thread-tekst-message {
-          max-width: 90%;
           font-size: 8pt; } }
 
 /*# sourceMappingURL=app.css.map */
