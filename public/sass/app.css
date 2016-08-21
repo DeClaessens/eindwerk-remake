@@ -434,7 +434,8 @@ body {
 .matches-container {
   height: auto;
   width: 100%;
-  box-shadow: none; }
+  box-shadow: none;
+  padding-bottom: 20px; }
   .matches-container .match {
     display: inline-block;
     width: 217px;
@@ -510,7 +511,8 @@ body {
   color: #ff3d3d; }
 .concerts-container ul {
   padding-top: 10px;
-  text-align: left; }
+  text-align: left;
+  padding-bottom: 20px; }
   .concerts-container ul a {
     display: inline-block;
     margin: 10px;
