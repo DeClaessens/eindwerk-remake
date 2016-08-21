@@ -1479,7 +1479,7 @@ body {
         font-size: 14pt; }
     .chat-overview-container ul {
       min-height: 0;
-      max-height: 500px; }
+      max-height: 370px; }
       .chat-overview-container ul li.thread a {
         padding: 10px 5px 10px 10px; }
         .chat-overview-container ul li.thread a .thread-profile-image {
