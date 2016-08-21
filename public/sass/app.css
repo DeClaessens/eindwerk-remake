@@ -1207,7 +1207,12 @@ body {
         width: 100%;
         height: 20px;
         box-sizing: border-box;
-        border-radius: 0; }
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none;
+        background: white; }
       .auth-container .form-horizontal .checkbox input {
         width: auto;
         margin-right: 3px;
