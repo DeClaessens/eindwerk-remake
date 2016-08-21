@@ -1,4 +1,9 @@
 @media screen and (max-width: 1000px) {
+    select,
+    textarea,
+    input {
+        font-size: 16px;
+    }
     input[type=text], input[type=password], input[type=email] {
         border-radius: 0;
         -webkit-appearance: none;
@@ -267,6 +272,7 @@
             input {
                 width: 88%;
                 max-width: 252px;
+                padding-left: 10px;
 
                 border: 2px solid #edefef;
 
