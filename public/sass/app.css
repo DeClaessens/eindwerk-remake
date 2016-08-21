@@ -1364,7 +1364,7 @@ body {
     .swipe-container #tinderslide {
       width: 80%; }
       .swipe-container #tinderslide li {
-        position: fixed;
+        position: relative;
         width: 100%;
         height: auto; }
 
