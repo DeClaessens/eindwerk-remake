@@ -1,4 +1,11 @@
 @media screen and (max-width: 1000px) {
+    input[type=text], input[type=password], input[type=email] {
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline:none;
+    }
     /* ------- VARIA ------- */
     .full-page {
         padding-bottom: 50px;
@@ -127,13 +134,7 @@
                 background: white;
             }
 
-            input[type=text], input[type=password], input[type=email] {
-                border-radius: 0;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                outline:none;
-            }
+
 
             .checkbox input {
                 width: auto;
@@ -268,6 +269,7 @@
                 max-width: 252px;
 
                 border: 2px solid #edefef;
+
                 border-radius: 0;
                 -webkit-appearance: none;
                 -moz-appearance: none;

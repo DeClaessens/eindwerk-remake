@@ -29,7 +29,6 @@ class SocialAccountService
             ->whereProviderUserId($providerUser->getId())
             ->first();
 
-        dd($user);
         if ($user) {
             return $user;
         } else {

@@ -1129,6 +1129,13 @@ body {
   padding-left: 20px; }
 
 @media screen and (max-width: 1000px) {
+  input[type=text], input[type=password], input[type=email] {
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none; }
+
   /* ------- VARIA ------- */
   .full-page {
     padding-bottom: 50px; }
@@ -1208,12 +1215,6 @@ body {
         height: 20px;
         box-sizing: border-box;
         background: white; }
-      .auth-container .form-horizontal input[type=text], .auth-container .form-horizontal input[type=password], .auth-container .form-horizontal input[type=email] {
-        border-radius: 0;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        outline: none; }
       .auth-container .form-horizontal .checkbox input {
         width: auto;
         margin-right: 3px;
@@ -1305,7 +1306,12 @@ body {
       .concert-header .search input {
         width: 88%;
         max-width: 252px;
-        border: 2px solid #edefef; }
+        border: 2px solid #edefef;
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none; }
 
   .concerts-container ul a {
     width: 47%;
