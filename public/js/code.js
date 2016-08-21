@@ -60,6 +60,13 @@ $('document').ready(function(){
         }
     });
 
+    $('.concert-list a').each(function(){
+        var el = $(this);
+        var w = el.width();
+
+        el.children('.concert-image-container').css('height', w);
+    });
+
 
 
     $(".message-box").scrollTop($(".message-box")[0].scrollHeight);

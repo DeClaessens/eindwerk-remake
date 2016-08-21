@@ -1287,6 +1287,35 @@ body {
     .profile-container .profile-menu-item {
       font-size: 9pt;
       min-height: 40px;
-      line-height: 40px; } }
+      line-height: 40px; }
+
+  /* ------- END OF PROFILE -------- */
+  /* ------- CONCERTS -------- */
+  .concert-header {
+    text-align: center; }
+    .concert-header h1 {
+      font-size: 16pt;
+      margin-bottom: 0; }
+    .concert-header h2 {
+      font-size: 9pt;
+      margin-bottom: 10px; }
+    .concert-header .search {
+      position: static;
+      width: 100%; }
+      .concert-header .search input {
+        width: 88%;
+        max-width: 252px;
+        border: 2px solid #edefef; }
+
+  .concerts-container ul a {
+    width: 47%;
+    margin: 2% 1%;
+    height: auto; }
+    .concerts-container ul a .concert-image-container {
+      width: 100%; }
+    .concerts-container ul a .concert-info .concert-info-left {
+      font-size: 8pt; }
+    .concerts-container ul a .concert-info .concert-info-right {
+      position: absolute; } }
 
 /*# sourceMappingURL=app.css.map */

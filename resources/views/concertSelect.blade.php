@@ -16,7 +16,7 @@
                 @foreach($concerts as $concert)
                     <a href="{{URL::to('concert/select', $concert->id)}}" class="column concert-list-item">
                         <div class="concert-image-container" style="background: url('{{$concert->concertImageUrl}}'), url('{{asset('img/default.jpg')}}');
-                                background-size: 100%;"></div>
+                                background-size: cover;"></div>
                         <div class="concert-info">
                             <p class="concert-info-left">{{str_limit($concert->name, $limit = 20, $end = '...')}}</p>
                             <p class="concert-info-right">{{$concert->venue}} - {{$concert->date->format('d/m/Y')}}</p>

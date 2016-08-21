@@ -246,4 +246,62 @@
             line-height: 40px;
         }
     }
+    /* ------- END OF PROFILE -------- */
+
+    /* ------- CONCERTS -------- */
+
+    .concert-header {
+        text-align: center;
+        h1 {
+            font-size: 16pt;
+            margin-bottom: 0;
+        }
+        h2 {
+            font-size: 9pt;
+            margin-bottom: 10px;
+        }
+        .search {
+            position: static;
+            width: 100%;
+            input {
+                width: 88%;
+                max-width: 252px;
+
+                border: 2px solid #edefef;
+                border-radius: 0;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                outline:none;
+            }
+
+            .icon {
+
+            }
+        }
+    }
+    .concerts-container{
+        ul{
+            a {
+                width: 47%;
+                margin: 2% 1%;
+
+                height: auto;
+
+                .concert-image-container {
+                    width: 100%;
+                }
+                .concert-info {
+                    .concert-info-left {
+                        font-size: 8pt;
+                    }
+                    .concert-info-right {
+                        position: absolute;
+                    }
+                }
+            }
+        }
+    }
+
+
 }
