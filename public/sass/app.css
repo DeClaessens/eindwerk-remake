@@ -1483,14 +1483,16 @@ body {
     .chat-overview-container ul {
       min-height: 0;
       max-height: 370px; }
-      .chat-overview-container ul li.thread a {
-        padding: 10px 5px 10px 10px; }
-        .chat-overview-container ul li.thread a .thread-profile-image {
-          width: 40px;
-          height: 40px; }
-        .chat-overview-container ul li.thread a .thread-tekst {
-          font-size: 10pt; }
-        .chat-overview-container ul li.thread a .thread-tekst-message {
-          font-size: 8pt; } }
+      .chat-overview-container ul li.thread {
+        min-height: 0; }
+        .chat-overview-container ul li.thread a {
+          padding: 10px 5px 10px 10px; }
+          .chat-overview-container ul li.thread a .thread-profile-image {
+            width: 40px;
+            height: 40px; }
+          .chat-overview-container ul li.thread a .thread-tekst {
+            font-size: 10pt; }
+          .chat-overview-container ul li.thread a .thread-tekst-message {
+            font-size: 8pt; } }
 
 /*# sourceMappingURL=app.css.map */
