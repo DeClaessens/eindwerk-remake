@@ -52,7 +52,7 @@ class UserController extends Controller
         $this->user = $user;
         $this->chat = $chat;
         $this->concert = $concert;
-        $this->facebook = $facebook;
+        
     }
 
     public function profile(){
