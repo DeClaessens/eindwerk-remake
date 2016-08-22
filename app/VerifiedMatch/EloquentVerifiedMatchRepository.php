@@ -119,8 +119,23 @@ class EloquentVerifiedMatchRepository implements VerifiedMatchRepository
         return $query;
     }
 
-    public function delete($id)
+    public function delete($authId, $matchId)
     {
-        $verifiedMatch->delete();
+        $query = $this->model
+            ->where(function ($query) use ($authId, $matchId) {
+                $query->where('user1', $authId)
+                    ->where('user2', $matchId);
+            })
+            ->orWhere(function ($query) use ($authId, $matchId) {
+                $query->where('user1', $matchId)
+                    ->where('user2', $authId);
+            })
+            ->get();
+
+        for($i = 0; $i < count($query); $i++) {
+            $query[$i]->delete();
+        }
+
+        return 1;
     }
 }

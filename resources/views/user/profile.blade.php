@@ -24,6 +24,9 @@
                             <p class="favorite-artists-artists">{{$user->favoriteArtists}}</p>
                         </li>
                         <li>
+                            <a href="{{ url('/verifiedmatch/delete', $user->id) }}">Delete this Match</a>
+                        </li>
+                        <li>
                             <a href="{{ url('/chat/solo', $user->id) }}">Send a Message</a>
                         </li>
                     </ul>

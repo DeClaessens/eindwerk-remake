@@ -36,4 +36,6 @@ interface ChatRepository
     public function getXLastMessages($user1, $amount);
 
     public function getLastMessageFromThread($user1, $user2);
+
+    public function deleteAllMessagesOfMatches($authid, $id);
 }

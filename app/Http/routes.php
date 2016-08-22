@@ -35,6 +35,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/chat', 'ChatController@index');
     Route::get('/chat/solo/{id}', 'ChatController@showChat');
 
+    Route::get('/verifiedmatch/delete/{id}', 'VerifiedMatchController@delete');
+
     Route::post('/chat/solo/send/{id}', 'ChatController@sendMessage');
 
     Route::get('/concert/select/{concertId}', 'ConcertController@showConcertLanding');

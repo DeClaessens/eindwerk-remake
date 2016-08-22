@@ -91,4 +91,23 @@ class EloquentPotentialMatchRepository implements PotentialMatchRepository
             return 0;
         }
     }
+
+    public function delete($authId, $id) {
+        $query = $this->model
+            ->where(function ($query) use ($authId, $id) {
+                $query->where('user1', $authId)
+                    ->where('user2', $id);
+            })
+            ->orWhere(function ($query) use ($authId, $id) {
+                $query->where('user1', $id)
+                    ->where('user2', $authId);
+            })
+            ->get();
+
+        for($i = 0; $i < count($query); $i++) {
+            $query[$i]->delete();
+        }
+
+        return 1;
+    }
 }

@@ -23,4 +23,6 @@ interface PotentialMatchRepository
     public function checkIfMatch($user1, $user2, $concert_id);
 
     public function checkIfOneSidedMatch($user1, $user2, $concert_id);
+
+    public function delete($authId, $id);
 }

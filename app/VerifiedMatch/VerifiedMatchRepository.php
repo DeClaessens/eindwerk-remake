@@ -40,5 +40,5 @@ interface VerifiedMatchRepository
 
     public function findXLastMatchesById($id, $amount);
 
-    public function delete($verifiedMatch);
+    public function delete($authId, $matchId);
 }

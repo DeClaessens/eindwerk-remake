@@ -75,4 +75,22 @@ class EloquentChatRepository implements ChatRepository
             ->first();
         return $query;
     }
+
+    public function deleteAllMessagesOfMatches($authid, $id) {
+        $query = $this->model->where(function ($query) use ($authid, $id) {
+            $query->where('sender', $authid)
+                ->where('receiver', $id);
+        })
+            ->orWhere(function ($query) use ($authid, $id) {
+                $query->where('receiver', $authid)
+                    ->where('sender', $id);
+            })
+            ->get();
+
+        for($i = 0; $i < count($query); $i++) {
+            $query[$i]->delete();
+        }
+
+        return 1;
+    }
 }
