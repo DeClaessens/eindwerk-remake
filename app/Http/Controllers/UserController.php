@@ -14,6 +14,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
+use Vinkla\Facebook\FacebookManager;
 
 class UserController extends Controller
 {
@@ -34,6 +35,10 @@ class UserController extends Controller
      * @var ConcertRepository
      */
     private $concert;
+    /**
+     * @var FacebookManager
+     */
+    private $facebook;
 
     /**
      * UserController constructor.
@@ -43,7 +48,7 @@ class UserController extends Controller
      * @param ChatRepository $chat
      * @param ConcertRepository $concert
      */
-    public function __construct(Guard $auth, VerifiedMatchRepository $verifiedMatch, UserRepository $user, ChatRepository $chat, ConcertRepository $concert)
+    public function __construct(Guard $auth, VerifiedMatchRepository $verifiedMatch, UserRepository $user, ChatRepository $chat, ConcertRepository $concert, FacebookManager $facebook)
     {
         $this->middleware('auth');
         $this->auth = $auth;
@@ -51,6 +56,7 @@ class UserController extends Controller
         $this->user = $user;
         $this->chat = $chat;
         $this->concert = $concert;
+        $this->facebook = $facebook;
     }
 
     public function profile(){
@@ -142,15 +148,12 @@ class UserController extends Controller
     }
 
     public function facebookTest() {
-        $fb = Facebook::make();
         $user = $this->auth->user();
-        try {
-            $response = $fb->get('/me?fields=id,name,email', $user->provider_user_id);
-        } catch(\Facebook\Exceptions\FacebookSDKException $e) {
-            dd($e->getMessage());
-        }
 
-        $userNode = $response->getGraphUser();
-        printf('Hello, %s!', $userNode->getName());
+        $query = $this->facebook->get('/me?fields=id,name, first_name', $user->provider_user_id);
+        $response = $query->getGraphUser();
+        dd($response['first_name']);
+
+
     }
 }

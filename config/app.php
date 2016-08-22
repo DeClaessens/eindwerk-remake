@@ -166,7 +166,7 @@ return [
         App\Providers\ChatServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Vinkla\Pusher\PusherServiceProvider::class,
-        SammyK\LaravelFacebookSdk\LaravelFacebookSdkServiceProvider::class,
+        Vinkla\Facebook\FacebookServiceProvider::class,
 
 
     ],
@@ -217,7 +217,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'Facebook' => SammyK\LaravelFacebookSdk\FacebookFacade::class,
+        'Facebook' => Vinkla\Facebook\Facades\Facebook::class,
     ],
 
 ];
