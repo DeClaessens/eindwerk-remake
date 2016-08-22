@@ -25,6 +25,7 @@ $('document').ready(function(){
             console.log(item.data('userid'));
         },
         onLike: function (item) {
+            console.log(item.data('userid'));
             var token = $('.csrf').val();
             /*$.ajax({
                 type: 'POST',
