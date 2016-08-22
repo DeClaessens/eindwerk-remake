@@ -9,6 +9,7 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\App;
 
 class PotentialMatchController extends Controller
 {
@@ -52,7 +53,7 @@ class PotentialMatchController extends Controller
         $otherUser = $this->user->find($id);    //technically we only need the id, and we already have it, so no issues here
 
         $authenticatedUser = $this->auth->user()->id;
-        
+
         if($this->potentialMatch->checkIfMatch($authenticatedUser, $otherUser->id, $concertId)){
             //CHECK IF VARIFIED MATCH ALREADY EXISTS ?
             //TECHNICALLY THIS SHOULDNT BE NEEDED AS WE SHOULD CLEAR THE MATCHES BEFORE VIEWING THEM
