@@ -167,6 +167,7 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Vinkla\Pusher\PusherServiceProvider::class,
         Vinkla\Facebook\FacebookServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
 
     ],
@@ -218,6 +219,8 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Facebook' => Vinkla\Facebook\Facades\Facebook::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+
     ],
 
 ];

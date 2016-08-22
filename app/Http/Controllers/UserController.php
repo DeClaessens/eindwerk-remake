@@ -14,6 +14,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
+use Intervention\Image\Facades\Image;
 use Vinkla\Facebook\FacebookManager;
 
 class UserController extends Controller
@@ -109,11 +110,12 @@ class UserController extends Controller
             if ($editUser->imageUrl != '') {
                 File::delete($editUser->imageUrl);
             }
-
+            $imageName = $editUser->id . substr(md5(microtime()),rand(0,26),5) . $request->file('imageUrl')->getClientOriginalName();
+            Image::make($request->file('imageUrl'))->orientate()->save(base_path() . '/public/uploads/users/images/' . $imageName);
             //save image to public/uploads/users/images and give it a prefixed name with user id to prevent overwrites
-            $imageName = $editUser->id . $request->file('imageUrl')->getClientOriginalName();
-            $path = base_path() . '/public/uploads/users/images/';
-            $request->file('imageUrl')->move($path, $imageName);
+            //$imageName = $editUser->id . $request->file('imageUrl')->getClientOriginalName();
+            //$path = base_path() . '/public/uploads/users/images/';
+            //$request->file('imageUrl')->move($path, $imageName);
 
             $editUser->imageUrl = '/uploads/users/images/' . $imageName;
         }
