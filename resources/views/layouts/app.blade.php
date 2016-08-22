@@ -73,6 +73,11 @@
         <script src="//js.pusher.com/3.0/pusher.min.js"></script>
         <script src="{{ asset('js/notify.min.js') }}"></script>
         <script>
+            Pusher.log = function(message) {
+                if (window.console && window.console.log) {
+                    window.console.log(message);
+                }
+            };
             var pusher = new Pusher("{{env("PUSHER_KEY")}}", {
                 cluster: 'eu'
             });

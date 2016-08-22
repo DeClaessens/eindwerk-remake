@@ -58,6 +58,16 @@ class PotentialMatchController extends Controller
 
             $this->verifiedMatch->matchUsersTogether($authenticatedUser, $otherUser->id, $concertId);
 
+            $pusher = App::make('pusher');
+
+            $pusher->trigger( 'gocon-channel',
+                'user-notify-' . $otherUser->id,
+                array('text' => 'You have a new match with ' . $otherUser->voornaam .' !'));
+
+            $pusher->trigger( 'gocon-channel',
+                'user-notify-' . $authenticatedUser->id,
+                array('text' => 'You have a new match with ' . $otherUser->voornaam .' !'));
+
         } else {
             $newPotentialMatch = $this->potentialMatch->make();
 

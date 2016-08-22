@@ -119,7 +119,7 @@ class EloquentVerifiedMatchRepository implements VerifiedMatchRepository
         return $query;
     }
 
-    public function delete($verifiedMatch)
+    public function delete($id)
     {
         $verifiedMatch->delete();
     }

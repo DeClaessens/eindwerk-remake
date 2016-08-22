@@ -102,7 +102,7 @@ class ChatController extends Controller
         $pusher->trigger( 'gocon-channel',
             'user-notify-' . $userid,
             array('text' => $authUser->voornaam . ' heeft je een bericht gestuurd.'));
-
+        
         return redirect()->back();
     }
 }

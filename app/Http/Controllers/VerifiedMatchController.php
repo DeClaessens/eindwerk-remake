@@ -46,4 +46,13 @@ class VerifiedMatchController extends Controller
         return view('matches.index', compact('matches', 'amountOfConcertsArray'));
     }
 
+    public function delete($id)
+    {
+        // TODO
+
+        // 1. Pass $id to repository
+        // 2. Delete all Matches that are combined with the Authenticated User
+        // 3. return with Notification.
+    }
+
 }
