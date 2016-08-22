@@ -146,7 +146,7 @@ body {
   height: 100%;
   position: absolute;
   text-align: center;
-  overflow-y: scroll; }
+  overflow-y: auto; }
   .homepage-container .homepage-content {
     position: relative;
     top: 50%;
@@ -727,7 +727,7 @@ body {
       font-size: 15pt; }
   .matched-concerts-container ul {
     max-height: 400px;
-    overflow-y: scroll; }
+    overflow-y: auto; }
     .matched-concerts-container ul li {
       list-style-type: none;
       min-height: 50px;
@@ -998,7 +998,7 @@ body {
     height: calc(100% - 125px);
     padding: 20px;
     box-sizing: border-box;
-    overflow-y: scroll;
+    overflow-y: auto;
     border-bottom: 1px solid #edefef;
     overflow-x: hidden; }
     .chat-box .message-box ul li {
@@ -1102,7 +1102,7 @@ body {
       font-weight: normal; }
   .chat-overview-container ul {
     max-height: 670px;
-    overflow-y: scroll; }
+    overflow-y: auto; }
     .chat-overview-container ul li.thread {
       list-style-type: none;
       min-height: 70px;

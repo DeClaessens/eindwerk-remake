@@ -165,6 +165,7 @@ return [
         App\Providers\PotentialMatchServiceProvider::class,
         App\Providers\ChatServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Vinkla\Pusher\PusherServiceProvider::class,
 
 
     ],

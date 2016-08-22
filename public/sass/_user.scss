@@ -91,7 +91,7 @@
     }
     ul {
         max-height: 400px;
-        overflow-y: scroll;
+        overflow-y: auto;
         li {
             list-style-type: none;
             min-height: 50px;

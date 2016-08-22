@@ -46,7 +46,7 @@
         height: calc(100% - 125px);
         padding: 20px;
         box-sizing: border-box;
-        overflow-y: scroll;
+        overflow-y: auto;
         border-bottom: 1px solid #edefef;
         overflow-x: hidden;
         ul {
@@ -191,7 +191,7 @@
     }
     ul {
         max-height: 670px;
-        overflow-y: scroll;
+        overflow-y: auto;
         li.thread {
             list-style-type: none;
             min-height: 70px;

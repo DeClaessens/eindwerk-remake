@@ -37,7 +37,7 @@
                                         <img src="{{$user->imageUrl}}">
                                     </div>
                                     <div class="text-container">
-                                        <h2>{{$user->name}}, 23</h2>
+                                        <h2>{{$user->voornaam}}</h2>
                                         <p>{{$user->bio}}</p>
                                     </div>
 

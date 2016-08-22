@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +49,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/stubru', 'HomeController@stubru');
 
     Route::post('/swiperight/{userId}/{concertId}', 'PotentialMatchController@soloYes');
-});
-Route::auth();
 
+    Route::get('/bridge', 'NotificationController@bridge');
+});
+
+Route::auth();
 Route::get('/home', 'HomeController@index');
