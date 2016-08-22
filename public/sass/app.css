@@ -542,7 +542,7 @@ body {
         margin-bottom: 5px; }
       .concerts-container ul a .concert-info p:last-child {
         font-weight: 100;
-        font-size: 8pt; }
+        font-size: pt; }
 
 .concert-landing-container {
   box-sizing: border-box;
