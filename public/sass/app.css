@@ -1140,6 +1140,12 @@ body {
   line-height: 70px;
   padding-left: 20px; }
 
+@media screen and (max-width: 800px) {
+  .concerts-container ul a {
+    width: 47% !important; }
+
+  .matches-container .match {
+    width: 47% !important; } }
 @media screen and (max-width: 1000px) {
   input[type=text], input[type=password], input[type=email], input[type=submit] {
     border-radius: 0;
@@ -1333,7 +1339,7 @@ body {
         outline: none; }
 
   .concerts-container ul a {
-    width: 47%;
+    width: 22%;
     margin: 2% 1%;
     height: auto; }
     .concerts-container ul a .concert-image-container {
@@ -1341,7 +1347,9 @@ body {
     .concerts-container ul a .concert-info .concert-info-left {
       font-size: 8pt; }
     .concerts-container ul a .concert-info .concert-info-right {
-      position: absolute; }
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%); }
 
   .concert-landing-container .concert-landing-card {
     width: 100%;
@@ -1447,7 +1455,7 @@ body {
         outline: none; }
 
   .matches-container .match {
-    width: 47%;
+    width: 22%;
     margin: 2% 1%;
     height: auto; }
     .matches-container .match .match-image {
@@ -1477,7 +1485,8 @@ body {
           font-size: 9pt; }
     .user-profile-container .matched-concerts-container {
       position: static;
-      width: 100%; }
+      width: 100%;
+      max-width: 500px; }
       .user-profile-container .matched-concerts-container ul {
         max-height: 300px; }
 
@@ -1526,7 +1535,8 @@ body {
 
   .matched-concerts-container {
     position: static;
-    width: 100%; }
+    width: 100%;
+    max-width: 500px; }
     .matched-concerts-container ul {
       max-height: 300px; } }
 
