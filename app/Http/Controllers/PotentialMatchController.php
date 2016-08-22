@@ -72,7 +72,7 @@ class PotentialMatchController extends Controller
 
             $pusher->trigger( 'gocon-channel',
                 'user-notify-' . $otherUser->id,
-                array('text' => 'You have a new match with ' . $otherUser->voornaam .' !'));
+                array('text' => 'You have a new match with ' . $authenticatedUser->voornaam .' !'));
 
             $pusher->trigger( 'gocon-channel',
                 'user-notify-' . $authenticatedUser,
