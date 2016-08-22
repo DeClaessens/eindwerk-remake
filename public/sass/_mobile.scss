@@ -203,6 +203,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        padding-bottom: 20px;
     }
 
     .hub-container {
@@ -210,7 +211,6 @@
         order: 2;
         display: block;
         width: 100%;
-        padding-bottom: 20px;
         .hub-menu-item {
             min-height: 30px;
             p {
@@ -528,7 +528,7 @@
 
     .user-profile-container {
         width: 100%;
-
+        padding-bottom: 20px;
         .user-container {
             width: 100%;
             margin-bottom: 20px;

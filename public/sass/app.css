@@ -1269,14 +1269,14 @@ body {
   .profile-position-container {
     width: 100%;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    padding-bottom: 20px; }
 
   .hub-container {
     position: static;
     order: 2;
     display: block;
-    width: 100%;
-    padding-bottom: 20px; }
+    width: 100%; }
     .hub-container .hub-menu-item {
       min-height: 30px; }
       .hub-container .hub-menu-item p {
@@ -1464,7 +1464,8 @@ body {
       font-size: 8pt; }
 
   .user-profile-container {
-    width: 100%; }
+    width: 100%;
+    padding-bottom: 20px; }
     .user-profile-container .user-container {
       width: 100%;
       margin-bottom: 20px; }
