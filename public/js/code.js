@@ -80,10 +80,6 @@ $('document').ready(function(){
     landingel.children('.concert-landing-image').css('height', landingW);
 
 
-
-
-
     $(".message-box").scrollTop($(".message-box")[0].scrollHeight);
-
 
 });

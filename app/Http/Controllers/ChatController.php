@@ -9,6 +9,7 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\App;
 
 class ChatController extends Controller
 {
@@ -94,6 +95,13 @@ class ChatController extends Controller
         $newChat->message = $request->message;
 
         $this->chat->save($newChat);
+
+        $userid = $id;
+        $pusher = App::make('pusher');
+
+        $pusher->trigger( 'gocon-channel',
+            'user-notify-' . $userid,
+            array('text' => $authUser->voornaam . ' heeft je een bericht gestuurd.'));
 
         return redirect()->back();
     }

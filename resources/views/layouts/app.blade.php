@@ -69,21 +69,22 @@
     <script src="{{ asset('js/jquery.transform2d.js') }}"></script>
     <script src="{{ asset('js/jquery.jTinder.js') }}"></script>
     <script src="{{ asset('js/holmes.js') }}"></script>
-    <script src="//js.pusher.com/3.0/pusher.min.js"></script>
-    <script>
-        var pusher = new Pusher("{{env("PUSHER_KEY")}}", {
-            cluster: 'eu'
-        });
+    @if(Auth::check())
+        <script src="//js.pusher.com/3.0/pusher.min.js"></script>
+        <script src="{{ asset('js/notify.min.js') }}"></script>
+        <script>
+            var pusher = new Pusher("{{env("PUSHER_KEY")}}", {
+                cluster: 'eu'
+            });
 
-        Pusher.log = function(msg) {
-            console.log(msg);
-        };
+            var channel = pusher.subscribe('gocon-channel');
+            channel.bind('user-notify-{{Auth::user()->id}}', function(data) {
+                $.notify(data.text);
+            });
 
-        var channel = pusher.subscribe('test-channel');
-        channel.bind('test-event', function(data) {
-            alert(data.text);
-        });
-    </script>
+        </script>
+    @endif
+
     <script src="{{ asset('js/code.js') }}"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
