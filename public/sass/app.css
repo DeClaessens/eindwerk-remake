@@ -1214,6 +1214,8 @@ body {
     width: auto; }
     .auth-container .panel-heading {
       font-size: 14pt; }
+    .auth-container .panel-body {
+      position: relative; }
     .auth-container .form-horizontal {
       width: auto;
       margin-right: 0;
