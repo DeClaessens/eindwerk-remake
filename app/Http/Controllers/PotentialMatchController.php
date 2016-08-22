@@ -55,6 +55,14 @@ class PotentialMatchController extends Controller
         $authenticatedUser = $this->auth->user()->id;
 
         if($this->potentialMatch->checkIfMatch($authenticatedUser, $otherUser->id, $concertId)){
+            $newPotentialMatch = $this->potentialMatch->make();
+
+            $newPotentialMatch->user1 = $authenticatedUser;
+            $newPotentialMatch->user2 = $otherUser->id;
+            $newPotentialMatch->concert_id = $concertId;
+
+            $this->potentialMatch->save($newPotentialMatch);
+            
             //CHECK IF VARIFIED MATCH ALREADY EXISTS ?
             //TECHNICALLY THIS SHOULDNT BE NEEDED AS WE SHOULD CLEAR THE MATCHES BEFORE VIEWING THEM
 
