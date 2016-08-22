@@ -62,7 +62,7 @@ class PotentialMatchController extends Controller
             $newPotentialMatch->concert_id = $concertId;
 
             $this->potentialMatch->save($newPotentialMatch);
-            
+
             //CHECK IF VARIFIED MATCH ALREADY EXISTS ?
             //TECHNICALLY THIS SHOULDNT BE NEEDED AS WE SHOULD CLEAR THE MATCHES BEFORE VIEWING THEM
 
@@ -72,7 +72,7 @@ class PotentialMatchController extends Controller
 
             $pusher->trigger( 'gocon-channel',
                 'user-notify-' . $otherUser->id,
-                array('text' => 'You have a new match with ' . $otherUser->voornaam .' !'));
+                array('text' => 'You have a new match with ' . $authenticatedUser->voornaam .' !'));
 
             $pusher->trigger( 'gocon-channel',
                 'user-notify-' . $authenticatedUser,
