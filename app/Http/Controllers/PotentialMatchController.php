@@ -51,12 +51,13 @@ class PotentialMatchController extends Controller
         //if a previous PotentialMatch between the two is already found, save the data into the ConfirmedMatch table
         $otherUser = $this->user->find($id);    //technically we only need the id, and we already have it, so no issues here
 
-        $authenticatedUser = $this->auth->user();
-        if($this->potentialMatch->checkIfMatch($authenticatedUser->id, $otherUser->id, $concertId)){
+        $authenticatedUser = $this->auth->user()->id;
+        dd($authenticatedUser);
+        if($this->potentialMatch->checkIfMatch($authenticatedUser, $otherUser->id, $concertId)){
             //CHECK IF VARIFIED MATCH ALREADY EXISTS ?
             //TECHNICALLY THIS SHOULDNT BE NEEDED AS WE SHOULD CLEAR THE MATCHES BEFORE VIEWING THEM
 
-            $this->verifiedMatch->matchUsersTogether($authenticatedUser->id, $otherUser->id, $concertId);
+            $this->verifiedMatch->matchUsersTogether($authenticatedUser, $otherUser->id, $concertId);
 
             $pusher = App::make('pusher');
 
@@ -65,14 +66,13 @@ class PotentialMatchController extends Controller
                 array('text' => 'You have a new match with ' . $otherUser->voornaam .' !'));
 
             $pusher->trigger( 'gocon-channel',
-                'user-notify-' . $authenticatedUser->id,
+                'user-notify-' . $authenticatedUser,
                 array('text' => 'You have a new match with ' . $otherUser->voornaam .' !'));
 
         } else {
             $newPotentialMatch = $this->potentialMatch->make();
 
-            $newPotentialMatch->user1 = $authenticatedUser->id;
-            
+            $newPotentialMatch->user1 = $authenticatedUser;
             $newPotentialMatch->user2 = $otherUser->id;
             $newPotentialMatch->concert_id = $concertId;
 
