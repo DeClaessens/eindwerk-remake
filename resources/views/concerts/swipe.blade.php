@@ -44,10 +44,14 @@
                                     <!--<a href="{{URL::to('swiperight',  array($user->id, $concert_id))}}">Yes</a><a href="{{URL::to('swipeleft',  array($user->id, $concert_id))}}">No</a>-->
                                 </li>
                             @endforeach
+                            <li>
+                                <a href="{{url('/concerts')}}" class="no-more-people-found">
+                                    <p>We can't find anyone else. Click to find another concert</p>
+                                </a>
+                            </li>
                         </ul>
-                        <a href="{{url('/concerts')}}" class="no-more-people-found">
-                            <p>We can't find anyone else. Click to find another concert</p>
-                        </a>
+
+
                     </div>
                 </div>
             </div>

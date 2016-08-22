@@ -542,7 +542,7 @@ body {
         margin-bottom: 5px; }
       .concerts-container ul a .concert-info p:last-child {
         font-weight: 100;
-        font-size: pt; }
+        font-size: 7pt; }
 
 .concert-landing-container {
   box-sizing: border-box;
@@ -935,17 +935,17 @@ body {
     background-size: contain; }
 
 .no-more-people-found {
+  display: block;
   width: 150px;
   height: 150px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   background-color: #edefef;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -80%);
+  position: relative;
   text-decoration: none;
   left: 50%;
-  color: black; }
+  color: black;
+  z-index: 10000; }
   .no-more-people-found:hover {
     background-color: #ff3d3d;
     color: white; }
