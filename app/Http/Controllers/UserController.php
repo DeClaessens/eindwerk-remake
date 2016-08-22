@@ -35,10 +35,6 @@ class UserController extends Controller
      * @var ConcertRepository
      */
     private $concert;
-    /**
-     * @var FacebookManager
-     */
-    private $facebook;
 
     /**
      * UserController constructor.
@@ -48,7 +44,7 @@ class UserController extends Controller
      * @param ChatRepository $chat
      * @param ConcertRepository $concert
      */
-    public function __construct(Guard $auth, VerifiedMatchRepository $verifiedMatch, UserRepository $user, ChatRepository $chat, ConcertRepository $concert, FacebookManager $facebook)
+    public function __construct(Guard $auth, VerifiedMatchRepository $verifiedMatch, UserRepository $user, ChatRepository $chat, ConcertRepository $concert)
     {
         $this->middleware('auth');
         $this->auth = $auth;
@@ -145,15 +141,5 @@ class UserController extends Controller
         $this->user->save($user);
 
         return redirect()->to('/profile');
-    }
-
-    public function facebookTest() {
-        $user = $this->auth->user();
-
-        $query = $this->facebook->get('/me?fields=id,name, first_name', $user->provider_user_id);
-        $response = $query->getGraphUser();
-        dd($response['first_name']);
-
-
     }
 }
