@@ -278,6 +278,24 @@
             line-height: 40px;
         }
     }
+
+    .edit-profile-form-container {
+        width: 100%;
+
+        margin-bottom: 20px;
+        ul {
+            li {
+                h2 {
+                    font-size: 14pt;
+                }
+
+                label {
+                    font-size: 11pt;
+                }
+            }
+        }
+
+    }
     /* ------- END OF PROFILE -------- */
 
     /* ------- CONCERTS -------- */

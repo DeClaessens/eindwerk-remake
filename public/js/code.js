@@ -59,11 +59,21 @@ $('document').ready(function(){
 
         }
     });
+
     resizeImages();
     $(window).resize(function(){
         resizeImages()
     });
 
+    $('.custom-upload-button').on('click', function(){
+        $('.image-upload').trigger('click');
+    });
+
+
+
+    $('.image-upload').change(function(){
+        readURL(this);
+    });
 
     $(".message-box").scrollTop($(".message-box")[0].scrollHeight);
 
@@ -89,4 +99,19 @@ function resizeImages() {
 
         landingel.children('.concert-landing-image').css('height', landingW);
         */
+}
+
+function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('.uploaded-profile-image').css('background', "url('" + e.target.result + "') center center no-repeat")
+                .css('background-size', 'cover')
+                .css('display', 'block');
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
 }

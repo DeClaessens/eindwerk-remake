@@ -90,6 +90,8 @@ class UserController extends Controller
     }
 
     public function edit() {
+        $user = $this->auth->user();
+
         return view('profile.edit', compact('user'));
     }
 

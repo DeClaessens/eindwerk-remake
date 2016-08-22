@@ -399,6 +399,98 @@ body {
   .profile-container .profile-menu-item:last-child {
     border-bottom: none; }
 
+.edit-profile-form-container {
+  display: block;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  height: auto;
+  margin-bottom: 20px; }
+  .edit-profile-form-container ul {
+    list-style-type: none; }
+    .edit-profile-form-container ul li {
+      min-height: 70px;
+      border-bottom: 1px solid #edefef;
+      padding: 20px 0 20px 20px; }
+      .edit-profile-form-container ul li label {
+        font-weight: normal;
+        margin-bottom: 10px;
+        font-size: 13pt;
+        display: block; }
+      .edit-profile-form-container ul li textarea {
+        display: block;
+        border: none;
+        background-color: #f9f9f9;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        overflow: auto;
+        padding: 10px;
+        width: 90%;
+        max-width: 90%;
+        box-sizing: border-box; }
+      .edit-profile-form-container ul li .image-upload {
+        display: none; }
+      .edit-profile-form-container ul li .custom-upload-button a {
+        display: block;
+        max-width: 100px;
+        padding: 5px 0;
+        text-align: center;
+        cursor: pointer;
+        font-size: 9pt;
+        border: none;
+        background-color: #ff3d3d;
+        border-radius: 1px;
+        border-bottom: 3px solid #eee;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 900;
+        position: relative;
+        transition: .2s all ease-in-out; }
+        .edit-profile-form-container ul li .custom-upload-button a:hover {
+          background-color: rgba(255, 61, 61, 0.8); }
+      .edit-profile-form-container ul li .current-profile-image, .edit-profile-form-container ul li .uploaded-profile-image {
+        height: 100px;
+        width: 100px;
+        border-radius: 3px;
+        display: inline-block;
+        position: relative;
+        margin-top: 30px; }
+        .edit-profile-form-container ul li .current-profile-image p, .edit-profile-form-container ul li .uploaded-profile-image p {
+          display: block;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          font-size: 9pt;
+          text-align: center;
+          position: absolute;
+          top: 0;
+          transform: translateY(-130%); }
+      .edit-profile-form-container ul li .uploaded-profile-image {
+        display: none; }
+    .edit-profile-form-container ul li:first-child {
+      padding: 0 0 0 20px;
+      line-height: 70px; }
+    .edit-profile-form-container ul li:last-child {
+      border-bottom: none; }
+    .edit-profile-form-container ul li.submit-form-li {
+      min-height: 0px; }
+      .edit-profile-form-container ul li.submit-form-li input {
+        display: inline-block;
+        width: 200px;
+        cursor: pointer;
+        height: 50px;
+        border: none;
+        background-color: #ff3d3d;
+        border-radius: 1px;
+        border-bottom: 3px solid #eee;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 900;
+        position: relative;
+        transition: .2s all ease-in-out; }
+        .edit-profile-form-container ul li.submit-form-li input:hover {
+          background-color: rgba(255, 61, 61, 0.8); }
+
 .matches-header {
   position: relative;
   margin-bottom: 20px; }
@@ -1313,6 +1405,14 @@ body {
       font-size: 9pt;
       min-height: 40px;
       line-height: 40px; }
+
+  .edit-profile-form-container {
+    width: 100%;
+    margin-bottom: 20px; }
+    .edit-profile-form-container ul li h2 {
+      font-size: 14pt; }
+    .edit-profile-form-container ul li label {
+      font-size: 11pt; }
 
   /* ------- END OF PROFILE -------- */
   /* ------- CONCERTS -------- */

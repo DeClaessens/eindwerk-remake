@@ -12,6 +12,27 @@
                 <div class="hub-menu-item center-text">
                     <a class="hub-menu-item-link" href="/concerts">Find a Concert</a>
                 </div>
+                @if(($user->bio == '') || ($user->favoriteArtists == '') || ($user->imageUrl == ''))
+                    <div class="hub-menu-item center-text">
+                        <p>Complete your profile!</p>
+                        <p class="small">Enrich your profile with more information.</p>
+                    </div>
+                    @if($user->imageUrl == '')
+                        <div class="hub-menu-item center-text">
+                            <a class="hub-menu-item-link" href="/profile/edit">Add a Picture</a>
+                        </div>
+                    @endif
+                    @if($user->bio == '')
+                        <div class="hub-menu-item center-text">
+                            <a class="hub-menu-item-link" href="/profile/edit">Add a Bio</a>
+                        </div>
+                    @endif
+                    @if($user->favoriteArtists == '')
+                        <div class="hub-menu-item center-text">
+                            <a class="hub-menu-item-link" href="/profile/edit">Add you Favorite Artists</a>
+                        </div>
+                    @endif
+                @endif
                 <div class="hub-menu-item recent-matches-container">
                     <p href="#" class="match-header">Most Recent Matches</p>
                     <div class="hub-recent-matches">
@@ -63,7 +84,7 @@
                     <a href="/chat">Messages</a>
                 </div>
                 <div class="profile-menu-item">
-                    <a href="#">Edit Profile</a>
+                    <a href="/profile/edit">Edit Profile</a>
                 </div>
             </div>
 
