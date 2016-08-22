@@ -51,6 +51,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/swiperight/{userId}/{concertId}', 'PotentialMatchController@soloYes');
 
     Route::get('/bridge', 'NotificationController@bridge');
+
+    Route::get('/facebook', 'UserController@facebookTest');
 });
 
 Route::auth();

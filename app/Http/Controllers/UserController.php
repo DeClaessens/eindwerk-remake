@@ -6,6 +6,7 @@ use App\Chat\ChatRepository;
 use App\Concert\ConcertRepository;
 use App\VerifiedMatch\VerifiedMatchRepository;
 use App\User\UserRepository;
+use Facebook\Facebook;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 use App\User;
@@ -138,5 +139,18 @@ class UserController extends Controller
         $this->user->save($user);
 
         return redirect()->to('/profile');
+    }
+
+    public function facebookTest() {
+        $fb = Facebook::make();
+        $user = $this->auth->user();
+        try {
+            $response = $fb->get('/me?fields=id,name,email', $user->provider_user_id);
+        } catch(\Facebook\Exceptions\FacebookSDKException $e) {
+            dd($e->getMessage());
+        }
+
+        $userNode = $response->getGraphUser();
+        printf('Hello, %s!', $userNode->getName());
     }
 }
