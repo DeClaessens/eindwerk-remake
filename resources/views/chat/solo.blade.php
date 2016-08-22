@@ -8,7 +8,7 @@
                         <div class="recipient-image" style="background: url('{{$otherUser->imageUrl}}') center center no-repeat; background-size: cover;">
 
                         </div>
-                        <p>{{$otherUser->name}}</p>
+                        <p>{{$otherUser->voornaam}}</p>
                     </a>
                 </div>
                 <div class="message-box">

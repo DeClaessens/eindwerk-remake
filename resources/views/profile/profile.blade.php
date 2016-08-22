@@ -20,7 +20,7 @@
                         @else
                                 @foreach($fivelastmatches as $match)
                                     <a href="{{url('/user', $match->matchedUser->id)}}" class="recent-match-item" style="background: url('{{$match->matchedUser->imageUrl}}') center center no-repeat; background-size: cover;">
-                                        <p class="name-popup">{{$match->matchedUser->name}}</p>
+                                        <p class="name-popup">{{$match->matchedUser->voornaam}}</p>
                                     </a>
                                 @endforeach
                         @endif

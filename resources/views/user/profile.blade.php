@@ -13,7 +13,7 @@
                     <ul>
                         <li class="user-info-container">
                             <h4>Name</h4>
-                            <p>{{$user->name}}</p>
+                            <p>{{$user->voornaam}}</p>
                         </li>
                         <li class="user-info-container">
                             <h4>Bio</h4>

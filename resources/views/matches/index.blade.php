@@ -18,7 +18,7 @@
                         <a href="{{url('user', $match->MatchedUser->id)}}"class="match">
                             <div class="match-image" style="background: url('{{$match->MatchedUser->imageUrl}}') center center no-repeat; background-size: cover;"></div>
                             <div class="match-text">
-                                <p class="name matched-user">{{$match->MatchedUser->name}}</p>
+                                <p class="name matched-user">{{$match->MatchedUser->voornaam}}</p>
                                 <p class="name matched-concert">You matched for {{$amountOfConcertsArray[$counter]}} concerts</p>
                             </div>
                         </a>
