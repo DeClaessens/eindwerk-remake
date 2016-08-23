@@ -91,6 +91,7 @@
     @endif
 
     <script src="{{ asset('js/code.js') }}"></script>
+    @yield('javascripts')
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

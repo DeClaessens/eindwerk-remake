@@ -207,6 +207,7 @@
             }
             h2 {
                 padding: 10px;
+                border-bottom: 1px solid #edefef;
             }
             ul {
                 li {
@@ -216,8 +217,10 @@
                     background-color: white;
                     transition: .2s all ease-in-out;
                     &:hover {
-                        transform: scale(1.05);
-                        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+                        background-color: $accent-color;
+                        a {
+                            color: white;
+                        }
                     }
 
                     a {
@@ -240,6 +243,10 @@
                 }
                 li:nth-child(even) {
                     background-color: #eee;
+            
+                    &:hover {
+                        background-color: $accent-color;
+                    }
                 }
             }
         }

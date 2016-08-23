@@ -108,6 +108,7 @@ class ConcertController extends Controller
     {
         $selectedConcert = $this->concert->find($concert_id);
         $api = new SpotifyWebAPI();
+        $user = $this->auth->user();
         $topTracks = '';
         $searchArtist = $api->search($selectedConcert->name, 'artist', array(
             'market' => 'be'
@@ -120,9 +121,36 @@ class ConcertController extends Controller
             ));
         }
 
+        $foundUserConcert = $this->userConcert->searchUserConcerts($user->id, $concert_id);
+
         $amountOfUsers = $this->userConcert->countAllUsersFromConcert($concert_id);
 
-        return view('concerts.landing', compact('selectedConcert', 'topTracks', 'amountOfUsers'));
+        return view('concerts.landing', compact('selectedConcert', 'topTracks', 'amountOfUsers', 'foundUserConcert'));
+    }
+
+    public function addUserConcert($concertId)
+    {
+        $user = $this->auth->user();
+
+        if($existingUserConcert = !$this->userConcert->searchUserConcerts($user->id, $concertId)) {
+            $newUserConcert = $this->userConcert->make();
+            $newUserConcert->user_id = $user->id;
+            $newUserConcert->concert_id = $concertId;
+            $this->userConcert->save($newUserConcert);
+        }
+
+        return 1;
+    }
+
+    public function deleteUserConcert($concertId)
+    {
+        $user = $this->auth->user();
+
+        if($existingUserConcert = $this->userConcert->searchUserConcerts($user->id, $concertId)) {
+            $this->userConcert->delete($existingUserConcert);
+        }
+
+        return 1;
     }
 
     public function findSolo($concert_id)
@@ -135,13 +163,6 @@ class ConcertController extends Controller
         $user = $this->auth->user();
 
         $concert = $this->concert->find($concert_id);
-
-        if($existingUserConcert = !$this->userConcert->searchUserConcerts($user->id, $concert->id)) {
-            $newUserConcert = $this->userConcert->make();
-            $newUserConcert->user_id = $user->id;
-            $newUserConcert->concert_id = $concert->id;
-            $this->userConcert->save($newUserConcert);
-        }
 
         $users = $this->userConcert->getAllUsersFromConcert($user->id, $concert_id);
         $usersCollection = [];

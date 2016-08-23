@@ -7,10 +7,9 @@
                 <div class="concert-landing-card">
                     <div class="concert-landing-image" style="background: url('{{$selectedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
                         <h1>{{$selectedConcert->name}}</h1>
-
                         <a style="display: block" href="{{URL::to('concert/find/solo', $selectedConcert->id)}}" class="landing-button">Find People</a>
-                        <div class="userconcert-toggle">
-                            <div class="inner-userconcert-toggle">
+                        <div class="userconcert-toggle {{ ( isset($foundUserConcert) ? 'toggled' : '') }}">
+                            <div class="inner-userconcert-toggle {{ ( isset($foundUserConcert) ? 'toggled' : '') }}">
                             </div>
                             <p class="userconcert-toggle-text-left">Yes</p>
                             <p class="userconcert-toggle-text-right">No</p>
@@ -44,10 +43,72 @@
                         <li>Venue: {{$selectedConcert->venue}}</li>
                         <li>Date: {{$selectedConcert->date->format('d/m/Y')}}</li>
                         <li>GoCon Users: {{$amountOfUsers}}</li>
-                        <li><a href="{{$selectedConcert->concertUrl}}">More Info & Tickets</a></li>
+                        <li><a target="_blank" href="{{$selectedConcert->concertUrl}}">More Info & Tickets</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
+@section('javascripts')
+    <script>
+        var token = '{{ csrf_token() }}';
+        $('.userconcert-toggle').on('click', function() {
+            $(this).toggleClass('toggled');
+            $(this).children('.inner-userconcert-toggle').toggleClass('toggled');
+
+            if($(this).hasClass('toggled')) {
+                $.post(
+                        '/setUserConcert/{{$selectedConcert->id}}',
+                        {
+                            "_token": token
+                        }
+                );
+            } else {
+                $.post(
+                        '/deleteUserConcert/{{$selectedConcert->id}}',
+                        {
+                            "_token": token
+                        }
+                );
+            }
+        });
+
+        $('.top-tracks-container ul li a').on('click', function(){
+            console.log('a');
+        });
+
+        var tmpEl = '';
+        var trackid = '';
+        var tmp = '';
+        $('.top-tracks-container ul li a i').on('click', function(e){
+            e.preventDefault();
+            if( ! $(this).hasClass('fa-pause-circle')) {
+                if(trackid != ''){
+                    if(tmpEl.hasClass('fa-play-circle')) {
+                        console.log('has class circle')
+                    } else {
+                        console.log('does not have class circle')
+                        tmpEl.removeClass('fa-pause-circle').addClass('fa-play-circle');
+                    }
+                    tmp = $('#'+ trackid);
+                    tmp.trigger('pause');
+                }
+                tmpEl = $(this);
+                trackid = $(this).data('trackid');
+                $(this).removeClass('fa-play-circle').addClass('fa-pause-circle');
+                tmp = $('#'+ trackid);
+                tmp.trigger('play');
+            } else {
+                trackid = $(this).data('trackid');
+                $(this).removeClass('fa-pause-circle').addClass('fa-play-circle');
+                tmp = $('#'+ trackid);
+                tmp.trigger('pause');
+            }
+
+            e.stopPropagation();
+        });
+
+    </script>
+@stop

@@ -43,6 +43,9 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/concerts', 'ConcertController@showAllConcerts');
     Route::get('/getConcerts', 'ConcertController@getAllConcertsFromApiAndSaveToDatabase');
+    Route::post('/setUserConcert/{id}', 'ConcertController@addUserConcert');
+    Route::post('/deleteUserConcert/{id}', 'ConcertController@deleteUserConcert');
+
 
     Route::get('/admin/getConcerts', 'HomeController@saveConcertsToDatabase');
 

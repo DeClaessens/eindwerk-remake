@@ -21,6 +21,8 @@ interface UserConcertRepository
      */
     public function save($userConcert);
 
+    public function delete($userConcert);
+
     /**
      * @param $user_id
      * @param $concert_id

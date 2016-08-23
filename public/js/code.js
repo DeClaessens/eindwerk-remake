@@ -4,22 +4,6 @@ $('document').ready(function(){
     }
     console.log('hello');
 
-    $('.top-tracks-container ul li a').on('click', function(){
-        console.log('a');
-    });
-
-    var tmp = '';
-    $('.top-tracks-container ul li a i').on('click', function(e){
-        e.preventDefault();
-        if(tmp != ''){
-            tmp[0].pause();
-        }
-        var trackid = $(this).data('trackid');
-        tmp = $('#'+ trackid);
-        tmp.trigger('play');
-        e.stopPropagation();
-    });
-
     $("#tinderslide").jTinder({
         onDislike: function (item) {
             console.log(item.data('userid'));
@@ -27,12 +11,6 @@ $('document').ready(function(){
         onLike: function (item) {
             console.log(item.data('userid'));
             var token = $('.csrf').val();
-            /*$.ajax({
-                type: 'POST',
-                url: '/swiperight/' + item.data('userid') + '/' + item.data('concertid'),
-                data: { CSRF: csrf},
-                dataType: 'json'
-            });*/
             $.post(
                 '/swiperight/' + item.data('userid') + '/' + item.data('concertid'),
                 {
@@ -42,13 +20,13 @@ $('document').ready(function(){
         }
     });
     holmes({
-        input: '.search-concerts input', // default: input[type=search]
-        find: '.concert-list a' // querySelectorAll that matches each of the results individually
+        input: '.search-concerts input',
+        find: '.concert-list a'
     });
 
     holmes({
-        input: '.search-matches input', // default: input[type=search]
-        find: '.matches-container a' // querySelectorAll that matches each of the results individually
+        input: '.search-matches input',
+        find: '.matches-container a'
     });
     var slideDuration = 200;
     $('.nav-profile-image').on('click', function() {
@@ -75,17 +53,10 @@ $('document').ready(function(){
         readURL(this);
     });
 
-    $('.userconcert-toggle').on('click', function() {
-        console.log('hello2');
-        $(this).toggleClass('toggled');
-        $(this).children('.inner-userconcert-toggle').toggleClass('toggled');
-    });
-
     $(".message-box").scrollTop($(".message-box")[0].scrollHeight);
-
-
-
 });
+
+$
 
 function resizeImages() {
         $('.concert-list a').each(function(){

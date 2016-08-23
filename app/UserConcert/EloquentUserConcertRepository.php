@@ -57,6 +57,11 @@ class EloquentUserConcertRepository implements UserConcertRepository
         $userConcert->save();
     }
 
+    public function delete($userConcert)
+    {
+        $userConcert->delete();
+    }
+
     public function searchUserConcerts($user_id, $concert_id)
     {
         return $this->model->where('user_id', $user_id)->where('concert_id', $concert_id)->first();

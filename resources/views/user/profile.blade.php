@@ -38,7 +38,7 @@
                     <ul>
                         @foreach($concertsMatched as $concert)
                             <li class="matched-concert">
-                                <a href="{{ url('concert/select', $concert->MatchedConcert->id) }}">
+                                <a target="_blank" href="{{ url('concert/select', $concert->MatchedConcert->id) }}">
                                     <div class="matched-concert-image" style="background: url('{{$concert->MatchedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
 
                                     </div>
@@ -50,76 +50,6 @@
                                 </a>
                             </li>
                         @endforeach
-                            @foreach($concertsMatched as $concert)
-                                <li class="matched-concert">
-                                    <a href="{{ url('concert/select', $concert->MatchedConcert->id) }}">
-                                        <div class="matched-concert-image" style="background: url('{{$concert->MatchedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
-
-                                        </div>
-                                        <div class="matched-concert-text">
-                                            <p>{{$concert->MatchedConcert->name}}</p>
-                                            <p>{{$concert->MatchedConcert->venue}}</p>
-                                            <p>{{$concert->MatchedConcert->date->format('d/m/Y')}}</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
-                            @foreach($concertsMatched as $concert)
-                                <li class="matched-concert">
-                                    <a href="{{ url('concert/select', $concert->MatchedConcert->id) }}">
-                                        <div class="matched-concert-image" style="background: url('{{$concert->MatchedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
-
-                                        </div>
-                                        <div class="matched-concert-text">
-                                            <p>{{$concert->MatchedConcert->name}}</p>
-                                            <p>{{$concert->MatchedConcert->venue}}</p>
-                                            <p>{{$concert->MatchedConcert->date->format('d/m/Y')}}</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
-                            @foreach($concertsMatched as $concert)
-                                <li class="matched-concert">
-                                    <a href="{{ url('concert/select', $concert->MatchedConcert->id) }}">
-                                        <div class="matched-concert-image" style="background: url('{{$concert->MatchedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
-
-                                        </div>
-                                        <div class="matched-concert-text">
-                                            <p>{{$concert->MatchedConcert->name}}</p>
-                                            <p>{{$concert->MatchedConcert->venue}}</p>
-                                            <p>{{$concert->MatchedConcert->date->format('d/m/Y')}}</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
-                            @foreach($concertsMatched as $concert)
-                                <li class="matched-concert">
-                                    <a href="{{ url('concert/select', $concert->MatchedConcert->id) }}">
-                                        <div class="matched-concert-image" style="background: url('{{$concert->MatchedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
-
-                                        </div>
-                                        <div class="matched-concert-text">
-                                            <p>{{$concert->MatchedConcert->name}}</p>
-                                            <p>{{$concert->MatchedConcert->venue}}</p>
-                                            <p>{{$concert->MatchedConcert->date->format('d/m/Y')}}</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
-                            @foreach($concertsMatched as $concert)
-                                <li class="matched-concert">
-                                    <a href="{{ url('concert/select', $concert->MatchedConcert->id) }}">
-                                        <div class="matched-concert-image" style="background: url('{{$concert->MatchedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
-
-                                        </div>
-                                        <div class="matched-concert-text">
-                                            <p>{{$concert->MatchedConcert->name}}</p>
-                                            <p>{{$concert->MatchedConcert->venue}}</p>
-                                            <p>{{$concert->MatchedConcert->date->format('d/m/Y')}}</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
                     </ul>
                 </div>
             </div>
