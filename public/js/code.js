@@ -4,21 +4,6 @@ $('document').ready(function(){
     }
     console.log('hello');
 
-    $("#tinderslide").jTinder({
-        onDislike: function (item) {
-            console.log(item.data('userid'));
-        },
-        onLike: function (item) {
-            console.log(item.data('userid'));
-            var token = $('.csrf').val();
-            $.post(
-                '/swiperight/' + item.data('userid') + '/' + item.data('concertid'),
-                {
-                    "_token": token
-                }
-            );
-        }
-    });
     holmes({
         input: '.search-concerts input',
         find: '.concert-list a'

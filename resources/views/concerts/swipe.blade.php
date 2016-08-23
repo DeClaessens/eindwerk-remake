@@ -44,18 +44,68 @@
                                     <!--<a href="{{URL::to('swiperight',  array($user->id, $concert_id))}}">Yes</a><a href="{{URL::to('swipeleft',  array($user->id, $concert_id))}}">No</a>-->
                                 </li>
                             @endforeach
-                            <li>
-                                <a href="{{url('/concerts')}}" class="no-more-people-found">
-                                    <p>We can't find anyone else. Click to find another concert</p>
-                                </a>
-                            </li>
                         </ul>
 
-
                     </div>
+                    <a href="{{url('/concerts')}}" class="no-more-people-found">
+                        <p>We can't find anyone else. Click to find another concert</p>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
+@endsection
+
+@section('javascripts')
+    <script>
+        var SwipeListItemCounter = 0;
+        var swipes = 0;
+        SwipeListItemCounter = checkList();
+        displayNoMoreSwipesDiv(checkIfAllSwiped());
+        $("#tinderslide").jTinder({
+            onDislike: function (item) {
+                displayNoMoreSwipesDiv(checkIfAllSwiped());
+            },
+            onLike: function (item) {
+                displayNoMoreSwipesDiv(checkIfAllSwiped());
+                var token = $('.csrf').val();
+                $.post(
+                        '/swiperight/' + item.data('userid') + '/' + item.data('concertid'),
+                        {
+                            "_token": token
+                        }
+                );
+            }
+        });
+
+        function checkList() {
+            var counter = 0;
+            $('#tinderslide ul li').each(function(){
+                counter++;
+            });
+
+
+            return counter
+        }
+
+        function checkIfAllSwiped() {
+            if(swipes < SwipeListItemCounter) {
+                swipes++;
+                return false
+            } else {
+                swipes++;
+                return true;
+            }
+
+        }
+
+        function displayNoMoreSwipesDiv(allswiped) {
+            console.log(allswiped);
+            if(allswiped) {
+                $('#tinderslide').css('display', 'none');
+            }
+        }
+
+    </script>
 @endsection

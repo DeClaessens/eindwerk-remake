@@ -29,7 +29,7 @@
                     @endif
                     @if($user->favoriteArtists == '')
                         <div class="hub-menu-item center-text">
-                            <a class="hub-menu-item-link" href="/profile/edit">Add you Favorite Artists</a>
+                            <a class="hub-menu-item-link" href="/profile/edit">Add your Favorite Artists</a>
                         </div>
                     @endif
                 @endif
