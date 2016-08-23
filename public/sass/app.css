@@ -656,7 +656,7 @@ body {
       text-align: center; }
       .concert-landing-container .concert-landing-card .concert-landing-image h1 {
         position: absolute;
-        top: 50%;
+        top: 30%;
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
@@ -666,7 +666,7 @@ body {
       .concert-landing-container .concert-landing-card .concert-landing-image a {
         display: inline-block;
         position: absolute;
-        bottom: 16%;
+        bottom: 36%;
         left: 50%;
         transform: translateX(-50%);
         padding: 15px 20px;
@@ -683,14 +683,25 @@ body {
           background-color: #b84a4a;
           border-color: #b84a4a;
           color: white; }
+      .concert-landing-container .concert-landing-card .concert-landing-image .userconcert-toggle-info {
+        color: white;
+        font-size: 9pt;
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        width: 400%; }
       .concert-landing-container .concert-landing-card .concert-landing-image .userconcert-toggle {
         width: 50px;
         height: 20px;
-        position: relative;
-        top: 20px;
-        left: 20px;
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
         border: 2px solid #f9f9f9;
-        background-color: #ff3d3d; }
+        background-color: #ff3d3d;
+        border-radius: 3px; }
         .concert-landing-container .concert-landing-card .concert-landing-image .userconcert-toggle .inner-userconcert-toggle {
           background-color: white;
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -703,7 +714,7 @@ body {
         .concert-landing-container .concert-landing-card .concert-landing-image .userconcert-toggle .inner-userconcert-toggle.toggled {
           left: auto;
           right: 0; }
-        .concert-landing-container .concert-landing-card .concert-landing-image .userconcert-toggle p {
+        .concert-landing-container .concert-landing-card .concert-landing-image .userconcert-toggle p.userconcert-toggle-text-left, .concert-landing-container .concert-landing-card .concert-landing-image .userconcert-toggle p.userconcert-toggle-text-right {
           font-weight: normal;
           font-size: 8pt;
           position: absolute;

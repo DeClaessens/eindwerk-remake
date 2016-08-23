@@ -8,6 +8,7 @@
                     <div class="concert-landing-image" style="background: url('{{$selectedConcert->concertImageUrl}}') center center no-repeat; background-size: cover;">
                         <h1>{{$selectedConcert->name}}</h1>
                         <a style="display: block" href="{{URL::to('concert/find/solo', $selectedConcert->id)}}" class="landing-button">Find People</a>
+                        <p class="userconcert-toggle-info">Do you want to be found in this concert?</p>
                         <div class="userconcert-toggle {{ ( isset($foundUserConcert) ? 'toggled' : '') }}">
                             <div class="inner-userconcert-toggle {{ ( isset($foundUserConcert) ? 'toggled' : '') }}">
                             </div>

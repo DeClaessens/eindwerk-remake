@@ -106,7 +106,7 @@
 
             h1 {
                 position: absolute;
-                top: 50%;
+                top: 30%;
                 left:50%;
                 transform: translate(-50%, -50%);
                 color: white;
@@ -117,7 +117,7 @@
             a {
                 display: inline-block;
                 position: absolute;
-                bottom: 16%;
+                bottom: 36%;
                 left: 50%;
                 transform: translateX(-50%);
 
@@ -141,14 +141,30 @@
                 }
             }
 
+            .userconcert-toggle-info {
+                color: white;
+                font-size: 9pt;
+                position: absolute;
+                bottom: 20%;
+
+                left: 50%;
+                text-align: center;
+                transform: translate(-50%,-50%);
+                width: 400%;
+            }
+
             .userconcert-toggle {
                 width: 50px;
                 height: 20px;
-                position: relative;
-                top: 20px;
-                left: 20px;
+                position: absolute;
+                bottom: 10%;
+                
+
+                left: 50%;
+                transform: translateX(-50%);
                 border: 2px solid #f9f9f9;
                 background-color: $accent-color;
+                border-radius: 3px;
                 .inner-userconcert-toggle {
                     background-color: white;
                     box-shadow: 0 1px 1px rgba(0,0,0,0.2);
@@ -165,7 +181,7 @@
                     right: 0;
                 }
 
-                p {
+                p.userconcert-toggle-text-left, p.userconcert-toggle-text-right {
                     font-weight:normal;
                     font-size: 8pt;
                     position: absolute;
