@@ -140,6 +140,53 @@
                     color: white;
                 }
             }
+
+            .userconcert-toggle {
+                width: 50px;
+                height: 20px;
+                position: relative;
+                top: 20px;
+                left: 20px;
+                border: 2px solid #f9f9f9;
+                background-color: $accent-color;
+                .inner-userconcert-toggle {
+                    background-color: white;
+                    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+                    width: (100% / 2);
+                    height: 100%;
+                    position: absolute;
+                    left:0;
+                    right: auto;
+                    z-index: 10;
+                }
+
+                .inner-userconcert-toggle.toggled {
+                    left: auto;
+                    right: 0;
+                }
+
+                p {
+                    font-weight:normal;
+                    font-size: 8pt;
+                    position: absolute;
+                    display: inline-block;
+                    line-height: 20px;
+                    z-index: 1;
+                    color: white;
+                }
+
+                p.userconcert-toggle-text-left {
+                    left: 5px;
+                }
+
+                p.userconcert-toggle-text-right {
+                    right: 5px;
+                }
+            }
+
+            .userconcert-toggle.toggled {
+                background-color: #2ca02c;
+            }
         }
         .top-tracks-container {
             .about-paragraph {

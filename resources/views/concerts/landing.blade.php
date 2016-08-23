@@ -9,6 +9,12 @@
                         <h1>{{$selectedConcert->name}}</h1>
 
                         <a style="display: block" href="{{URL::to('concert/find/solo', $selectedConcert->id)}}" class="landing-button">Find People</a>
+                        <div class="userconcert-toggle">
+                            <div class="inner-userconcert-toggle">
+                            </div>
+                            <p class="userconcert-toggle-text-left">Yes</p>
+                            <p class="userconcert-toggle-text-right">No</p>
+                        </div>
                     </div>
                     <div class="top-tracks-container">
                         <h2>Top Tracks</h2>

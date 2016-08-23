@@ -75,7 +75,15 @@ $('document').ready(function(){
         readURL(this);
     });
 
+    $('.userconcert-toggle').on('click', function() {
+        console.log('hello2');
+        $(this).toggleClass('toggled');
+        $(this).children('.inner-userconcert-toggle').toggleClass('toggled');
+    });
+
     $(".message-box").scrollTop($(".message-box")[0].scrollHeight);
+
+
 
 });
 
