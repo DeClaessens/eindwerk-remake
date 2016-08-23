@@ -39,6 +39,10 @@
                                     <div class="text-container">
                                         <h2>{{$user->voornaam}}</h2>
                                         <p>{{$user->bio}}</p>
+                                        <!--
+                                        <a href="#" class="swipe-button dislike-button">Dislike</a>
+                                        <a href="#" class="swipe-button like-button">Like</a>
+                                        -->
                                     </div>
 
                                     <!--<a href="{{URL::to('swiperight',  array($user->id, $concert_id))}}">Yes</a><a href="{{URL::to('swipeleft',  array($user->id, $concert_id))}}">No</a>-->
@@ -76,8 +80,26 @@
                             "_token": token
                         }
                 );
-            }
+            },
+            likeSelector: '.like',
+            dislikeSelector:  '.dislike'
         });
+
+        /*$('.like-button, .dislike-button').click(function(e){
+            e.preventDefault();
+            console.log('hello');
+            $("#tinderslide").jTinder($(this).attr('class'));
+            e.stopPropagation();
+        });
+
+        $('.like-button').on('click', function(e) {
+
+        });
+
+        $('.dislike-button').on('click', function() {
+            console.log('hello');
+            displayNoMoreSwipesDiv(checkIfAllSwiped());
+        });*/
 
         function checkList() {
             var counter = 0;

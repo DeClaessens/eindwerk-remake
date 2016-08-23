@@ -12,12 +12,12 @@
                 <div class="hub-menu-item center-text">
                     <a class="hub-menu-item-link" href="/concerts">Find a Concert</a>
                 </div>
-                @if(($user->bio == '') || ($user->favoriteArtists == '') || ($user->imageUrl == ''))
+                @if(($user->bio == '') || ($user->favoriteArtists == '') || ($user->imageUrl == '/img/default-profile-image.png'))
                     <div class="hub-menu-item center-text">
                         <p>Complete your profile!</p>
                         <p class="small">Enrich your profile with more information.</p>
                     </div>
-                    @if($user->imageUrl == '')
+                    @if($user->imageUrl == '/img/default-profile-image.png')
                         <div class="hub-menu-item center-text">
                             <a class="hub-menu-item-link" href="/profile/edit">Add a Picture</a>
                         </div>

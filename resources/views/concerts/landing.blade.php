@@ -76,10 +76,6 @@
             }
         });
 
-        $('.top-tracks-container ul li a').on('click', function(){
-            console.log('a');
-        });
-
         var tmpEl = '';
         var trackid = '';
         var tmp = '';
@@ -88,9 +84,7 @@
             if( ! $(this).hasClass('fa-pause-circle')) {
                 if(trackid != ''){
                     if(tmpEl.hasClass('fa-play-circle')) {
-                        console.log('has class circle')
                     } else {
-                        console.log('does not have class circle')
                         tmpEl.removeClass('fa-pause-circle').addClass('fa-play-circle');
                     }
                     tmp = $('#'+ trackid);

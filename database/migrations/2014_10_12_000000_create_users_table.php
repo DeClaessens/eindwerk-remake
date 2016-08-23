@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('voornaam');
             $table->string('email')->unique();
             $table->string('password', 60);
-            $table->string('imageUrl');
+            $table->string('imageUrl')->default('/img/default-profile-image.png');
             $table->string('bio');
             $table->string('favoriteArtists');
             $table->integer('birthday');
