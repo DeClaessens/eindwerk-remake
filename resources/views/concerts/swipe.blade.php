@@ -104,6 +104,7 @@
             console.log(allswiped);
             if(allswiped) {
                 $('#tinderslide').css('display', 'none');
+                $('.no-more-people-found').css('display', 'block');
             }
         }
 
