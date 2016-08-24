@@ -40,7 +40,7 @@
                             <a href="{{url('/matches')}}">Matches</a>
                         </li>
                         <li>
-                            <a href="{{url('/chat')}}">Chat</a>
+                            <a href="{{url('/chat')}}">Messages</a>
                         </li>
                     </ul>
                     <div class="nav-profile-image" style="background: url('{{Auth::user()->imageUrl}}') center center no-repeat; background-size: cover;">
@@ -51,7 +51,7 @@
                             <a href="{{url('/profile')}}">Profile</a>
                         </li>
                         <li>
-                            <a href="#">Edit Profile</a>
+                            <a href="{{url('/profile/edit')}}">Edit Profile</a>
                         </li>
                         <li>
                             <a href="{{url('/logout')}}">Logout</a>
@@ -84,7 +84,10 @@
 
             var channel = pusher.subscribe('gocon-channel');
             channel.bind('user-notify-{{Auth::user()->id}}', function(data) {
-                $.notify(data.text);
+                $.notify(data.text, {
+                    className:'notification',
+                    globalPosition: 'top right'
+                });
             });
 
         </script>

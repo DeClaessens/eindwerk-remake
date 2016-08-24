@@ -79,6 +79,11 @@ class ChatController extends Controller
         $matchedConcerts = $this->verifiedmatch->findAllConcertsMatched($authUser->id, $otherUser->id);
 
         $messages = $this->chat->getMessagesFromMatch($authUser->id, $otherUser->id);
+        foreach ($messages as $message) {
+            $message->is_read = true;
+
+            $this->chat->save($message);
+        }
 
         return view('chat.solo', compact('authUser', 'otherUser', 'matchedConcerts', 'messages'));
     }
@@ -101,7 +106,7 @@ class ChatController extends Controller
 
         $pusher->trigger( 'gocon-channel',
             'user-notify-' . $userid,
-            array('text' => $authUser->voornaam . ' heeft je een bericht gestuurd.'));
+            array('text' => $authUser->voornaam . ' sent you a new Message.'));
         
         return redirect()->back();
     }

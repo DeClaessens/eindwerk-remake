@@ -26,6 +26,14 @@ body {
   margin: 0;
   padding: 0; }
 
+.notifyjs-container .notifyjs-bootstrap-notification {
+  background-color: #ff3d3d;
+  border: none;
+  color: white;
+  text-shadow: none;
+  font-size: 9pt;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
+
 .full-page {
   padding-top: 80px;
   box-sizing: border-box;
@@ -946,7 +954,7 @@ body {
     right: 0; }
   .auth-container .facebook-register-container {
     display: inline-block;
-    width: 30%;
+    width: 45%;
     height: 90%;
     position: absolute;
     top: 50%;
@@ -974,6 +982,9 @@ body {
       .auth-container .facebook-register-container .facebook-register-inner-container p {
         font-size: 9pt;
         text-align: center; }
+
+.panel-body {
+  position: relative; }
 
 .current-concert {
   background-color: white;
@@ -1719,5 +1730,19 @@ body {
     max-width: 500px; }
     .matched-concerts-container ul {
       max-height: 300px; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .homepage-container .homepage-content .homepage-header h1 {
+    font-size: 30pt; }
+  .homepage-container .homepage-content .homepage-header p {
+    font-size: 8pt;
+    line-height: 11pt; }
+  .homepage-container .homepage-content .divider {
+    height: 3px; }
+  .homepage-container .homepage-content .homepage-body {
+    height: 150px; }
+    .homepage-container .homepage-content .homepage-body .homepage-body-step-container .homepage-body-step {
+      width: 50px;
+      height: 50px;
+      transform: translateY(10%); } }
 
 /*# sourceMappingURL=app.css.map */
