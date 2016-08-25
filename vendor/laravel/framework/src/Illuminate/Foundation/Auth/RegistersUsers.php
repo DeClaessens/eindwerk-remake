@@ -68,7 +68,6 @@ trait RegistersUsers
         $newUser = new User();
         $newUser->name = $request->name;
         $newUser->voornaam = $request->voornaam;
-        dd($request->voornaam);
 
         $newUser->email = $request->email;
         $newUser->password = Hash::make($request->name);
