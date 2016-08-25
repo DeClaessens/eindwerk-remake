@@ -56,6 +56,11 @@ function resizeImages() {
 
             el.children('.match-image').css('height', w);
         });
+
+        var swipeEl = $('.swipe-card .image-container');
+        var swipeW = swipeEl.width();
+
+        swipeEl.children('img').css('height', swipeW);
         /*
         var landingel = $('.concert-landing-card');
         var landingW = landingel.width();
