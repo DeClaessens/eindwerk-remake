@@ -70,7 +70,7 @@ trait RegistersUsers
         $newUser->voornaam = $request->voornaam;
 
         $newUser->email = $request->email;
-        $newUser->password = Hash::make($request->name);
+        $newUser->password = Hash::make($request->password);
 
         $newUser->save();
 
