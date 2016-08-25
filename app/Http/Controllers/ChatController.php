@@ -80,9 +80,11 @@ class ChatController extends Controller
 
         $messages = $this->chat->getMessagesFromMatch($authUser->id, $otherUser->id);
         foreach ($messages as $message) {
-            $message->is_read = true;
+            if($message->receiver == $authUser->id) {
+                $message->is_read = true;
 
-            $this->chat->save($message);
+                $this->chat->save($message);
+            }
         }
 
         return view('chat.solo', compact('authUser', 'otherUser', 'matchedConcerts', 'messages'));

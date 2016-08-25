@@ -38,4 +38,6 @@ interface ChatRepository
     public function getLastMessageFromThread($user1, $user2);
 
     public function deleteAllMessagesOfMatches($authid, $id);
+
+    public function countUnreadMessages($authid);
 }

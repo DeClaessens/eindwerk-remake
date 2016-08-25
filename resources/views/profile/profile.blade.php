@@ -78,10 +78,23 @@
                     <p>Your Profile</p>
                 </div>
                 <div class="profile-menu-item">
-                    <a href="/matches">Matches</a>
+                    <a href="/matches">
+                        Matches
+                        @if($newMatches >= 1)
+                            <span>
+                            {{$newMatches}}
+                        </span>
+                        @endif
+                    </a>
                 </div>
                 <div class="profile-menu-item">
-                    <a href="/chat">Messages</a>
+                    <a href="/chat">Messages
+                        @if($newMessages >= 1)
+                        <span>
+                            {{$newMessages}}
+                        </span>
+                        @endif
+                    </a>
                 </div>
                 <div class="profile-menu-item">
                     <a href="/profile/edit">Edit Profile</a>

@@ -56,7 +56,7 @@ class EloquentChatRepository implements ChatRepository
 
     public function getXLastMessages($user1, $amount)
     {
-        $query = $this->model->where('receiver', $user1)->limit($amount)->get();
+        $query = $this->model->where('receiver', $user1)->groupBy('sender')->limit($amount)->get();
 
         return $query;
     }
@@ -76,7 +76,8 @@ class EloquentChatRepository implements ChatRepository
         return $query;
     }
 
-    public function deleteAllMessagesOfMatches($authid, $id) {
+    public function deleteAllMessagesOfMatches($authid, $id)
+    {
         $query = $this->model->where(function ($query) use ($authid, $id) {
             $query->where('sender', $authid)
                 ->where('receiver', $id);
@@ -92,5 +93,12 @@ class EloquentChatRepository implements ChatRepository
         }
 
         return 1;
+    }
+
+    public function countUnreadMessages($authid)
+    {
+        $query = $this->model->where('receiver', $authid)->where('is_read', false)->count();
+
+        return $query;
     }
 }

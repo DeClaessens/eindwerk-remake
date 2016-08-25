@@ -45,7 +45,7 @@ class EloquentVerifiedMatchRepository implements VerifiedMatchRepository
         return $this->model->where('user1', $user1)->groupBy('user2')->get();
     }
 
-    public function checkIfUsersMatch($user1, $user2) {
+    public function findMatch($user1, $user2) {
 
         $response = $queryResult = $this->model
             ->where('user1', $user1)
@@ -54,18 +54,8 @@ class EloquentVerifiedMatchRepository implements VerifiedMatchRepository
 
         if($response != NULL) {
             //MATCH FOUND, RETURN TRUE
-            return 1;
+            return $response;
         } else {
-            //NO MATCH FOUND, TEST OTHER POSSIBILITY
-            $queryResult = $this->model
-                ->where('user1', $user2)
-                ->where('user2', $user1)
-                ->first();
-
-            if($queryResult != NULL) {
-                return 1;
-            }
-
             return 0;
         }
     }
@@ -115,6 +105,13 @@ class EloquentVerifiedMatchRepository implements VerifiedMatchRepository
 
     public function findXLastMatchesById($id, $amount){
         $query = $this->model->where('user1', $id)->limit($amount)->get();
+
+        return $query;
+    }
+
+    public function countUnreadMatches($authid)
+    {
+        $query = $this->model->where('user1', $authid)->where('new_match', true)->count();
 
         return $query;
     }

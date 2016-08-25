@@ -25,7 +25,7 @@ interface VerifiedMatchRepository
      * @param $user2
      * @return mixed
      */
-    public function checkIfUsersMatch($user1, $user2);
+    public function findMatch($user1, $user2);
 
     /**
      * @param $user1
@@ -39,6 +39,8 @@ interface VerifiedMatchRepository
     public function matchUsersTogether($user1, $user2, $concertId);
 
     public function findXLastMatchesById($id, $amount);
+
+    public function countUnreadMatches($authid);
 
     public function delete($authId, $matchId);
 }

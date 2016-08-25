@@ -77,14 +77,26 @@ class UserController extends Controller
         $recentmessages = $this->chat->getXLastMessages($user->id, 2);
         $fivelastmatches = $this->verifiedMatch->findXLastMatchesById($user->id, 5);
         $upcomingconcerts = $this->concert->getUpcomingConcerts(5);
+        $newMessages = $this->chat->countUnreadMessages($user->id);
+        $newMatches = $this->verifiedMatch->countUnreadMatches($user->id);
 
-        return view('profile.profile', compact('user', 'matchedusers', 'fivelastmatches', 'recentmessages', 'upcomingconcerts'));
+        return view('profile.profile', compact('user', 'matchedusers', 'fivelastmatches', 'recentmessages', 'upcomingconcerts', 'newMessages', 'newMatches'));
     }
 
     public function userPage($id) {
         $user = $this->user->find($id);
         $authUser = $this->auth->user();
-        $doyoumatch = $this->verifiedMatch->checkIfUsersMatch($id, $authUser->id);
+        $doyoumatch = $this->verifiedMatch->findMatch($authUser->id, $id);
+
+        if($doyoumatch) {
+
+            if($doyoumatch->new_match == true) {
+                $doyoumatch->new_match = false;
+
+                $this->verifiedMatch->save($doyoumatch);
+            }
+        }
+
         $concertsMatched = $this->verifiedMatch->findAllConcertsMatched($authUser->id, $user->id);
 
         return view('user.profile', compact('user', 'doyoumatch', 'concertsMatched'));

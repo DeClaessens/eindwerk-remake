@@ -231,6 +231,18 @@ body {
       .homepage-container .homepage-content .homepage-register a.facebook i {
         margin-right: 10px; }
 
+#step-1 {
+  background: url("../img/homepage/concerten-screen.png") center center no-repeat;
+  background-size: cover; }
+
+#step-2 {
+  background: url("../img/homepage/swipe-screen.png") center center no-repeat;
+  background-size: cover; }
+
+#step-3 {
+  background: url("../img/homepage/chat-screen.png") center center no-repeat;
+  background-size: cover; }
+
 .profile-position-container {
   position: relative; }
 
@@ -404,6 +416,12 @@ body {
       .profile-container .profile-menu-item a:hover {
         color: #ff3d3d;
         background-color: #f9f9f9; }
+      .profile-container .profile-menu-item a span {
+        background-color: #ff3d3d;
+        padding: 3px 5px;
+        font-size: 10pt;
+        border-radius: 40%;
+        color: white; }
   .profile-container .profile-menu-item:last-child {
     border-bottom: none; }
 
@@ -1221,7 +1239,7 @@ body {
       background-color: #ff3d3d;
       position: relative;
       right: 40px;
-      text-align: right;
+      text-align: left;
       float: right; }
     .chat-box .message-box ul li.auth .nofloat {
       clear: both; }

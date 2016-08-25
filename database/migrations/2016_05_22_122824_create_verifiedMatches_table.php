@@ -20,6 +20,7 @@ class CreateVerifiedMatchesTable extends Migration
             $table->foreign('user2')->references('id')->on('users')->onDelete('cascade');
             $table->integer('concert_id');
             $table->foreign('concert_id')->references('id')->on('concerts')->onDelete('cascade');
+            $table->boolean('new_match')->default(true);
         });
     }
 

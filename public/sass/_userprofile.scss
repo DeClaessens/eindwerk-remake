@@ -216,6 +216,13 @@
                 color: $accent-color;
                 background-color: #f9f9f9;
             }
+            span {
+                background-color: $accent-color;
+                padding: 3px 5px;
+                font-size: 10pt;
+                border-radius: 40%;
+                color: white;
+            }
         }
     }
     .profile-menu-item:last-child {
