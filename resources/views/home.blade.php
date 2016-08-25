@@ -15,13 +15,13 @@
             <div class="homepage-body">
                 <div class="homepage-body-step-container">
                     <div class="homepage-body-step" id="step-1">
-                        <span>Step 1</span>
+                        <span>Zoek!</span>
                     </div>
                     <div class="homepage-body-step" id="step-2">
-                        <span>Step 1</span>
+                        <span>Swipe!</span>
                     </div>
                     <div class="homepage-body-step" id="step-3">
-                        <span>Step 1</span>
+                        <span>Chat!</span>
                     </div>
                 </div>
             </div>

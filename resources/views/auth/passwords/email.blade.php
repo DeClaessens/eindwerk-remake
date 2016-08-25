@@ -2,9 +2,16 @@
 
 <!-- Main Content -->
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+<div class="user-nav">
+    <div class="grid-container">
+        <div class="logo">
+            <a href="{{url('/')}}">GoCON</a>
+        </div>
+    </div>
+</div>
+<div class="full-page">
+    <div class="grid-container">
+        <div class="auth-container">
             <div class="panel panel-default">
                 <div class="panel-heading">Reset Password</div>
                 <div class="panel-body">
@@ -34,7 +41,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-envelope"></i> Send Password Reset Link
+                                    Send Reset Password Link
                                 </button>
                             </div>
                         </div>
@@ -43,5 +50,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection
