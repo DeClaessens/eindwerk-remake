@@ -31,8 +31,8 @@
                             <input type="hidden" class="csrf" value="{!! csrf_token() !!}">
                             <?php $counter = 1; ?>
                             @foreach($usersCollection as $user)
-                                <li class="swipe-card" data-userid="{{$user->id}}" data-concertid="{{$concert_id}}" style="background:url('{{$user->imageUrl}}') center center no-repeat; background-size: cover;">
-                                    <div class="image-container">
+                                <li class="swipe-card" data-userid="{{$user->id}}" data-concertid="{{$concert_id}}">
+                                    <div class="image-container" style="background:url('{{$user->imageUrl}}') center center no-repeat; background-size: cover;">
                                         <div class="like-dislike-notification"></div>
                                     </div>
                                     <div class="text-container">
